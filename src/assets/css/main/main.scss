@@ -1,0 +1,52 @@
+body, a, h5, p, #cic-search-container label, .menu-title, #zip-code-container label, .fl-node-content a {
+    font-family: "Body", sans-serif;
+}
+h1, h2, h3, h4, .cic-heading-2, .cic-heading-3, .cic-heading-4{ 
+    font-family: "Heading";
+}
+
+h1,h2,h3,h4 {
+    font-weight: 600;
+    // margin: 0;
+    // padding: 0;
+    // text-align: center
+}
+
+h1 {
+    font-size: 2.5rem
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    font-size: 1.5rem
+}
+
+h4 {
+    font-size: 1.25rem
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25em;
+    margin: 0;
+    padding: 0
+}
+
+.cic-paragraph--medium {
+    font-weight: 500
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
