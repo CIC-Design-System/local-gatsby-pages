@@ -1,0 +1,69 @@
+/**********************************************************
+* Philanthropy Section
+/*********************************************************/
+.cic-philanthropy-wrapper {
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr );    
+    column-gap: 2rem;
+    grid-template:         
+        " title title title title "
+        " content1 content1 content1 content1 "
+        " content2 content2 content2 content2 "
+    ;
+    max-width: 100%;
+    padding: 2rem 0;
+}
+
+.phil-title {
+    grid-area: title;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.phil-content1 {
+    grid-area: content1;
+}
+
+.phil-content2 {
+    grid-area: content2;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cic-philanthropy-wrapper {
+        margin: 0 1rem;
+    }
+    
+    .phil-content2 {
+        margin-top: 1.5rem;
+    }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cic-philanthropy-wrapper {
+        margin: 0 2rem;
+        max-width: 66rem; 
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-philanthropy-wrapper {
+        margin: 0;
+        max-width: 70rem; 
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .cic-philanthropy-wrapper {
+      display: grid;
+      column-gap: 2rem;      
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        " title title title title title title title title title title title title "
+        " content1 content1 content1 content1 content1 content1 content2 content2 content2 content2 content2 content2 "        
+      ;    
+    }
+}

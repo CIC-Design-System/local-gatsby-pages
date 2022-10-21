@@ -1,0 +1,221 @@
+
+#overlay { 
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 15000000000;
+    overflow: auto;
+}
+.BobHeader{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.fade-in {
+    animation: fadeIn .65s;
+    -webkit-animation: fadeIn .65s;
+    -moz-animation: fadeIn .65s;
+    -o-animation: fadeIn .65s;
+    -ms-animation: fadeIn .65s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+.wizard-sticky-buttons {
+    height: 5rem;
+    background-color: #ffffff;
+    width: 100%;
+    white-space: nowrap;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+}
+
+.bob-cash-wizard {
+    background-color: #FFF;
+    margin: 0 auto;
+    width: 26rem;
+    max-width: 48rem;
+}
+
+#bobCashStep1 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.step-img {
+    background-color: #FCF7E3;
+    padding: 1rem 0.75rem;
+    height: 33rem;
+
+    .img-bob {
+        height: 20rem;
+    }
+}
+
+.img-right {
+    float: right;
+}
+
+#state-illust {
+    position: relative;
+}
+
+#state-availability {
+    position: absolute;
+    max-width: 11.625rem;
+    top: 2.125rem;
+    right: 3.375rem;
+}
+
+.zipInfo {
+    padding: 0 1rem;
+    
+    >p {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .step1-zip {
+        margin-bottom: 2rem;
+    }
+}
+
+.wizard-info {
+    background-color: #FCF7E3;
+    padding: 1.5rem 1rem;
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+}
+
+.wizard-loan-offer {
+    background-color: #FCF7E3;
+    padding: 1.5rem 1rem;
+
+    >p {
+        margin-bottom: 1rem;
+    }
+
+    .loan-offer {
+        background-color: #ffffff;
+        margin-top: 0.625rem;
+        padding: 0.75rem 1rem 0.75rem 0;
+        border-radius: 0.25rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .loan-offer-description {
+        background-color: #ffffff;
+        width: 100%;
+        padding: 0 1.5rem 1rem 3rem;
+        border-radius: 0.25rem;
+    }
+}
+
+.bob-cash-buttons { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+
+    a {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.bob-cash-input-container {
+    width: 100%;
+}
+
+#bobCashStep2, 
+#bobCashStep3,
+#bobCashStep4,
+#bobCashStep5, 
+#bobCashStep6 {
+    display: none;
+}
+
+#zipIconBobWizardFocus {
+    display: none;
+}
+
+#bob-wizard-error-message {
+    display: none;
+    height: 9.125rem;
+}
+
+#firstname-error-message,
+#lastname-error-message {
+    display: none;
+    margin-bottom: 2rem;
+}
+
+#first-name-container,
+#last-name-container.cic-error-border {
+    margin-bottom: 0;
+}
+
+#last-name-container {
+    margin-top: 1rem;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .bob-cash-wizard {
+        width: 100%;
+        max-width: 48rem;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .bob-cash-buttons { 
+        width: 26rem;
+    }
+}

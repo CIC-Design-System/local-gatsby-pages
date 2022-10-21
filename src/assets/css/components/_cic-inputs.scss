@@ -1,0 +1,291 @@
+/* CIC FLOAT LABEL INPUT */
+.cic-fl-input {
+    padding: 1rem;
+    width: 18rem;
+}
+
+.cic-fl-input label {
+    background-color: white;
+    left: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: .75em;
+    line-height: 1em;
+    color: theme-color('black');
+}
+
+.cic-fl-input input, .cic-fl-input input:focus, .cic-fl-input textarea, .cic-fl-input textarea:focus {
+    background-color: white;
+    border: none;
+    box-shadow: none;
+    width: 16rem;    
+}
+
+.cic-fl-input textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.cic-fl-input .form-control:placeholder-shown:not(:focus)+* {    
+    top: 1.25rem;    
+    font-size: 100%;
+    color: $chicago-40;
+}
+
+.cic-fl-input:focus::placeholder {        
+    color: $chicago-50;
+}
+
+.cic-fl-input .form-control {    
+    padding: 0;
+    height: auto;
+    color: theme-color('black');
+}
+
+.cic-fl-input>input, .cic-fl-input>img {
+    display: inline;
+}
+
+/* CIC SELECT */
+.cic-fl-input.has-select {
+    padding: 0;
+}
+
+.cic-fl-input.has-select>button {
+    padding: 1rem;
+}
+
+.cic-select, .cic-select:hover, .cic-select:focus {    
+    width: 100%;
+    background-color: theme-color( 'white' );
+    z-index: 1;
+    text-align: start;
+    color: theme-color( 'black' );
+    border: none;
+    outline: none;
+    padding: 0;
+    position: static;
+}
+  
+.dropdown-toggle::after {
+    position: absolute;
+    right: 1rem;
+    margin: 0.5rem;
+}
+
+.dropdown-item:active {
+    background: inherit;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-menu.show {
+    border: 1px solid $chicago-60;
+}
+
+/*CIC INPUT WITH LEFT AND/OR RIGHT ICONS*/
+.cic-two-icons input, .cic-two-icons input:focus {
+    width: 10.5rem;
+}
+
+.cic-two-icons label, .cic-left-icon label {
+    left: 3rem;
+}
+
+.cic-right-icon input, .cic-right-icon input:focus {
+    width: 13rem;
+}
+
+.cic-left-icon input, .cic-left-icon input:focus {
+    width: 13.5rem;
+}
+
+.cic-prepend-icon {
+    margin-right: 0.5rem;
+}
+
+.cic-append-icon {
+    margin-left: 1rem;
+}
+
+#store-locator-icon {
+    margin-left: 0;
+}
+
+/* CIC ERROR BORDER */
+.cic-error-border {
+    border: 1px solid $orange-60 !important;
+}
+
+/*RADIO BUTTONS SECTION*/
+// The container
+.cic-radio-button {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0.75rem;  
+}
+  
+  // Hide the browser's default radio button 
+.cic-radio-button input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+// Create a custom radio button 
+.cic-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.125rem;
+    width: 1.125rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid color( 'gray' );
+}
+
+// Create the indicator (the dot/circle - hidden when not checked) 
+.cic-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;  
+}
+
+.cic-check-select {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: end;
+}
+
+.filter-icon-rotate {
+    transition: all .5s;
+	transform: rotate(90deg);
+}
+
+#filter-pills {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 1em;
+}
+
+#filter-pills .filter-pill {
+    font-size: 14px;
+    margin: 0 0.25rem 1rem;
+    padding: 0 0.25rem;
+    white-space: nowrap;
+}
+
+#filter-pills .filter-pill:hover {
+    cursor: pointer;
+}
+
+#filter-pills .close-x {
+    font-size: 1em;
+}
+
+.cic-check-select span {
+    float: right;
+}
+
+.cic-check-select:hover, .cic-check-select:focus {
+    display: flex !important;
+    padding: 0 2rem !important;
+}
+
+.cic-check-select::after {
+    display: none;
+}
+
+#brandFilterDropdown {
+    padding: 1rem 1rem 0;
+    width: 80% !important;
+    left: 60px !important;
+}
+
+.cic-checkbox {
+    width: auto;
+}
+
+.cic-checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .cic-checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  .cic-checkbox-label:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .cic-checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .cic-checkbox-label .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+// Create custom checkbox dropdown
+
+// Show the indicator (dot/circle) when checked
+.cic-radio-button input:checked ~ .cic-checkmark:after {
+    display: block;
+}
+
+.cic-radio-button.error {
+    color: $orange-50;
+}
+
+.cic-radio-button.error .cic-checkmark {
+    border: 1px solid $orange-50;
+}
+
+// Style the indicator (dot/circle)
+.cic-radio-button .cic-checkmark:after {
+    top: 0.2rem;
+    left: 0.2rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+}

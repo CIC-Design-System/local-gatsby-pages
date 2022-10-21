@@ -1,0 +1,212 @@
+.cic-testimonials-page {
+    padding: 2rem 0;
+}
+
+.shadow-20 {
+    filter: drop-shadow(0px 2px 6px rgba(31, 29, 28, 0.2));
+}
+
+
+.testimonials-rating {
+    display: grid;
+    background: theme-color( 'light' );
+}
+
+.percentage-info {
+    display: grid;
+    grid-template-columns: 1fr 3.8rem 1fr;
+    margin-bottom: 0.5rem;
+
+    div:first-child {
+        text-align: end;
+    }
+
+    div:nth-child(2) {
+        border-bottom: 1px dashed rgba(31, 29, 28, 0.6);
+    }
+
+    .reviews-filter {
+        text-align: end;
+
+        span {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.rating-percentage {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.cic-card-source{
+    position: absolute;  
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 1.125rem;
+    top: 1.125rem;
+  }
+
+.testimonials-filter {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+/********************************************************************
+* Media Queries
+********************************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .testimonials-rating {
+        grid-template-columns: repeat( 4, [col] 1fr );
+        grid-template-rows: repeat( 4, [row] auto );
+        column-gap: 1rem;
+        padding: 2rem 1rem;
+    }
+
+    .rating-title {
+        grid-column: col / span 4;
+        grid-row: row;
+        margin-bottom: 1.5rem;
+    }
+    
+    .rating-info {
+        grid-column: col / span 1;
+        grid-row: row 2;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rating-stars {
+        grid-column: col / span 2;
+        grid-row: row 3;
+        z-index: 2;
+    }
+
+    .rating-percentage {
+        grid-column: col 2 / span 3;
+        grid-row: row 2 / span 2;
+    }
+    
+    .rating-button {
+        grid-column: col / span 4;
+        grid-row: row 5;
+        margin-top: 2rem;
+    }
+
+    .testimonials-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        margin: 2rem 1rem;
+    }
+
+    .rating-filter {
+        grid-column: col / span 4;
+        grid-row: row 4;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+}
+
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .testimonials-rating {
+        margin: 0;
+        max-width: 70rem;
+        grid-template-columns: repeat( 8, 1fr );
+        grid-template-areas: 
+            " . title title title title title title . "
+            " number number stars stars reviews reviews reviews reviews "
+            " button button button button reviews reviews reviews reviews "
+            " . . . . filter filter filter filter "
+            ;
+    }
+
+    .testimonials-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        margin: 2rem;
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 1rem;
+    }
+
+    .rating-filter {
+        grid-area: filter;
+    }
+
+    .testimonials-rating {
+        column-gap: 2rem;
+        padding: 2rem;
+    }
+
+    .rating-title {
+        grid-column: title;
+        margin-bottom: 1.5rem;
+    }
+    
+    .rating-info {
+        grid-area: number;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .rating-stars {
+        grid-area: stars;
+    }
+
+    .rating-percentage {
+        grid-area: reviews;
+    }
+    
+    .rating-button {
+        grid-area: button;
+        margin-top: 0.5rem;
+
+        span a {
+            max-width: 32rem;
+        }
+    }
+    
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .testimonials-rating {
+        max-width: 70rem;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat( 12, 1fr );    
+        grid-template-areas: 
+            " . . . title title title title title title . . . "
+            " . . number number stars stars reviews reviews reviews . . . "
+            " . . button button button button reviews reviews reviews . . . "
+            " . . . . . . filter filter filter . . . "
+            ;
+    }
+
+    .testimonials-container {
+        margin: 2rem 0;
+    }
+}

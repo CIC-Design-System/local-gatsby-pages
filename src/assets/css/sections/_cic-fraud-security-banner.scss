@@ -1,0 +1,98 @@
+/**********************************************************
+* Banner Section
+/*********************************************************/
+.cic-banner-wrapper {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat( 4, 1fr );
+  row-gap: .5rem;
+  column-gap: 1rem;
+  grid-template: 
+      " icon icon icon icon "
+      " title title title title "
+      " content content content content "
+      " phone phone phone phone "
+  ;  
+}
+
+.cic-banner-icon {
+  grid-area: icon;
+}
+
+.cic-banner-title {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  grid-area: title;
+}
+
+.cic-banner-content {
+  grid-area: content;
+}
+
+.cic-banner-phone-number {
+  grid-area: phone;
+  margin-bottom: 1rem;
+}
+
+.cic-banner-wrapper p{ 
+	color: theme-color( 'white' ) !important;
+}
+
+.circle-icon {
+  margin: 0 auto;
+  background-color: theme-color( 'white' );
+  border-radius: 50%;
+  height: 6.5rem;
+  width: 6.5rem;
+  position: relative;  
+}
+
+.circle-icon img{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  max-width: 3.25rem;
+}
+
+/**********************************************************
+* Breakpoint Queries
+/*********************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+  .cic-banner-wrapper {    
+      margin: 0 1rem;
+  }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+  .cic-banner-wrapper {    
+      margin: 0 2rem;
+      max-width: 66rem;
+  }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+  .cic-banner-wrapper {    
+      margin: 0 auto;
+      max-width: 70rem;
+  }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+  .cic-banner-wrapper {   
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      " . . . icon icon icon icon icon icon . . . "
+      " . . . title title title title title title . . . "
+      " . . . content content content content content content . . . "
+      " . . . phone phone phone phone phone phone . . . "
+    ;    
+  }    
+}

@@ -1,0 +1,401 @@
+/***********************************************
+    STORE LOCATOR CONTAINER
+/***********************************************/
+.cic-store-locator-landing {
+    max-width: 100%;
+}
+
+#cic-store-locator-test {
+    margin: 0 auto;
+    height: calc(100vh - 5em);
+}
+
+.vue-map-container {
+    grid-area: map;
+    position: static !important;
+}
+
+.cic-store-landing-container {
+    grid-area: container;
+}
+
+.store-locator-zip {
+    background-color: #fff;
+
+    .cic-append-icon {
+        float: right;
+    }
+
+    .cic-fl-input {
+        width: 100%;
+    }
+}
+
+#store-locator-icon {
+    cursor: pointer;
+}
+
+/***********************************************
+    STORE LOCATOR RESULTS CONTAINER
+/***********************************************/
+.cic-store-locator-results {
+    border-bottom: 1px solid rgba(31, 29, 28, 0.2); //Chicago-100 with 0.2 opacity
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cic-store-locator-openIntervals-trigger {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.store-openIntervals-container {
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+}
+
+.store-interval-time {
+    text-align: right;
+}
+
+.cic-store-locator-app-stores {
+    display: flex; 
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.cic-store-locator-app-store-address {
+    display: flex;
+    flex-direction: column;
+}
+
+.cic-store-locator-app-redirect {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.cic-store-locator-app-store-content { 
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.125rem;
+}
+
+.cic-store-locator-app-store-icon { 
+    margin-right: .5rem;
+}
+
+.cic-store-locator-list {
+    position: absolute;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+
+    &.activeList {
+        background-color: #fff;
+        height: 100%;
+    }
+}
+
+.store-list, .storeDetail {
+    padding: 0 1rem;
+}
+
+.store-locator-zip-container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.cic-store-locator-app-image-detail img {
+    width: 100%;
+    height: 16.125rem;
+    object-fit: cover;
+}
+
+.time-rotation {
+	transition: all .5s;
+	transform: rotate(90deg);
+}
+
+.store-locator-nav-icon {
+    position: absolute;
+    cursor: pointer;
+    top: calc(100vh - 14rem);
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0px 0px 2px rgba(31, 29, 28, 0.1), 0px 2px 2px rgba(31, 29, 28, 0.2);
+    background-color: #fff;
+    border-radius: 50%;
+
+    &.listActive {
+        left: 27rem;
+    }
+
+    div {
+        margin-left: 0;
+    }
+}
+
+.noResults-container {
+    padding: 0 1rem;
+}
+
+.noResults-title {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.store-list-tab {
+    width: 1.5rem;
+    height: 3rem;
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    left: 428px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    /***********************************************
+        STORE LOCATOR CONTAINER
+    /***********************************************/
+    .cic-store-locator-landing {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1rem;
+        grid-template-areas:
+          " map map map map "
+          " container container container container "
+        ;
+        width: 100%;
+    }
+
+    .store-locator-zip-container {
+        width: calc(100vw - 2rem);
+        margin-bottom: 0.75rem;
+    }
+
+    .store-locator-view-chooser {
+        width: calc(100vw - 2rem);
+        display: flex;    
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+
+    .map-view, .list-view {
+        width: 50%;
+        text-align: center;
+        padding: 0.5rem 1rem;
+
+        &:not(.current) {
+            background-color: #fff !important;
+        }
+    }
+
+    .map-view {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .list-view {        
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .store-locator-zip .form-group{
+        margin-bottom: 0 !important;
+    }
+
+    .store-locator-zip .form-group input{
+        width: 73%;
+    }
+
+    /***********************************************
+        STORE LOCATOR RESULTS CONTAINER
+    /***********************************************/
+    .cic-store-locator-list {
+        width: 100%;
+    }
+
+    .cic-store-locator-results {
+        width: 100%;
+    }
+
+    .cic-store-locator-app-heading { 
+        margin: 2.5rem 0 1.5rem;
+    }
+
+    .cic-store-locator-app-store-heading {
+        margin-bottom: 1.125rem;
+    }
+
+    .cic-store-locator-app-image {
+        display: none;
+    }
+
+    #closeList {
+        display: none;
+    }
+
+    #closeStoreDetail {
+        position: absolute;
+        right: 1rem;
+    }
+
+    .detailHeader {
+        display: flex;
+
+        img {
+            display: none;
+        }
+    }
+
+    .cic-store-locator-details-link {
+        margin-bottom: 1rem;
+
+        span a {
+            max-width: 100%;
+        }
+    }
+
+    .cic-store-details-started {
+        margin-top: 1rem;
+        margin-bottom: 8rem;
+
+        span a {
+            max-width: 100%;
+        }
+    }
+
+    .storeDetail {
+        background-color: #fff;
+        height: 100%;
+        padding-top: 1rem;
+    }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {
+    .cic-store-locator-landing {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+          " map map map map map map map map "
+        ;
+    } 
+
+    .cic-store-locator-app-image {
+        display: block;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-store-locator-landing {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+          " map map map map map map map map map map map map "
+        ;
+    } 
+
+    .store-locator-zip .form-group{
+        margin-bottom: 0 !important;
+        
+        input {
+            width: 70%;
+        }
+    }
+}
+
+//Tablet and Desktop Size
+@include media-breakpoint-up(md) {    
+
+    /***********************************************
+        STORE LOCATOR CONTAINER
+    /***********************************************/
+    .cic-store-locator-landing {
+        width: 100%;
+    }
+
+    .store-locator-zip-container {
+        width: 21.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .store-locator-zip .form-group{
+        margin-bottom: 0 !important;
+    }
+
+    .store-locator-view-chooser {
+        display: none;
+    }
+
+    /***********************************************
+        STORE LOCATOR RESULTS CONTAINER
+    /***********************************************/
+    .cic-store-locator-list {
+        width: 26.75rem;
+    }
+
+    #closeList {
+        position: absolute;
+        right: 1rem;
+        top: 2rem;
+        cursor: pointer;
+    }
+
+    #closeStoreDetail {
+        display: none;
+    }
+
+    .cic-store-locator-results {
+        margin: 0 auto 1rem auto;
+        width: 100%;
+    }
+
+    .cic-store-locator-app-heading { 
+        margin: 3.56rem 0 1rem;
+    }
+
+    .cic-store-locator-app-store-heading {
+        margin-bottom: 1.125rem;
+    }
+
+    .cic-store-locator-app-image-detail {
+        margin-left: 1.15rem;
+        margin-right: 1.15rem;
+    }
+
+    .cic-store-locator-details-link {
+        margin-left: 1.15rem;
+        margin-right: 1.15rem;
+        margin-bottom: 1rem;
+
+        span a {
+            max-width: 100%;
+        }
+    }
+
+    .cic-store-details-started {
+        margin-left: 1.15rem;
+        margin-right: 1.15rem;
+        margin-top: 1rem;
+
+        span a {
+            max-width: 100%;
+        }
+    }
+}

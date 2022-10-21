@@ -1,0 +1,200 @@
+.cic-loan-calculator-wrapper {
+    padding-bottom: 2rem;
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat( 4, 1fr );   
+    grid-template: 
+    " title title title title "
+    " state state state state "
+    " amount amount amount amount "
+    " frequency frequency frequency frequency "    
+    " offer offer offer offer "
+    " button button button button "
+    " legal legal legal legal "
+    ;
+    max-width: 100%;
+}
+
+.loan-calculator-offer{
+    display: flex;
+    flex-direction: row;
+}
+
+.loan-calculator-title {
+    grid-area: title;
+}
+
+.loan-calculator-amount {
+    grid-area: amount;
+}
+
+.loan-calculator-frequency {
+    grid-area: frequency;
+}
+
+.amount-state {
+    grid-area: state;
+}
+
+.loan-calculator-amount, .amount-state, .loan-calculator-frequency {
+    margin-top: 2rem;
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+.loan-calculator-offer {
+    grid-area: offer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(31, 29, 28, 0.2);
+    padding-bottom: 1rem;
+}
+
+.loan-calculator-button {
+    grid-area: button;
+}
+
+.loan-calculator-legal {
+    grid-area: legal;
+}
+
+.loan-calculator-card:not(:first-child) .loan-payment {
+    background-color: #D7FFF4;
+
+    &.disabled {
+        background-color: #F5F3F1;
+    }
+}
+
+.loan-title {
+    display: inline-flex;
+    align-items: center;
+}
+
+.loan-amount {
+    margin-top: 0.5rem;
+    margin-left: 2.125rem;
+}
+
+.loan-payment {
+    margin-top: 1.5rem;
+    margin-left: 2.125rem;
+}
+
+.loan-duration {
+    margin-top: 0.25rem;
+    margin-left: 2.125rem;
+}
+
+.loan-calculator-card {
+    width: 20%;
+    max-width: 20%;
+    padding: 0.75rem 1rem;
+
+    &:not(:first-child) {
+        border-right: 1px solid rgba(31, 29, 28, 0.2);
+    }
+}
+
+.payment-label, .duration-label {
+    display: none;
+}
+
+#loanAmountIconFocus {
+    display: none;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cic-loan-calculator-wrapper {
+        margin: 0 1rem;
+    }
+
+    .loan-calculator-offer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .loan-calculator-card {
+        width: 100%;
+        max-width: 100%;
+        border-right: none !important;
+
+        &:first-child {
+            display: none;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(31, 29, 28, 0.2);
+        }
+    }
+
+    .amount-container, .state-container {
+        width: 100%;
+    }
+
+    .loan-calculator-amount, .amount-state {
+        p {
+            display: none;
+        }
+
+        .form-group {
+            width: 100%;
+        }
+    }
+
+    .loan-info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .loan-payment, .loan-duration {
+        margin-left: 1rem;
+    }
+
+    .payment-label, .duration-label {
+        display: inline-flex;
+        align-items: end;
+        margin-left: 1rem;
+    }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cic-loan-calculator-wrapper {
+        margin: 0 2rem;
+        max-width: 66rem;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+		" . title title title title title title . "
+        " . . state state state state . . "
+		" amount amount amount amount frequency frequency frequency frequency "
+        " offer offer offer offer offer offer offer offer "
+        " . . button button button button . . "
+        " . . legal legal legal legal . . "
+		;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-loan-calculator-wrapper {
+        max-width: 70rem;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat( 12, 1fr );    
+        column-gap: 2rem;
+        row-gap: spacer( 2 );
+        grid-template-areas:
+		" . . . title title title title title title . . ."
+        " . . . . state state state state . . . ."
+		" . . amount amount amount amount frequency frequency frequency frequency . . "
+        " offer offer offer offer offer offer offer offer offer offer offer offer "
+        " . . . . button button button button . . . ."
+        " . . . . legal legal legal legal . . . ."
+		;
+    }
+}

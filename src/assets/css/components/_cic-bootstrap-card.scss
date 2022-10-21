@@ -1,0 +1,44 @@
+/********************************************************************
+* Bootstrap Card
+*
+* All styling for the Bootstrap Card 
+********************************************************************/
+
+.cic-card-container {
+    background-color: theme-color( 'white' );
+    color: gray( '100' );
+}
+
+.cic-card-header img { 
+    width: 1.5em;
+}
+
+.cic-card-footer a {
+    color: $green-60;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.cic-card-footer img {
+    width: 1em;
+    margin-left: .25em;
+}
+
+/********************************************
+* Media Queries
+*********************************************/
+@include media-breakpoint-between(xs, sm) {
+    .cic-card-container {
+        width: 100%;
+    }
+} 
+
+@include media-breakpoint-between(md, xl) {
+    .cic-card-container {
+        width: 12rem;
+    }
+
+    .fl-module-cic-bootstrap-card {
+        width: 12rem;
+    }
+}

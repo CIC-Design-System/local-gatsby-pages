@@ -1,0 +1,407 @@
+$size: 1.5rem;
+$sixemm : 1.75rem;
+$sizeM: 1.875rem;
+$sizeC: 2rem;
+$iconHIW: 4rem;
+$iconHero: 3.5rem;
+$iconFaq: 2.5rem;
+$chevS: 1.625rem;
+$icon_space: .5rem ;
+$acenter: center ;
+$sizeMenuIcon: 1.125rem;
+
+.arrowMenu{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-chevron-right-lg.svg');
+    width: $size;
+    height: $size;
+    align-self: $acenter;
+}
+.arrowMenuRight{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-chevron-right-sm.svg');
+    width: $size;
+    height: $size;
+    align-self: $acenter;
+}
+
+.arrowMenuLeft {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-chevron-left-lg.svg');
+}
+
+.IconBob{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-bob-icon.svg');
+}
+.IconPayDayLoan{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-payday-small.svg');
+}
+.IconInstallment{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-installment-small.svg');
+}
+.IconTitleLoan{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-title-small.svg');
+}
+.IconFlexLine{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-flex-small.svg');
+}
+.IconCheckCashing{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-check-cashing.svg');
+}
+.IconWesternUnion{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-western-union.svg');
+}
+.IconGiftCards{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-sell-us-gift-cards.svg');
+}
+.IconPrepaidCard{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-us-money-card-default.svg');
+}
+.IconGreenDot {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/green-dot.svg');
+}
+.IconBillPay{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-bill-pay.svg');
+}
+.IconMoneyOrders{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-serv-money-orders.svg');
+}
+.IconPerson{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-user-light-lg.svg');
+}
+.IconMapPin{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-map-pin.svg');
+}
+.IconPhone{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-phone.svg');
+}
+.IconEmail{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-at-light-sm.svg');
+}
+.IconEmailColor{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-at-light-sm-green-60.svg');
+}
+.IconMobile{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-mobile.svg');
+}
+.IconMobileColor{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-mobile-green-60.svg');
+}
+.IconFraud{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-lock-checked.svg');
+}
+.IconFullStar{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-star-full.svg');
+}
+.IconHalfStar{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-star-half.svg');
+}
+.IconEmptyStar{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-star-empty.svg');
+}
+.IconGoogle{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/img/google.webp');
+}
+.IconUserTest{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-user-light-sm.svg');
+}
+.IconTax{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-icon-sm-tax-prep.svg');
+}
+.IconCCCIllustAgreement{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/ccc-illust-agreement.svg');
+}
+.IconCCCIllustCash{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/ccc-illust-cash.svg');
+}
+.IconCCCIllustClockFace{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/ccc-illust-clock-face.svg');
+}
+.IconWeek {
+    background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-weekly.svg');
+}
+.IconBiWeek{
+    background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-bi-weekly.svg');
+}
+.IconBiMonth {
+    background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-semi-monthly.svg');
+}
+.IconMonth {
+    background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-monthly.svg');
+}
+.IconIllustBill{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-bill.svg');
+}
+.IconIllustCalculator{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-calculator.svg');
+}
+.IconCash{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-cash.svg');
+}
+.IconIllustCheckbox{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-checkbox.svg');
+}
+.IconIllustClockFace{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-clock-face.svg');
+}
+.IconIllustCulture{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-culture.svg');
+}
+.IconPaperwork{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-electronically-sign.svg');
+}
+.IconIllustFastCash{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-fast-cash.svg');
+}
+.IconIllustFraudDepartment{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-fraud-department.svg');
+}
+.IconIllustGiftCard{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-gift-card.svg');
+}
+.IconIllustId{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-id.svg');
+}
+.IconIllustKey{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-key.svg');
+}
+.IconIllustMagnifyingGlass{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-magnifying-glass.svg');
+}
+.IconIllustMoneyOrders{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-money-orders.svg');
+}
+.IconBeingApp{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-online.svg');
+}
+.IconIllustPayBills{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-pay-bills.svg');
+}
+.IconIllustPersonalSecurity{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-personal-security.svg');
+}
+.IconIllustPiggyBank{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-piggybank.svg');
+}
+.IconIllustQuotePhone{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-quote-phone.svg');
+}
+.IconUserQuote{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-quotes.svg');
+}
+.IconIllustSeasonal{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-seasonal.svg');
+}
+.IconIllustSecurityShield{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-security-shield.svg');
+}
+.IconIllustStoreFront{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-storefront.svg');
+}
+.IconIllustUSMoneyCard{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-illust-us-money card.svg');
+}
+.IconPhoneWhite{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-phone-white.svg');
+}
+.IconFaqQuestion{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-faq-question-default.svg');
+}
+.IconFaqAnswer{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-faq-answer-default.svg');
+}
+.IconFacebook{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-facebook-light.svg');
+}
+.IconLinkedin{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-social-linkedin-light.svg');
+}
+.IconYT{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-social-youtube-light.svg');
+}
+.IconPhoneFooter{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/phone-green-10.svg');
+}
+.IconCloseMenu{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-close-circle-lg.svg');
+}
+.IconUser{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-user-light-sm-white.svg');
+}
+.IconWthChevronDown{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/chevron-wht-down-sm.svg');
+}
+.IconChevronDown{
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-chevron-down-sm.svg');
+	width: $sizeC;
+    height: $sizeC;
+}
+.IconChat {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-chat.svg');
+}
+.IconCCConnect {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cc-connect-loans.svg');
+}
+.IconHunt {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-target.svg');
+}
+
+.IconNav {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-location-arrow.svg');
+}
+
+.IconZip {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-zip-code.svg');
+}
+
+.IconZipColor {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-zip-code-green-60.svg');
+}
+
+.IconPrintPost {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-print.svg');
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-right: 0.625rem;
+
+}
+
+.IconHamburger {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-hamburger-light-lg.svg');
+}
+
+.IconMoneyPin {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-money-location-pin.svg');
+}
+
+.IconMoneyPinColor {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-money-location-pin-green-60.svg');
+}
+
+.IconRedTriangle {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-red-triangle.svg');
+}
+
+.IconGreenDot {
+	background-image: url('https://localstoresdev.wpengine.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-ui-green-dot.svg');
+	background-size: cover;
+}
+
+.inline-icon {
+	display: inline-block;
+	width: .75rem;
+	height: .75rem;
+	vertical-align: middle;
+}
+
+.pointer{
+	cursor: pointer;
+}
+.cic-arrow-menu-mob{
+	background-size: $sizeM $sizeM;
+    width: $sizeM!important;
+    height: $sizeM!important;
+}
+.cic-quote-size{
+	background-size: $iconHIW 3rem;
+}
+.cic-user-size{
+	background-size: $iconFaq $iconFaq;
+}
+.cic-close-size{
+	background-size: $sizeC $sizeC;
+	width: $sizeC;
+    height: $sizeC;
+}
+.cic-faq-size{
+	background-size: $iconFaq $iconFaq;
+	width: $iconFaq;
+	height: $iconFaq;
+}
+.cic-phone-white-size{
+	background-size: $size $size;
+	width: $size;
+	height: $size;
+}
+.cic-menu-icon-size {
+	background-size: $sizeMenuIcon;
+	width: $sizeMenuIcon;
+	height: $sizeMenuIcon;
+}
+.cic-chev-down-size {
+    background-size: $chevS $chevS;
+    width: $chevS;
+    height: $chevS;
+}
+.cic-paper-size{
+	background-size: $iconHIW $iconHIW;
+	width: $iconHIW;
+	height: $iconHIW;
+}
+.mm-icon-no{
+    width: $size;
+    height: $size;
+}
+.mm-icon-wrapper{
+	margin-right: $icon_space;
+    width: $size;
+    height: $size;
+}
+.mm-icon-wrapper-left{
+	margin-left: $icon_space;
+    width: $size;
+    height: $size;
+}
+.mm-icon-full-star{
+	display: inline-flex;
+	width: 1.3rem;
+	height: 1.3rem;
+}
+.mm-icon-space{
+	margin-top: 1.5rem;
+}
+.mm-icon-sb{
+    width: 1.688rem;
+    height: 1.688rem;
+}
+.mm-space{
+	margin-bottom: 1rem;
+}
+.floatRight{
+	float: right;
+}
+.floatLeft{
+	float: left;
+}
+.faq-content{
+	width: 70%;
+}
+.faq-title-space{
+	margin-left: $sizeM;
+	max-width: 85%;
+}
+.svg-white{
+	filter: invert(0%) sepia(63%) saturate(0%) hue-rotate( 249deg ) brightness(113%) contrast(115%);
+}
+.cic-login-size{
+	background-size: $sixemm $sixemm;
+    width: $sixemm;
+    height: $sixemm;
+}
+.cic-login-space{
+    margin-top: -0.125rem;
+    margin-right: 0.313rem;
+}
+
+.iconHero {
+	background-size: $iconHero $iconHero;
+	width: $iconHero;
+	height: $iconHero;
+}
+
+.icon-wizard {
+	background-size: $size $size;
+	width: $size;
+	height: $size;
+	margin-left: 1rem;
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+}

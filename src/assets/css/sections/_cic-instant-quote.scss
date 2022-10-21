@@ -1,0 +1,63 @@
+/**********************************************************
+* Instant Quote Section
+/*********************************************************/
+
+#cic-instant-quote-container {
+	display: flex;
+	flex-direction: row; 
+	padding: 2rem 0;
+	justify-content: center; 
+}
+
+#cic-instant-quote-content-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#cic-instant-quote-content-container p{
+	color: theme-color( 'white' );
+}
+
+#cic-instant-quote-img-container{
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	max-width: 5.5em;
+}
+
+#cic-instant-quote-img-container img{
+	width: 100%;
+
+}
+
+.cic-instant-quote-cta {
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.5em;
+	margin-right: spacer( 2 );
+}
+
+#cic-instant-quote-contact-info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) {
+	#cic-instant-quote-contact-info {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	#cic-instant-quote-content-container {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	#cic-instant-quote-img-container {
+		width: inherit;
+	}
+}

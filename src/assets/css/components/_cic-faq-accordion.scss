@@ -1,0 +1,85 @@
+/**********************************************************
+* FAQ Accordion
+/*********************************************************/
+
+.cic-faq-accordion-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cic-faq-accordion-base {
+	position: relative;
+	background-color: gray( '10' );
+	border: 1px solid gray( '20' );
+	border-radius: .25em;
+	width: 100%;
+	max-width: 34em;
+}
+
+.cic-accordion-card {
+	display: flex;
+	flex-direction: column;
+	max-width: 34em;
+	width: 100%;
+}
+
+.cic-card {
+	background-color: theme-color( 'white' );
+	margin-top: -.25em;
+	border: 1px solid rgba(0,0,0,0.125);
+	display: flex;
+	padding: 1rem;
+}
+
+.cic-top {
+	position: absolute;
+	width: 2.5rem;
+}
+
+.cic-bottom {
+	width: 2.5rem;
+}
+
+.cic-faq-accordion-icon {
+	width: 2.5em;
+}
+
+.cic-transition-in {
+	opacity: 1;
+	-webkit-transition: opacity .5s ease-in;
+	-moz-transition: opacity .5s ease-in;
+	-o-transition: opacity .5s ease-in;
+	transition: opacity .5s ease-in;
+}
+
+.cic-transition-out {
+	opacity: 0 !important;
+	-webkit-transition: opacity .5s ease-out;
+	-moz-transition: opacity .5s ease-out;
+	-o-transition: opacity .5s ease-out;
+	transition: opacity .5s ease-out;
+}
+
+.cic-faq-accordion-chevron {
+	width: 2em;
+	outline: none;
+}
+
+.cic-rotate-180 {
+	transition: all .5s;
+	transform: rotate(180deg);
+}
+
+.cic-rotate-360 {
+	transition: all .5s;
+	transform: rotate(360deg);
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+	.cic-faq-accordion-base, .cic-accordion-card {
+		max-width: 46rem;
+	}
+}

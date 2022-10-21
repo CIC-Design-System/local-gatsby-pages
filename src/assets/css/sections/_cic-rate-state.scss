@@ -1,0 +1,359 @@
+.cic-rate-state-wrapper {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr );    
+    column-gap: 1rem;
+    grid-template: 
+        " bgimg bgimg bgimg bgimg "
+        " info info info info "
+        " border border border border"
+    ;
+    max-width: 100%;
+}
+
+.rate-state-info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );    
+    column-gap: 2rem;
+    grid-template: 
+        " title title "
+        " content content "
+        " table table "
+        " buttons buttons "
+        " callUs callUs "
+    ;
+}
+
+.rate-state-border {
+    grid-area: border;
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );    
+    column-gap: 2rem;
+    grid-template: 
+        " header header "
+        " zipInput zipButton "
+        " nearest nearest "
+    ;
+}
+
+.rate-state-background {    
+    grid-area: bgimg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rate-state-title {
+    grid-area: title;
+
+    h1, h3 {
+        text-align: left;
+    }
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+    }
+}
+
+.rate-state-content {
+    grid-area: content;
+    margin-bottom: 0.5rem;
+}
+
+.rate-state-table {
+    grid-area: table;
+    margin-bottom: 1.5rem;
+
+    .fee-schedule {
+        cursor: pointer !important;
+    }
+}
+.d-tab{
+    align-items: baseline;
+}
+.table-title {    
+    margin-bottom: 1.25rem;
+
+    a {
+        cursor: pointer !important;
+    }
+}
+.b-title {
+    font-family: "Body", sans-serif !important;
+}
+.rt-h3{
+    font-size: 1rem;
+    font-family: "Body", sans-serif !important;
+    font-weight: normal;
+    margin-left: 0.625rem;
+}
+.rt-loan-amount{
+    display:flex;
+}
+.rt-loan-amount {
+    margin-bottom: 1.25rem;
+}
+
+.rt-loan-amount p {
+    display: inline;
+    margin-left: 0.625rem;
+}
+
+.rate-state-buttons {
+    grid-area: buttons;
+}
+
+.rate-state-callus {    
+    grid-area: callUs;    
+    margin-top: 1.125rem;
+}
+
+.rate-state-callus p {
+    display: inline;
+}
+
+.rate-state-border-zip-header, .rate-state-border-header, .rate-state-border-no-results {
+    grid-area: header;
+    display: none;
+
+    h4 {
+        text-align: left;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    p {
+        text-align: left;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.rate-state-zip-input {
+    grid-area: zipInput;
+    display: none;
+}
+
+.rate-state-zip-button {
+    grid-area: zipButton;
+    display: none;
+}
+
+.rate-state-nearest {
+    grid-area: nearest;
+    display: none;
+
+    h3 {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+}
+
+.closeAlert {
+    cursor: pointer;
+}
+
+#state-alert {
+    position: relative;
+
+    .cic-banner-exit-icon {
+        top: 0;
+        right: 0;
+    }
+}
+
+#state-alert-emoji {
+    vertical-align: text-bottom;
+}
+
+#state-alert-title {
+    display: inline;
+    margin-left: 0.5rem;
+}
+
+#state-alert-store,
+#rtZipIconFocus,
+#mmRtZipIconFocus,
+#mobileRtZipIconFocus,
+#rate-state-zipIconFocus {
+    display: none;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cic-rate-state-wrapper {
+        margin: 0 1rem;
+    } 
+    .d-tab{
+        flex-direction: column;
+    }
+    .rate-state-background {    
+        height: 12.125rem;
+        margin-bottom: 1rem;
+    }
+
+    .rate-state-info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: 1fr;    
+        column-gap: 1rem;
+        grid-template: 
+            " title "
+            " content "
+            " table "
+            " buttons "
+            " callUs "
+        ;
+    }
+
+    .rate-state-title {
+        h1, h3 {
+            text-align: center;
+        }
+    }
+
+    .table-title a {
+        display: block;
+    }
+
+    .rate-state-buttons a:nth-child( 2 ) {
+		margin-top: 1rem;
+    }
+
+    .rate-state-border {
+        grid-area: border;
+        display: grid;
+        grid-template-columns: 1fr;    
+        grid-template: 
+            " header "
+            " zipInput "
+            " zipButton "
+            " nearest "
+        ;
+    }
+
+    .rate-state-border-zip-header, .rate-state-border-header, .rate-state-border-no-results {
+        h4 {
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .rate-state-zip-input .cic-fl-input {
+        width: 100%;
+
+        input {
+            width: 70%;
+        }
+    }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cic-rate-state-wrapper {
+        margin: 0 2rem;
+        max-width: 66rem;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+          " bgimg bgimg bgimg bgimg bgimg bgimg bgimg bgimg "
+          " info info info info info info info info "
+          " border border border border border border border border "
+        ;
+    } 
+
+    .rate-state-background {   
+        height: 24.75rem !important;
+    }
+
+    .rate-state-buttons a {
+        min-width: 21rem;
+        max-width: 32rem;
+        margin-top: 0 !important;
+    }
+
+    .rate-state-callus {    
+        text-align: right;
+    }
+
+    .rate-state-zip-input .cic-fl-input {
+        width: 21rem;
+
+        input {
+            width: 70%;
+        }
+    }
+    
+    .rate-state-zip-button a {
+        width: 21rem;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-rate-state-wrapper {
+        margin: 0 auto;
+        max-width: 70rem;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+          " bgimg bgimg bgimg bgimg bgimg bgimg info info info info info info "
+          " . . border border border border border border border border . . "
+        ;
+    } 
+
+    .rate-state-background {    
+        max-height: 19.18rem;
+    }
+
+    .rate-state-zip-input .cic-fl-input {
+        width: 22rem;
+
+        input {
+            width: 73%;
+        }
+    }
+    
+    .rate-state-zip-button a {
+        width: 22rem;
+    }
+
+    .rate-state-border-zip-header, 
+    .rate-state-border-header, 
+    .rate-state-border-no-results {    
+        h4, p {
+            text-align: center;
+        }
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .cic-rate-state-wrapper {
+        display: grid;
+        column-gap: 2rem;
+        row-gap: spacer( 2 );  
+    }
+
+    .rate-state-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .rate-state-buttons a:last-child {
+        margin-left: 2rem;
+    }
+
+    .rate-state-buttons span {
+        max-width: 16em;
+        width: 100%;
+    }
+}

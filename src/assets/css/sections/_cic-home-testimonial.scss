@@ -1,0 +1,260 @@
+/**********************************************************
+* Testimonial Section
+/*********************************************************/
+.cic-testimonial-wrapper {
+    margin: spacer( 4 ) auto;
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr );
+    row-gap: .5rem;
+    column-gap: 1rem;
+    grid-template: 
+        " title title title title "
+        " content content content content "
+        " rateInfo rateInfo rateInfo rateInfo "        
+        " rateStars rateStars rateStars rateStars "        
+    ;
+    max-width: 100%;
+}
+
+.cic-testimonial-section-title{
+  grid-area: title;
+  margin: spacer(5) spacer(4) 0;
+  padding-bottom: spacer(4);
+}
+
+.cic-testimonial-section-content{
+  grid-area: content;
+  margin-top: spacer(2);
+  margin-bottom: spacer(4);
+}
+
+.section-rateInfo{
+  grid-area: rateInfo;
+  text-align: center;
+}
+
+.section-rateStars{
+  grid-area: rateStars;
+  text-align: center;
+}
+
+.section-moreReviews{  
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.cic-testimonial-wrapper p{ 
+	color: theme-color( 'white' );
+}
+
+.cic-rateNumber{
+  font-family: "Recoleta", serif;
+  font-weight: 600;
+  line-height: 3.5rem;
+  font-size: 2.5rem;
+}
+
+.cic-avg-rating-stars{
+  margin-top: spacer(2);
+  margin-bottom: spacer(2);
+}
+
+.cic-avg-rating-stars img{
+  width: 1.3rem;
+}
+
+.section-moreReviews p{  
+  display: inline;
+  margin-right: spacer(2);
+  color: theme-color( 'white' );
+}
+
+.section-moreReviews a{
+  width: 2rem;
+  height: spacer(4);
+}
+
+a.more-reviews-link {
+  color: theme-color( 'success' );
+}
+
+.reviewsCount{
+  font-weight: 500;
+  font-size: spacer(3);
+  line-height: spacer(4);
+}
+
+.reviewsCount:hover {
+  background: $green-10 !important;
+  color: $green-80 !important;
+}
+
+.usr-stars {
+  width: spacer(3);
+  height: spacer(3);
+}
+
+.cic-card-date {
+  font-family: Graphik LC Web;
+  font-style: normal;
+  font-weight: normal;
+  font-size: spacer(3);
+  line-height: spacer(4);
+  color: gray('40');
+}
+
+.cic-card-quotes{
+  position: absolute;  
+  width: 4rem;
+  height: spacer(6);
+  right: 2rem;
+  bottom: spacer(4);
+}
+
+.bob-cash {
+  display: none;
+}
+
+.section-carousel{
+  margin: 1rem;
+  display: flexbox;
+  flex-direction: column;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+  .cic-testimonial-card{
+    margin-bottom: 1rem;
+  }
+}
+
+/**********************************************************
+* Grid styles Section
+/*********************************************************/
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+  .cic-testimonial-wrapper {
+    position: relative;
+    display: grid;
+    column-gap: spacer( 5.5 );
+    row-gap: spacer( 2 );
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      " . . . title title title title title title . . . "
+      " . . . content content content content content content . . . "
+      " . . . rateInfo rateInfo rateInfo rateStars rateStars rateStars . . . "
+    ;     
+  }
+
+  .cic-testimonial-section-content{  
+    text-align: center;     
+  }  
+
+  .bob-cash {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: -6rem;
+    z-index: 5;
+    overflow: visible;
+  }
+
+  .cic-light-waves-background-pattern {
+    overflow: visible !important;
+  }
+
+  .section-rateInfo {
+    text-align: right;    
+  }
+
+  .section-rateInfo p{
+    display: inline;
+  }
+
+  .cic-totalRates{
+    margin-left: spacer(2);
+  }
+
+  .section-rateStars{
+    text-align: left;    
+  }
+
+  .section-carousel{
+    margin: 1rem auto;
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 70rem;
+  }
+}
+
+/**********************************************************
+* Grid styles Testimonia Card Section
+/*********************************************************/
+.cic-testimonial-card{
+  display: grid;
+  padding: spacer(4);
+  grid-template-columns: 2.5rem auto;
+  background-color: white;    
+  border-radius: spacer(1);
+  height: 14.5rem;
+  position: relative;
+}
+
+.cic-testimonial-card p{
+  color: theme-color('black');
+}
+
+.cic-testimonial-card-profile {
+  grid-column: 1;
+  border-radius: spacer(1);
+  height: 2.5rem;
+}
+
+.cardUsername{
+  grid-column: 2;
+  margin-left: spacer(4);  
+}
+
+.cardUsername p{
+  font-weight: 500;
+  font-size: spacer(4);
+  line-height: 1.25rem;
+}
+
+.cardDate{
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin-top: spacer(3);
+}
+.cardContent{
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  margin-top: spacer(2);
+  height: 8.75rem;
+  z-index: 1;
+}
+.cardMore{
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  text-align: right;
+  z-index: 10;  
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+}
+
+.cardMore a {
+  font-size: spacer(4);
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+
+@media only screen and (max-width: 1240px) {
+  .bob-cash {
+    display: none;
+  }
+}
+

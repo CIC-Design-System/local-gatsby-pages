@@ -1,0 +1,520 @@
+/**********************************************************
+* Footer
+/*********************************************************/
+#cic-main-footer-desktop-nav-container{
+	width:100%;
+}
+.cic-footer-desktop-nav-list ul > li{
+   /**/ 
+   margin-top: 1.5rem!important;
+   margin-bottom: .5rem!important;
+}
+.menuChevron{
+	display : inherit;
+}
+.menuMobile{
+	position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+.transformChevron{
+	transition: all 0.5s ease 0s;
+	transform: rotateX(180deg);
+}
+.transformChevronD{
+	transition: all 0.5s ease 0s;
+	transform: rotateX(0deg);
+}
+.cic-footer-home{
+	margin-top: 1.5rem!important;
+	margin-bottom: .5rem!important;
+}
+ul.toggleUl > li {
+    padding: 8px 16px;
+}
+ul.toggleUl > li a {
+	color: #fff;
+}
+#cic-footer-container {
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	overflow: hidden;
+	background-size: 75px;
+	padding: spacer( 4 );
+	background-color: $navy-100;
+}
+
+// .sis-chat-button {
+// 	position: fixed !important;
+// 	right: 25px !important;
+// 	bottom: 25px !important;
+// }
+
+.sis-chat-button:hover,
+.sis-chat-button:focus {
+	background: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.cic-footer-nav-accordion {
+	margin-bottom: spacer( 2 );
+	width: 100%
+}
+
+.cic-footer-icon { 
+	width: 1.25em;
+}
+
+.cic-footer-icon img {
+	width: 100%;
+}
+
+.cic-footer-nav-item {
+	color: theme-color( 'white' ) !important;
+	background-color: transparent;
+	font-size: 1rem;
+	margin: spacer( 2 ) spacer( 4 );
+}
+
+#cic-footer-contact-info-container {
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: spacer( 4 );
+}
+
+#ccfi-legal-footer {
+	width: 100%;
+	text-align: justify;
+	margin-top: 2rem;
+}
+
+#cic-footer-nav-icon{
+	color: theme-color( 'white' ) !important;
+}
+
+#cic-footer-left-container {
+	width: 100%;
+	max-width: 70em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#cic-footer-contact-info  {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .5em;
+}
+
+#cic-footer-contact-info p {
+	color: $green-10;
+	margin-left: .5em;
+}
+
+#cic-footer-contact-info img {
+	width: 100%;
+	max-width: 1.5em;
+}
+
+#cic-footer-contact-hours {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .5em;
+}
+
+.cic-footer-social-icon {
+	width: 1.5em;
+	margin: spacer( 2 ) spacer( 4 ) 0 0;
+}
+
+.cic-footer-social-icon img {
+	width: 100%;
+}
+
+#cic-footer-copyright-img-container {
+	display: flex;
+}
+
+.infin-logo {
+	width: 3.75rem;
+	max-height: 3.9rem;
+	margin-right: 1.75rem;
+}
+
+.network-logo {
+	width: 3.75rem;	
+	max-height: 3.9rem;
+}
+
+.cic-logo {
+	width: 5.5rem;
+	max-height: 3.9rem;
+}
+
+.cic-footer-hr {
+ 	border-top: 1px solid rgba(255, 255, 255, 0.6);
+	margin: 0;
+	width: 100%;
+}
+
+#cic-footer-copyright {
+	width: 100%;
+	max-width: 70em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	.network-logo {
+		margin-right: auto;
+	}
+}
+
+.cic-footer-legal-container {
+	background-color: gray( '10' );
+}
+
+.cic-dark-waves-background-pattern { 
+	overflow: hidden;
+	background-size: 75px;
+}
+
+.cic-light-waves-background-pattern { 
+	background-color: $navy-100;
+	overflow: hidden;
+	background-size: 75px;
+}
+
+#cic-footer-contact-meta-container {
+	max-width: 70em;
+	width: 100%;
+	display: flex; 
+	justify-content: center;
+	flex-direction: column;
+}
+
+#cic-footer-contact-meta {
+	display: flex;
+	flex-direction: column;
+}
+
+.click-privacy-policy {
+	text-align: right;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+	.cic-footer-logos-container {
+		display: none;
+	}
+
+	#cic-footer-social-media-container {
+		width: 100%;
+		display: flex; 
+		flex-direction: row;
+		justify-content: space-between;
+		margin: spacer( 2 ) 0 spacer( 2 );
+	}
+
+	#cic-footer-copyright-img-container {
+		width: 100%;
+	}
+
+	#cic-footer-desktop-nav-container { 
+		display: none;
+	}
+
+	#cic-footer-tablet-nav-container {
+		display: none;
+	}
+
+	#cic-footer-hr--mobile {
+		display: block;
+	}
+
+	#cic-footer-hr--desktop {
+		display: none;
+	}
+
+	#cic-footer-contact-hours span p:nth-child(2) {
+		margin-left: 0.5rem;
+	}
+    .toggleMenu{
+        margin: 0.5rem 0;
+    }
+
+	.related-reading-sections {
+		text-align: center;
+	}
+
+	.related-reading-section {
+		padding: 1rem 0;
+		margin: 0 1rem;
+	
+		&:nth-of-type(2) {
+			border-top: 1px solid #1F1D1C;
+			border-bottom: 1px solid #1F1D1C;
+		}
+	}
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    #cic-footer-contact-hours {
+		align-items: flex-end;
+	}
+
+	#cic-footer-contact-hours span p:nth-child(2) {
+		margin-left: 0.5rem;
+	}
+	#cic-main-footer-desktop-nav-container { 
+		
+		display: grid;width: 60%;
+		grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+		grid-template-areas:
+			"homeFooter Resources"
+			"availableServices aboutUs";
+	}
+	.menuChevron{
+		display : none;
+	}
+	.menuMobile{
+		display: contents;
+	}
+	.cic-footer-home{
+		margin: 0;
+	}
+    ul.toggleUl > li {
+        margin: 1rem;
+        padding: 0;
+    }
+}
+
+//TABLET AND DESTOP VIEW
+@media only screen and (min-width: 768px) {
+	#cic-footer-desktop-nav-container {
+		display: none;
+	}
+
+	#cic-footer-tablet-nav-container {
+		display: flex;
+	}
+
+	#cic-footer-container {
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.cic-footer-nav-accordion {
+		display: none; 
+	}
+
+	#cic-footer-home {
+		display: none;
+	}
+
+	#cic-footer-desktop-nav-container {
+		justify-content: space-around;
+		flex-direction: row;
+		width: 100%;
+		max-width: 70em;
+	}
+
+	.cic-footer-top-nav-item {
+		margin: spacer( 5 ) 0 spacer( 2 );
+	}
+
+	.cic-footer-nav-item {
+		margin: spacer( 4 );
+	}
+
+	.cic-footer-nav-item a {
+		color: theme-color( 'white' );
+	}
+
+	#cic-footer-contact-info-container {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		max-width: 37.75rem;
+		width: 100%;
+	}
+
+	#ccfi-legal-footer {
+		max-width: 37.75rem;
+		width: 100%;
+		text-align: justify;
+	}
+
+	#cic-footer-contact-hours {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 60%;
+	}
+
+	#cic-footer-hr--mobile { 
+		display: none; 
+	}
+
+	#cic-footer-hr--desktop {
+		display: block;
+	}
+
+	#cic-footer-contact-meta {
+		flex-direction: row;
+	}
+
+	.cic-footer-logos-container .network-logo {
+		margin-right: 1.5rem;
+	}
+
+	#cic-footer-social-media-container {
+		flex-direction: column;
+		margin: 0;
+		justify-content: center;
+	}
+
+	#cic-footer-copyright {
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	#cic-footer-copyright p {
+		margin-right: spacer( 4 );
+	}
+
+	.cic-footer-legal-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.cic-footer-legal {
+		max-width: 66em;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.homeFooter{
+		grid-area: homeFooter;
+	}
+	.availableServices{
+		grid-area: availableServices;
+	}
+	.aboutUs{
+		grid-area: aboutUs;
+	}
+	.resources{
+		grid-area: Resources;
+	}
+
+	.be-related-reading-container {
+		padding: 2rem 0;
+	}
+
+	.be-label {
+		margin-bottom: 1rem;
+	}
+
+	.related-reading-sections {
+		display: flex;
+		max-width: 66rem;
+		margin: auto;
+		justify-content: space-between;
+		text-align: center;
+	}
+
+	.related-reading-section {
+		padding: 0 2rem;
+		width: 33.33%;
+		max-width: 33.33%;
+	
+		&:nth-of-type(2) {
+			border-left: 1px solid #1F1D1C;
+			border-right: 1px solid #1F1D1C;
+		}
+	}
+}
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+	#cic-footer-desktop-nav-container {
+		display: flex;
+	}
+
+	#cic-footer-tablet-nav-container {
+		display: none;
+	}
+
+	#cic-footer-contact-info-container {
+		max-width: 70rem;
+		width: 100%;
+		justify-content: center;
+	}
+
+	#ccfi-legal-footer {
+		max-width: 70rem;
+		width: 100%;
+		text-align: justify;
+	}
+
+	#cic-footer-contact-hours {
+		margin-left: 1rem;
+		flex-direction: row;
+	}
+	#cic-main-footer-desktop-nav-container {
+		display: grid;
+		justify-items: center;
+		grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+		grid-template-areas: 
+			"homeFooter availableServices Resources aboutUs";
+		width: 100%;
+		max-width: 70em;
+		height: max-content;
+	}
+	.menuChevron{
+		display : none;
+	}
+	.menuMobile{
+		display: contents;
+	}
+	.cic-footer-home{
+		margin: 0;
+	}
+
+	.be-related-reading-container {
+		padding: 2rem 0;
+	}
+
+	.be-label {
+		margin-bottom: 1rem;
+	}
+
+	.related-reading-sections {
+		display: flex;
+		max-width: 70rem;
+		margin: auto;
+		justify-content: space-between;
+	}
+
+	.related-reading-section {
+		padding: 0 2rem;
+		width: 33.33%;
+		max-width: 33.33%;
+	
+		&:nth-of-type(2) {
+			border-left: 1px solid #1F1D1C;
+			border-right: 1px solid #1F1D1C;
+		}
+	}
+}

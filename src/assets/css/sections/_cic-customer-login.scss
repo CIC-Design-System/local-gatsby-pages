@@ -1,0 +1,64 @@
+
+    .cic-login-container{
+        display: flex;
+        flex-direction: column;
+        max-width: 34rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .cic-login-heading{
+
+    }
+    .cic-login-content{ 
+        max-width: 22em;
+        width: 100%;
+        padding: 1.5rem 0rem; 
+        p > a > strong {
+            font-weight: 500;
+        }
+    }
+    
+    .cic-login-text{
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: flex-start;
+        p > b {
+            font-weight: 500;
+        }
+        img{
+            padding-right: 0.5rem;
+        }
+    }
+    p, .cic-login-text > p{ 
+        padding-bottom: 0.5rem;
+    }
+    .cic-login-100{
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    a.cic-select, .cic-select:hover, .cic-select:focus {
+        display: inline-block;
+        padding: 1rem;
+    }
+    .cic-login-100 label {
+        background-color: white;
+        font-style: normal;
+        font-weight: 500;
+        font-size: .75em;
+        line-height: 1em;
+        color: #B13F01;
+    }
+    .cic-login-100 label {
+        top: -20px;
+        left: 92%;
+        transform: translateX(-50%);
+    }
+    @media only screen and (max-width: 767px){
+        .cic-login-container{
+            padding: 0 1rem;
+        }
+    }

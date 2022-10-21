@@ -1,0 +1,165 @@
+/**********************************************************
+* FAQ Section
+/*********************************************************/
+.cic-faq-by-category-wrapper{
+  padding-bottom: 2rem;
+}
+
+.cic-faq-filters {
+  grid-area: filters;
+  display: grid;  
+  margin-bottom: 0.25rem;
+}
+
+.cic-faq-filters .label-container {
+  justify-content: space-between;
+}
+
+.filters-product,
+.filters-search,
+.cic-faq-filters .label-container {
+  width: 100%;
+  margin: auto;
+}
+
+.cic-faq-content {
+  grid-area: content;
+}
+
+.product-faq-title {
+  margin-top: 3.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.cic-faq-accordion-container .cic-faq-accordion-base:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.faq-see-all {
+  margin: 1rem auto 0 auto;
+}
+
+.dropdown-item.prepend {
+  padding: 0.25rem 1rem;
+}
+
+.faq-pagination {
+  text-align: center;
+}
+
+.faq-pagination .page-numbers:not(.prev):hover {
+  text-decoration: underline;
+}
+
+.faq-pagination .page-numbers {
+  cursor: pointer;
+}
+
+.faq-pagination .page-numbers.activePage {
+	font-weight: 500;
+	color: theme-color( 'black' ) !important;
+}
+
+.cic-faq-filters .filter-title {
+  margin-bottom: 1rem;
+}
+
+.cic-faq-filters .filter-title.search,
+.cic-faq-filters .label-container .clear-filters {
+  margin-top: 1.25rem;
+}
+
+.filters-search button.search-icon {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  float: right;
+}
+
+.cic-faq-filters .label-container a,
+.no-results-link {
+  color: $green-60;
+}
+
+.no-results-msg {
+  margin: 3.25rem 0 1.5rem 0;
+  font-size: 1.4rem;
+}
+
+.cic-faq-filters .form-group {
+  width: 100%;
+}
+
+.cic-faq-filters .form-group:focus{
+  border-color: $green-60;
+}
+
+.cic-faq-filters .form-group>input {
+  width: 85%;
+}
+
+#productSelectDropdown .clear-filters {
+  border-top: 1px solid $chicago-100;
+  padding: 1rem;
+}
+
+.cic-faq-card-body .faq-content p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.faq-content ul {
+  margin: 1rem 0 1rem 2rem;
+  list-style-type: disc;
+}
+
+.faq-content ul li {
+  color: $chicago-100;
+}
+
+.cic-faq-accordion-chevron {
+  margin-left: auto;
+}
+
+.cic-card .cic-faq-accordion-icon {
+  align-self: flex-start;
+}
+
+/**********************************************************
+* Breakpoints
+/*********************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+  .cic-faq-by-category-wrapper, .cic-all-faq-wrapper {
+    margin: 0 1rem;
+  }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+  .cic-faq-by-category-wrapper, .cic-all-faq-wrapper {
+    margin: 0 2rem;
+    max-width: 66rem;
+  }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+  .cic-faq-by-category-wrapper, .cic-all-faq-wrapper {
+    margin: 0 auto;
+    max-width: 70rem;
+  }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .filters-product,
+    .filters-search,
+    .cic-faq-filters .label-container {
+      width: 34rem;
+    }
+
+    .cic-faq-filters .form-group>input {
+      width: 91%;
+    }
+}

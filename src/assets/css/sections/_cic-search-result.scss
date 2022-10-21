@@ -1,0 +1,321 @@
+#search-page-container {
+	display: grid;	
+	/*row-gap: 1rem;	*/
+	margin: 0 1rem;
+	grid-template-areas: 
+		"search-form search-form search-form search-form"
+		"filter filter filter filter"
+		"hr-top hr-top hr-top hr-top"
+        "search-content search-content search-content search-content"
+		"pagination pagination pagination pagination"
+		"filter-button filter-button filter-button filter-button"
+		"sidebar sidebar sidebar sidebar"
+}
+
+.search-form-container {
+	grid-area: search-form;
+	margin: 1rem 0;
+}
+
+.search-filter {
+	grid-area: filter;
+	text-align: right;
+	margin-top: 1.125rem;
+	margin-bottom: 1rem;
+}
+
+.search-filter p {
+	display: inline;
+}
+
+.search-hr-top{
+	grid-area: hr-top;
+    border-top: 1px solid rgba(31, 29, 28, 0.2);
+    height: 1px;
+	max-width: 60rem;
+}
+
+.searchContent {
+	grid-area: search-content;
+}
+
+.pagination-content {
+	grid-area: pagination;
+	margin: 1.5rem 0;
+}
+
+.pagination-numbers {		
+	text-align: center;
+}
+
+.pagination-numbers .page-numbers.current {
+	font-weight: 500;
+	color: theme-color( 'black' ) !important;
+	background: none !important;
+	border: none !important;
+}
+
+.filter-button {
+	grid-area: filter-button;
+}
+
+.search-sidebar {
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;	
+}
+
+.post-hr {
+    border-top: 1px solid rgba(31, 29, 28, 0.2);
+    height: 1px;
+	max-width: 60rem;
+	margin: 1rem 0;
+}
+
+.searchPost {	
+	float: right;
+	padding: 1rem;
+	margin-top: 1.125rem;
+}
+
+.searchPost a:hover {
+	text-decoration: none;
+}
+
+.postTitle {	  
+	margin-bottom: 0.5rem;
+}
+
+.postTitle a p {
+	text-align: left;
+	text-decoration: none;
+}
+
+.post-more>img {
+	float: right;
+}
+
+.fl-post-more-link {
+	font-size: spacer(4);
+	font-weight: 500;
+	line-height: 1.25rem;
+}
+/*
+.next {
+	display: inline-block;
+	background-image: url( '../../icons/cic-ui-circle-chevron-right.svg' );
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 1.5rem;
+	margin-left: 2.3rem;
+}
+
+.next.disabled {
+	background-image: url( '../../icons/cic-ui-circle-chevron-right-chic30.svg' );
+}
+
+.prev {
+	display: inline-block;
+	background-image: url( '../../icons/cic-ui-circle-chevron-left.svg' );
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 1.5rem;
+	margin-right: 1.65rem;
+}
+
+.prev.disabled {
+	background-image: url( '../../icons/cic-ui-circle-chevron-left-chic30.svg' );
+}
+*/
+.page-numbers {
+	line-height: 1.25rem;
+	font-size: 1rem;
+	margin: auto 0.25rem;
+}
+
+.search-sidebar-separator {
+	border-top: 1px solid rgba(31,29,28,0.2);
+    margin: 1rem 0;
+}
+
+.cic-store-locator-zip.mobile-sidebar {
+	margin-bottom: 1rem;
+}
+
+.cic-store-locator-zip.mobile-sidebar .form-group input {
+	width: 72%;
+}
+
+.mobile-sidebar-store-locator-header {
+	text-align: left;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+/**********************************************************
+* Filter Section Styles
+/*********************************************************/
+.cic-search-header {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	float: right;
+	text-align: left;
+}
+
+.cic-search-header .d-flex {
+	align-items: flex-end;
+}
+
+.cic-search-header .cic-icon {
+	height: 1.25rem;
+}
+
+.cic-search-header .dropdown-toggle::after {
+	display: none;
+}
+
+.cic-search-header .search-filters-dropdown {
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+.search-filters-dropdown .dropdown-item {
+	border: 1px solid $chicago-10;
+	padding: .75rem 1.5rem;
+}
+
+/**********************************************************
+* Mobile Section Styles
+/*********************************************************/
+@include media-breakpoint-down(md) {
+	#desktop-store-locator, #sb-login {
+		display: none;
+	}
+
+	.sb-bottom-item {
+		margin-bottom: 1.5rem;
+	}
+
+	#zip-code-container {
+		border: solid 1px gray( '100' );
+		padding: 0 .5em;
+		position: relative;
+		width: 100%;		
+	}
+
+	#zip-code-container input {
+		border: none;
+		background-color: white;
+		margin: .5em .25em;
+		width: 100%;
+	}
+	
+	#zip-code-container label {
+		font-size: 1rem;
+		position: absolute;
+		line-height: 1em;
+		transform-origin: top left;
+		transition: all .1s ease-in-out;
+		padding: 0 0 0 2em;
+		margin: 0;
+	}
+	
+	#zip-code-container.active label {
+		padding: 0 10px;
+		background-color: white;
+		transform: translate( 1.5em, -1.5em ) scale( .75 );
+	}
+
+	#mobile-store-locator p {
+		text-align: left;
+	}	
+
+	.page-nav a {
+		display: block;
+		width: 100%;
+	}
+
+	.searchPost {
+		width: 100%;
+	}
+
+	.cic-desktop-sidebar {
+		display: none;
+	}
+}
+
+/**********************************************************
+* Desktop Section Styles
+/*********************************************************/
+
+@include media-breakpoint-up(md) {
+	#search-page-container {
+		display: grid;
+		column-gap: 2rem;
+		row-gap: 1rem;
+		max-width: 90rem;
+		grid-template-areas: 
+			". search-form search-form search-form search-form search-form search-form search-form . . . ."
+			". filter filter filter filter filter filter filter . . . ."
+			". hr-top hr-top hr-top hr-top hr-top hr-top hr-top hr-top sidebar sidebar ."
+			". . . search-content search-content search-content search-content search-content . sidebar sidebar ."
+			". . . pagination pagination pagination pagination pagination . . . ."
+	}
+
+	#searchForm-container {		
+		float: right;
+		min-width: 32rem;
+		margin-top: 2.625rem;
+		margin-bottom: 0.5rem;
+
+		#searchInput {
+			min-width: 70%;
+		}
+
+		#cic-search-icon-green {
+			float: right;
+		}
+	}
+
+	.search-filter {		
+		margin-top: 3.562rem;
+	}
+
+	.cic-search-header {
+		max-width: 34rem;
+	}	
+
+	.mobile-line-break {
+		display: none;
+	}
+
+	.pagination-numbers {
+		width: 34rem;
+		float: right;
+		text-align: center;
+	}
+
+	.search-sidebar {		
+		max-width: 13rem;
+	}
+
+	#mobile-store-locator, .filter-button {
+		display: none;
+	}	
+
+	.search-sidebar-separator {		
+		max-width: 13rem;
+	}
+
+	.searchPost {
+		width: 34rem;
+	}
+
+	.cic-mobile-sidebar {
+		display: none !important;
+	}
+}

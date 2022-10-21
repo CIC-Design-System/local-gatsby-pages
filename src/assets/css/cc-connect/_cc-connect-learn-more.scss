@@ -1,0 +1,98 @@
+/********************************************************************
+* CC Connect Learn More Section
+********************************************************************/
+
+.cc-connect-learn-more-wrapper {
+    padding: 2rem 0;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: repeat( 4, 1fr );
+	grid-template: 
+		" title title title title "
+		" content content content content "
+        " image image image image "        
+        " button button button button"
+        " footer footer footer footer "
+		;
+    border-top: 1px solid color( 'orange' );
+    border-bottom: 1px solid color( 'orange' );
+}
+
+.learn-more-title {
+    grid-area: title;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.learn-more-content {
+    grid-area: content;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.learn-more-logo {
+    grid-area: image;
+    margin: 1.5rem auto
+}
+
+.learn-more-button {
+    grid-area: button;
+    margin-bottom: 2rem;
+}
+
+.learn-more-footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+/********************************************************************
+* Media Queries
+********************************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cc-connect-learn-more-wrapper {
+        margin: 0 1rem;
+    }
+}
+
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cc-connect-learn-more-wrapper {
+        max-width: 66rem;
+        margin: 0 2rem;
+        column-gap: 2rem;
+        grid-template-columns: repeat( 8, 1fr );
+        grid-template: 
+            " title title title title title title title title "
+            " content content content content content content content content "
+            " . . image image image image . . "
+            " . . button button button button . . "
+            " footer footer footer footer footer footer footer footer "
+            ;
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+   
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cc-connect-learn-more-wrapper {
+        max-width: 70rem;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat( 12, 1fr );    
+        column-gap: 2rem;
+        grid-template-areas:
+		" . . title title title title title title title title . ."
+		" . . content content content content content content content content . . "
+        " . . . . image image image image . . . . "
+        " . . . . button button button button . . . . "
+        " . . footer footer footer footer footer footer footer footer . . "
+		;
+    }
+}

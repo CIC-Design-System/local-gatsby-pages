@@ -1,0 +1,157 @@
+/**********************************************************
+* Store Locator
+/*********************************************************/
+
+.cic-store-locator-container {	
+    display: grid;
+	grid-template-columns: repeat( 4, 1fr );
+	grid-template: 
+        " title title title title "
+        " img img img img "
+        " content content content content "
+		" zipCode zipCode zipCode zipCode "
+		" buttons buttons buttons buttons "
+    ;
+	padding: 2rem 0;
+}
+
+.cic-store-locator-heading {
+	grid-area: title;
+	margin-bottom: 1.5rem;
+}
+
+.cic-store-locator-feature-image {
+	grid-area: img;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cic-store-locator-text-content {
+	grid-area: content;
+	margin-bottom: 2rem;
+}
+
+.cic-store-locator-zip {
+	grid-area: zipCode;
+}
+
+.cic-store-locator-zip .form-group {
+	margin-bottom: 0;
+	width: 90%;
+
+	input {
+		width: 85%;
+	}
+}
+
+.store-locator-search-container {
+	display: flex;
+	align-items: center;
+}
+
+.cic-store-locator-buttons {
+	grid-area: buttons;
+}
+
+#cic-find-store-icon,
+#cic-find-store-icon-mobile,
+#cic-find-store-icon-mm {
+	cursor: pointer;
+	float: right;
+}
+
+#store-error-message {
+    display: none;
+	margin-bottom: 1rem;
+}
+
+#cic-find-store {
+	cursor: pointer;
+}
+
+#zipIconFocus {
+	display: none;
+}
+
+.navIconContainer {
+	cursor: pointer;
+	margin-left: 1rem;
+	width: 3rem;	
+	height: 3rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 2px rgba(31, 29, 28, 0.1), 0px 2px 2px rgba(31, 29, 28, 0.2);
+
+	div {
+		margin-left: 0;
+	}
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+	.cic-store-locator-container {
+		margin: 0 1rem;
+	}
+
+	.cic-store-locator-feature-image {
+		height: 12rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+	.cic-store-locator-container {
+		display: grid;
+		column-gap: 2rem;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas:
+			" title title title title title title title title title title title title "
+			" img img img img img img content content content content content content "
+			" img img img img img img zipCode zipCode zipCode zipCode zipCode zipCode "
+			" img img img img img img buttons buttons buttons buttons buttons buttons "			
+		;
+		margin: 0 2rem;
+		max-width: 66rem;
+	}
+
+	.cic-store-locator-feature-image {
+		margin-bottom: 0;
+	}
+
+	.cic-store-locator-buttons a {
+		max-width: 32rem;
+	}
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+	.cic-store-locator-container {
+		display: grid;
+		column-gap: 2rem;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas:
+			" . . title title title title title title title title . . "
+			" . . img img img img content content content content . . "
+			" . . img img img img zipCode zipCode zipCode zipCode . . "
+			" . . img img img img buttons buttons buttons buttons . . "			
+		;
+		margin: 0 auto;
+		max-width: 70rem;
+	}
+
+	.cic-store-locator-heading {
+		margin-bottom: 2rem;
+	}
+
+	.cic-store-locator-text-content {
+		margin-bottom: 1rem;
+	}
+
+	.cic-store-locator-buttons a {
+		max-width: 100%;
+	}
+}

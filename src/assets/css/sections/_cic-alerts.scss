@@ -1,0 +1,164 @@
+.cic-alert-banner-container, .cic-cookie-banner-container, .cic-loading-container {
+    position: fixed;
+    padding: 2.5rem 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;    
+    z-index: 2;
+
+    &.hidden {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.cic-alert-banner-container, .cic-cookie-banner-container {
+    border-top: 1rem solid #F67E35;
+}
+
+.cic-loading-wrapper {
+    width: 10rem;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+.cic-banner-exit-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.cic-alert-banner-wrapper, .cic-cookie-banner-wrapper {
+    display: grid;    
+}
+
+.alert-title, .cookie-title {
+    grid-area: title;
+    margin-bottom: 1rem;
+
+    h4 {
+        text-align: left;
+    }
+}
+
+.alert-content {
+    grid-area: content;
+    margin-bottom: 0.5rem;
+}
+
+.alert-buttonSecondary {
+    grid-area: button;
+}
+
+.cookie-content {
+    grid-area: content;
+}
+
+.cookie-button {
+    grid-area: cookieBtn;
+}
+
+/********************************************************************
+* Media Queries
+********************************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cic-alert-banner-wrapper {
+        column-gap: 1rem;
+        margin: 0 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            " title title title title "
+            " content content content content "
+            " button button button button "
+        ;
+    }
+
+    .cic-cookie-banner-wrapper {
+        column-gap: 1rem;
+        margin: 0 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            " title title title title "
+            " content content content content "
+            " cookieBtn cookieBtn cookieBtn cookieBtn "
+        ;
+    }
+
+    .cookie-button {
+        margin-top: 0.5rem;
+    }
+
+    .cic-loading-wrapper {
+        width: 5rem;
+    }
+}
+
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cic-alert-banner-wrapper {
+        max-width: 66rem;
+        column-gap: 2rem;
+        margin: 0 2rem;        
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+            " title title title title title title title title "
+            " content content content content content content content content "
+            " . . button button button button . . "
+        ;
+    }
+
+    .cic-cookie-banner-wrapper {
+        max-width: 66rem;
+        column-gap: 2rem;
+        margin: 0 2rem;        
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+            " title title title title title title title title "
+            " content content content content content content content content "
+            " . . cookieBtn cookieBtn cookieBtn cookieBtn . . "
+        ;
+    }
+
+    #cookie-btn-accept .cic-btn {
+        max-width: 100%;
+    }
+
+    .cookie-button {
+        margin-top: 0.5rem;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-alert-banner-wrapper {
+        max-width: 70rem;
+        column-gap: 2rem;
+        margin: 0 auto;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+            " . title title title title title title title title title title . "
+            " . content content content content content content button button button button . "
+        ;
+    }
+
+    .cic-cookie-banner-wrapper {
+        max-width: 70rem;
+        column-gap: 2rem;
+        margin: 0 auto;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+            " . title title title title title title title title title title . "
+            " . content content content content content content cookieBtn cookieBtn cookieBtn cookieBtn . "
+        ;
+    }
+}
+

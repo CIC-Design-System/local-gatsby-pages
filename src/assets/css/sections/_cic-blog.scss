@@ -1,0 +1,65 @@
+/**********************************************************
+* Recent Blog Post Component
+/*********************************************************/
+
+#cic-recent-blog-posts-content-container {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#cic-recent-posts-section-title {
+	margin: spacer( 4 ) 0;
+}
+
+.cic-recent-blog-posts-thumbnail {
+	height: 12em;
+	overflow: hidden;
+}
+
+.cic-recent-blog-title {
+    display: flex;
+    justify-content: start;
+}
+
+.cic-light-gray-background {
+	background-color: gray( '10' );
+}
+
+.cic-recent-blog-posts-read-more {
+	width: 30%;
+}
+
+.cic-recent-blog-posts-read-more p {
+	font-weight: 500;
+}
+
+.cic-recent-blog-posts-read-more img{
+	width: 1em;
+}
+
+#cic-recent-blog-posts-container hr {
+	width: 100%;
+	border-top: 1px solid rgba(31, 29, 28, 0.2);
+}
+
+#cic-recent-blog-post-button {
+	width: 100%;
+	margin: spacer( 4 ) 0;
+	justify-content: center;
+	align-items: center;
+}
+
+@include media-breakpoint-between(md, xl) { 
+	#cic-recent-blog-posts-content-container {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.cic-recent-blog-posts-content {
+		max-width: 22rem;
+		width: 100%;
+		margin: 0 spacer( 4 );
+	}
+}

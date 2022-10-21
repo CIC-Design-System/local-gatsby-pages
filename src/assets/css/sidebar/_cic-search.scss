@@ -1,0 +1,31 @@
+/**********************************************************
+* Search Sidebar Section
+/*********************************************************/
+.cic-sidebar-search-wrapper {
+    background-color: theme-color( 'light' );
+    padding: 1.5rem 1rem;
+
+    .cic-fl-input {
+        padding: 0.5rem;
+        width: 100%;
+        margin-bottom: 0;
+
+        label {
+            background-color: theme-color( 'light' );
+        }
+
+        input {
+            background-color: theme-color( 'light' ) !important;
+            width: 84%;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .cic-fl-input .form-control:placeholder-shown:not(:focus)+* {    
+        top: 0.75rem;    
+        font-size: 100%;
+    }
+}

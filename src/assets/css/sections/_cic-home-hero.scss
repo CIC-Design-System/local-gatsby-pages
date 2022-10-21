@@ -1,0 +1,91 @@
+/**********************************************************
+* Home Hero Section
+/*********************************************************/
+
+#cic-home-hero-container {
+	z-index: 1;
+	padding-top: 9em;
+	position: relative;
+	padding-bottom: 2rem;
+}
+
+#cic-home-hero-contact-info span {
+	margin: .5em .5em .5em 0;
+}
+
+#cic-home-hero-contact-info span {
+	width: 1.5em;
+}
+
+#cic-home-hero-title h1,
+#cc-connect-home-hero-title h1 {
+	text-align: center;
+}
+
+#cic-home-hero-contact-info img{
+	width: 100%;
+}
+
+#cic-home-hero-login-link p{
+	color: theme-color( 'success' );
+}
+
+#cc-connect-home-hero-login-link p {
+	color: $orange-10;
+}
+
+#cic-home-hero-login img,
+#cc-connect-home-hero-login img {
+	width: 1.5em;
+	margin: 0 .25em;
+}
+
+#cc-connect-home-hero-login {
+	flex-direction: column;
+	margin-top: 1.5rem;
+
+	p {
+		margin-bottom: .5rem;
+	}
+}
+
+.hero-contact-separator {
+	padding: 0 1em .5em 1em;
+}
+
+// Breakpoints
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    #cic-home-hero-container {
+		margin: 0 1rem;
+	}
+} 
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) {
+    #cic-home-hero-container {
+		margin: 0 2rem;
+	}
+} 
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    #cic-home-hero-title {
+		width: 40%;
+		padding: 0 0;
+	}
+
+	#cc-connect-home-hero-title {
+		width: 30%;
+		padding: 0 0;
+	}
+
+	#cc-connect-home-hero-login {
+		flex-direction: row;
+
+		p {
+			margin-right: 2rem;
+		}
+	}
+}

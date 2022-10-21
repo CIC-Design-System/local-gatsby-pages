@@ -1,0 +1,257 @@
+/**********************************************************
+* Rate Calculator Section
+/*********************************************************/
+.cic-rate-calculator-wrapper {
+  display: grid;
+  grid-template-columns: repeat( 4, 1fr );
+  column-gap: 1rem;
+  grid-template: 
+      " stepContent stepContent stepContent stepContent "              
+  ;  
+}
+
+.cic-step-index{
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.cic-step-status{
+  grid-area: stepsStatus;
+  background-color: theme-color( 'white' );
+}
+
+.cic-step-content{
+  grid-area: stepContent;
+  background-color: theme-color( 'white' );
+  padding: 1rem;
+}
+
+.rate-calculator-step{
+  display: grid;  
+  row-gap: 1.5rem;
+  width: 100%;  
+}
+
+.rate-calculator-title{
+  margin-top: 1.5rem;
+  grid-row: 1;
+}
+
+.rate-calculator-square{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.31rem;
+  row-gap: 1rem;    
+  grid-row: 2;
+}
+
+.product-card{
+  width: 100%;
+  padding: 1rem; 
+  border: 1px solid #757372;
+}
+
+.product-card.active{
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #25836B;  
+  position: relative;
+}
+
+.product-card:not(.active) img.activeIcon {
+  display: none;
+}
+
+.product-card img.activeIcon {
+  position: absolute;
+  width: 1.2rem;
+  left: 1.15rem;
+  top: 0.15rem;
+}
+
+.product-card img{
+  width: 1.5rem;
+  margin: 1rem auto;  
+}
+
+.frequencyInfo{
+  margin-top: 0.5rem;
+}
+
+.product-info p {
+  display: inline;
+  margin-left: 0.5rem;
+}
+
+.product-info img {
+  width: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rate-calculator-table{
+  display: grid;
+  grid-row: 2;
+}
+
+.rate-calculator-paragraph{
+  grid-row: 3;
+  padding: 0.5rem 0;
+}
+
+.info-prepend {
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.info-apend {
+  width: 1.37rem;
+  margin-left: 0.5rem;
+}
+
+.info-content.form-group {
+  margin: 0.5rem auto;
+}
+
+.rate-calculator-table table td:nth-child(2) {
+  text-align: right;
+}
+
+.rate-calculator-table td {
+  padding: 0.5rem;
+}
+
+.rate-calculator-table p {
+  margin-top: 0.87rem;
+}
+
+.rate-calculator-square>.form-group{    
+  width: 100%;
+  grid-column: 1 / 3;
+}
+
+/**********************************************************
+* Desktop Section Styles
+/*********************************************************/
+
+@include media-breakpoint-up(md) {
+  .cic-rate-calculator-wrapper {
+    padding: 1rem;    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      " . . . stepContent stepContent stepContent stepContent stepContent stepContent . . . "
+    ;    
+  }
+
+  #rate-wizard .content{   
+    min-height: 31.31rem;
+  }
+
+  .rate-calculator-square {
+    margin:0 6.31rem;
+  }
+
+  .actions {
+    padding: 1rem;
+  }
+
+  .actions li a {
+    margin: 0 auto;
+  }
+
+  .rate-calculator-table{
+    padding: 0 1rem;
+  }
+}
+
+
+/**********************************************************
+* Wizard Steps Section Styles
+/*********************************************************/
+.wizard > .steps .current-info, .wizard > .steps .number {
+  display: none;
+}
+
+.wizard > .steps ul {
+  display: flex;
+  justify-content: center;
+}
+
+.wizard > .steps li a {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: gray( '20' );
+  margin-right: 4.87rem;
+  position: relative;
+}
+
+.wizard > .steps li a:before {
+  content: "";
+  width: 4.87rem;
+  height: 0.12rem;
+  background: gray( '20' );
+  position: absolute;
+  right: 0.75rem;
+  top: 0.31rem;
+}
+
+.wizard > .steps li a:after {
+  content: "";
+  width: 0;
+  height: 0.12rem;
+  background: gray( '100' );
+  position: absolute;
+  left: -4.87rem;
+  top: 0.31rem;
+  transition: all 0.6s ease;
+}
+
+.wizard > .steps li.first a {
+  background: gray( '100' );
+}
+
+.wizard > .steps li.checked a {
+  background: gray( '100' );
+}
+
+.wizard > .steps li.checked a:after {
+  width: 4.87rem;
+}
+
+.wizard > .steps li:last-child a {
+  margin-right: 0;
+}
+
+.wizard > .steps li:first-child a:before {
+  display: none;
+}
+
+.wizard > .steps li:first-child a:after {
+  display: none;
+}
+
+
+/**********************************************************
+* Wizard Actions Section Styles
+/*********************************************************/
+.actions {
+  margin-top: 1rem;
+}
+
+.actions ul {
+  display: flex;
+}
+
+.actions li {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.actions li.disabled {
+  display: none;
+}
+
+.actions li[aria-disabled="true"] a {
+  display: none;
+}

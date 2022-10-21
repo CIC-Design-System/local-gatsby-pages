@@ -1,0 +1,220 @@
+/********************************************************************
+* CC Connect Learn More Section
+********************************************************************/
+
+.cc-connect-product-wrapper {
+    padding: 2rem 0;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: repeat( 4, 1fr );
+	grid-template: 
+		" info info info info "
+		" offer offer offer offer "
+		;
+    border-top: 1px solid color( 'orange' );
+    border-bottom: 1px solid color( 'orange' );
+}
+
+.product-info-container {
+    grid-area: info;
+    display: grid;
+    grid-template: 
+        " title "
+        " content "
+        " image"
+        " zipCode "
+        " buttons "
+        " footer "
+        ;
+}
+
+.product-title {
+    grid-area: title;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.product-content {
+    grid-area: content;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.product-logo {
+    grid-area: image;
+    margin: 1.5rem auto
+}
+
+.product-zip {
+    grid-area: zipCode;
+    display: grid;
+
+    .zip-form {
+        .form-group {
+            width: 100%;
+            margin-bottom: 0;
+
+            input {
+                width: 70%;
+            }
+        }
+    }
+}
+
+#cc-availavility {
+	cursor: pointer;
+	max-width: 100%;
+}
+
+#cc-product-error-message {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+#zipIconCCProductFocus {
+    display: none;
+}
+
+.product-buttons {
+    grid-area: buttons;
+    margin-top: 1rem;
+    margin-bottom: 2rem;    
+}
+
+.product-footer {
+    grid-area: footer;
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+.product-offer-container {
+    grid-area: offer;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-img {
+    margin: 0 auto 1rem;
+}
+
+.offer-content {
+    text-align: center;
+}
+
+.product-offer-container {
+    border-top: 1px solid color( 'orange' );
+    margin-top: 2rem;
+    padding-top: 2rem;
+
+    .offer-content:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/********************************************************************
+* Media Queries
+********************************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cc-connect-product-wrapper {
+        margin: 2rem 1rem;
+    }
+
+    .product-buttons span a {
+        margin-bottom: 1.5rem;
+    }
+
+    .product-zip {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .zip-form {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+
+    .zip-button {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+    }
+}
+
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cc-connect-product-wrapper {
+        max-width: 66rem;
+        margin: 2rem;
+        column-gap: 2rem;
+        grid-template-columns: repeat( 8, 1fr );
+        grid-template: 
+            " info info info info info info info info "
+            " offer offer offer offer offer offer offer offer "
+            ;
+    }
+
+    .product-buttons span a {
+        width: 45%;
+
+        &:first-child {
+            margin-right: 2rem;
+        }
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .product-buttons {
+        text-align: center;
+
+        a {
+            display: inline-block;
+            max-width: 21rem;
+        }
+
+        span:first-child a {
+            margin-right: 2rem;
+        }
+    }
+
+    .product-zip {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 2rem;
+    
+        .zip-form {
+            grid-column: 2 / 5;
+        }
+    
+        .zip-button {
+            grid-column: 5 / 8;
+        }
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cc-connect-product-wrapper {
+        max-width: 70rem;
+        width: 100%;
+        margin: 2rem auto;
+        grid-template-columns: repeat( 12, 1fr );    
+        column-gap: 2rem;
+        grid-template-areas:
+		    " info info info info info info info info offer offer offer offer ";
+
+        padding: 1rem 0;
+    }
+
+    .product-offer-container {
+        margin-top: 0;
+        border-top: none;
+        padding-top: 0;
+        justify-content: center;
+    }
+
+    .product-info-container {
+        border-right: 1px solid color( 'orange' );
+        padding: 1rem 0;
+    }
+}

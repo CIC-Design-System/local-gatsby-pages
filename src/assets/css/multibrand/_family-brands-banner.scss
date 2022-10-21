@@ -1,0 +1,135 @@
+/********************************************************************
+* 3 Frames Info Section
+********************************************************************/
+.ccfi-cloud-background-pattern {
+    // background-image: url('../../img/ccfi-clouds-1.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 4rem 0;
+}
+
+.family-brands-wrapper {
+    padding: 2rem 0;
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat( 4, 1fr );
+	grid-template: 
+		" info info info info "
+		" cards cards cards cards "
+		;
+}
+
+.family-brands-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+
+    p, h2 {
+        color: #fff !important;        
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    img {
+        place-self: center;
+        margin-top: 2rem;
+    }
+}
+/*
+.family-brands-cards-container {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );
+    row-gap: 1rem;
+    justify-items: center;
+}*/
+.family-brands-cards-container {
+    grid-area: cards;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    align-content: flex-start;
+    /*justify-content: center;*/
+}
+.family-brands-card {
+    min-width: 10.25rem;
+    min-height: 5rem;
+    max-width: 10.25rem;
+    max-height: 5rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.family-brands-card:hover img {
+    transform: scale(0.9);
+}
+/********************************************************************
+* Media Queries
+********************************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .family-brands-wrapper {
+        padding: 2rem 1rem;
+    }
+
+    .family-brands-info img {
+        margin-bottom: 2rem;
+    }
+    .family-brands-cards-container {
+        justify-content: center;
+    }
+}
+
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .family-brands-wrapper {
+        grid-template-columns: repeat( 8, 1fr );    
+        margin: 0 2rem;
+        grid-template: 
+            " info info info info cards cards cards cards "
+            ;
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+   
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .family-brands-wrapper {
+        max-width: 70rem;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat( 12, 1fr );            
+        grid-template-areas:
+		" info info info info info info . cards cards cards cards . "
+		;
+    }
+
+    .frame-info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:not(:first-child) {
+            border-left: 1px dashed rgba(255,255,255, 0.6);
+        }
+    }
+
+    .frame-icon {
+        margin-bottom: 1.5rem;
+    }
+}

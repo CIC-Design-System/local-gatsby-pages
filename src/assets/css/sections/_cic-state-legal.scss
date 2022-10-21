@@ -1,0 +1,82 @@
+/**********************************************************
+* State Legal Section
+/*********************************************************/
+
+.cic-state-legal-wrapper {
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+}
+
+.state-legal-title {
+    margin-bottom: 1rem;
+}
+
+.cic-state-legal-inner {
+    max-width: 70rem;
+}
+
+.state-legal-col {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: $chicago-100;
+}
+
+.state-legal-col a:focus {
+    color: $green-70;
+}
+
+a.new-tab {
+    position: relative;
+}
+
+a.new-tab:hover, a.new-tab:focus, a.new-tab:active {
+    z-index: 25;
+}
+
+a.new-tab span.new-window {
+    position: absolute;
+    left: -9000px;
+    width: 0;
+    overflow: hidden;
+}
+
+.state-legal-col a.new-tab {
+    position: relative;
+}
+
+.state-legal-col a.new-tab:hover, .state-legal-col a.new-tab:focus, .state-legal-col a.new-tab:active {
+    z-index: 25;
+}
+
+.state-legal-col a.new-tab span.new-window {
+    position: absolute;
+    left: -9000px;
+    width: 0;
+    overflow: hidden;
+}
+
+a.new-tab:hover span.new-window, a.new-tab:focus span.new-window, a.new-tab:active span.new-window {
+    display: block;
+    position: absolute;
+    left: 1em; 
+    width: 12em;
+    background-color: $chicago-10;
+    color: $chicago-80;
+    text-align: center;
+    padding: .25em;
+}
+
+//TABLET AND DESKTOP
+@media only screen and (min-width: 768px) {   
+    .cic-state-legal-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+    }
+    
+    .state-legal-col {
+        width: 16rem;
+    }
+}

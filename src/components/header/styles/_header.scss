@@ -1,0 +1,102 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.h2-sub {
+    font-size: 1.25rem;
+}
+.h3-third {
+    font-family: "Body", sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.625rem;
+    color: var(--link)!important;
+}
+.cic-rate-state-wrapper {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 1rem;
+    grid-template:
+        " bgimg bgimg bgimg bgimg "
+        " info info info info ";
+    max-width: 100%;
+}
+.rate-state-background {
+    grid-area: bgimg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.rate-state-info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+    grid-template:
+        " title title "
+        " content content "
+        " table table "
+        " buttons buttons "
+        " callUs callUs ";
+}
+.rate-state-background img {
+    grid-area: bgimg;
+    width: 100%;
+    height: 16.56rem;
+    object-fit: cover;
+}
+.rate-state-title {
+    grid-area: title;
+}
+.rate-state-table {
+    grid-area: table;
+    margin-bottom: 1.5rem;
+}
+.rate-state-buttons {
+    grid-area: buttons;
+}
+.rate-state-callus {
+    grid-area: callUs;
+    margin-top: 1.125rem;
+}
+
+/**/
+
+.iconDiv {
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+}
+.topTel {
+    margin-top: 1.25rem;
+}
+/**/
+@media only screen and (min-width: 1120px){
+    .cic-rate-state-wrapper {
+        margin: 0 auto;
+        max-width: 70rem;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-areas: " bgimg bgimg bgimg bgimg bgimg bgimg info info info info info info ";
+    }
+    .rate-state-background {
+        max-height: 19.18rem;
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .cic-rate-state-wrapper {
+        display: grid;
+        column-gap: 2rem;
+        row-gap: 0.5rem;
+    }
+    .cic-btn {
+        padding: 1.125em 0!important;
+    }
+}
+ 

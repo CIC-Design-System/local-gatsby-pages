@@ -1,0 +1,103 @@
+/**********************************************************
+* Steps Section
+/*********************************************************/
+.cic-steps-wrapper {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat( 4, 1fr );  
+  grid-template: 
+      " topContent topContent topContent topContent "
+      " stepContent stepContent stepContent stepContent "
+      " bottomContent bottomContent bottomContent bottomContent "              
+  ;  
+}
+
+.cic-steps-top-content {
+  grid-area: topContent;
+}
+
+.cic-steps {  
+  grid-area: stepContent;
+  margin-top: 2rem;
+}
+
+.step-wrapper{
+  display: grid;  
+  row-gap: 0.5rem;  
+  margin-bottom: 2rem;
+  grid-template-rows: auto 1fr;
+}
+
+.step-header{
+  grid-row: 1;
+  margin-bottom: 0.5rem;
+}
+
+.step-header>img {
+  vertical-align: middle;
+}
+
+.step-header>p{
+  display: inline;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.step-content{
+  grid-row: 2;
+  overflow: hidden;
+}
+
+.cic-steps-bottom-content {
+  grid-area: bottomContent;
+}
+
+/**********************************************************
+* Breakpoint Queries
+/*********************************************************/
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+  .cic-steps-wrapper {
+      margin: 0 1rem;
+  }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+  .cic-steps-wrapper {
+      margin: 0 2rem;
+      max-width: 66rem;
+  }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+  .cic-steps-wrapper {
+      margin: 0 auto;
+      max-width: 70rem;
+  }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+  .cic-steps-wrapper {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      " . . . topContent topContent topContent topContent topContent topContent . . . "
+      " stepContent stepContent stepContent stepContent stepContent stepContent stepContent stepContent stepContent stepContent stepContent stepContent "
+      " . . . bottomContent bottomContent bottomContent bottomContent bottomContent bottomContent . . . "
+    ;
+  }    
+
+  .cic-steps {      
+    grid-template-columns: repeat(auto-fit, minmax(12.4rem, 1fr));
+    display: grid;
+    column-gap: 1.875rem;     
+    margin-bottom: 2rem; 
+  }
+
+  .step-wrapper{    
+    margin-top: 0;
+  }
+}

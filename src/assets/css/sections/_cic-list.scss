@@ -1,0 +1,38 @@
+/**********************************************************
+* CIC List Module
+/*********************************************************/
+#cic-list-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#cic-list-content-container { 
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+#cic-list-item {
+	display: flex;
+	// align-items: center;
+	margin: spacer( 1 ) 0;
+}
+
+#cic-list-icon {
+	width: 100%;
+	max-width: 1.25em;
+}
+
+@include media-breakpoint-between(md, xl) { 
+	#cic-list-content-container {
+		max-width: 34em;
+	}
+
+	#cic-list-icon {
+		max-width: 1.5em
+	}
+}

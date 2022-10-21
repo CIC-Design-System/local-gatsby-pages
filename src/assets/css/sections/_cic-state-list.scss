@@ -1,0 +1,78 @@
+/**********************************************************
+* State List Section
+/*********************************************************/
+.cic-state-list-wrapper {
+    padding-bottom: 2rem;
+    display: grid;
+}
+
+.cic-state-list-title {
+    grid-area: title;
+}
+
+.cic-state-list-ak {
+    grid-area: ak;
+}
+
+.cic-state-list-ln {
+    grid-area: ln;
+}
+
+.cic-state-list-oz {
+    grid-area: oz;
+}
+
+.cic-state-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .875rem;
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+    .cic-state-list-wrapper {
+        margin: 0 1rem;
+        grid-template-columns: repeat( 4, 1fr );
+        column-gap: 1rem;
+        grid-template: 
+            " title title title title "
+            " ak ak ak ak "
+            " ln ln ln ln "
+            " oz oz oz oz "
+        ;
+    }
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+    .cic-state-list-wrapper {
+        margin: 0 2rem;
+        max-width: 66rem;
+    }
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+    .cic-state-list-wrapper {
+        margin: 0 auto;
+        max-width: 70rem;
+    }
+}
+
+//Tablet and Desktop Size
+@media only screen and (min-width: 768px) {
+    .cic-state-list-wrapper {
+        column-gap: 2rem;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+            " . . . title title title title title title . . . "
+            " ak ak ak ak ln ln ln ln oz oz oz oz "
+        ;  
+    }
+
+    .cic-state-list {
+        max-width: 21rem;
+    }
+}

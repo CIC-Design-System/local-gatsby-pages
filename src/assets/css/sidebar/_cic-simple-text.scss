@@ -1,0 +1,29 @@
+/**********************************************************
+* Simple Text Sidebar Section
+/*********************************************************/
+.cic-sidebar-simple-text-wrapper {
+    padding: 2rem 1.25rem;
+    width: 100%;
+}
+
+.simple-text-title {
+    grid-area: title;
+    margin-bottom: 1rem;
+
+    h4 {
+        color: theme-color( 'white' );
+    }
+}
+
+.simple-text-content {
+    grid-area: content;
+    margin-bottom: 1.5rem;
+
+    p {
+        color: theme-color( 'white' );
+    }
+}
+
+.simple-text-button {
+    grid-area: button;
+}

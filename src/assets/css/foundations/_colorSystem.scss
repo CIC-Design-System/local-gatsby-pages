@@ -1,0 +1,81 @@
+/********************************************************************
+* ColorSystem.scss
+*
+* Merge all of our colors into BootStraps color maps and set up
+* our theme colors.
+********************************************************************/
+@import 'colors'; 
+
+/********************************************
+* Chicago(Greys)
+*********************************************/
+$grays: ();
+$grays: map-merge( ( 
+  "10"   : $chicago-10,
+  "20"   : $chicago-20,
+  "30"   : $chicago-30,
+  "40"   : $chicago-40,
+  "50"   : $chicago-50,
+  "60"   : $chicago-60,
+  "70"   : $chicago-70,
+  "80"   : $chicago-80,
+  "90"   : $chicago-90,
+  "100"  : $chicago-100
+  ), $grays
+);
+  
+/********************************************
+* Colors Map
+*********************************************/
+$colors: ();
+$colors: map-merge( (
+  "blue"      : $blue-60,
+  "indigo"    : #6610f2,
+  "purple"    : $purple-60,
+  "pink"      : #e83e8c,
+  "red"       : $red-60,
+  "orange"    : $orange-60,
+  "yellow"    : #ffc107,
+  "green"     : $green-10,
+  "teal"      : #20c997,
+  "cyan"      : #17a2b8,
+  "gray"      : gray( '60' ),
+  "gray-dark" : gray( '80' ) 
+  ), $colors 
+);
+
+/********************************************
+* Theme Colors Map
+*
+* An array of branded colors. 
+*********************************************/
+// TODO: Possibly extract this up to the config file. 
+/*$theme-colors: ();
+$theme-colors: map-merge( (
+  "primary"     : var(--primary-color),
+  "secondary"   : var(--secondary-color),
+  "success"     : var(--success-color),
+  "white"       : $white,
+  "black"       : gray( '100' ),
+  "info"        : var(--info-color),
+  "warning"     : var(--warning-color),
+  "danger"      : var(--danger-color),
+  'body-color'  : gray( '900' ),
+  'body-bg'     : $white,
+  "light"       : gray( '10' ),
+  "dark"        : gray( '80' ),
+  ), $theme-colors 
+); */
+
+$theme-colors: ();
+$theme-colors: map-merge( (
+  "primary"     : var(--primary-theme),
+  "secondary"   : var(--secondary-theme),
+  "white"       : $white,
+  "black"       : gray( '100' ),
+  'body-color'  : gray( '900' ),
+  'body-bg'     : $white,
+  "light"       : gray( '10' ),
+  "dark"        : gray( '80' ),
+  ), $theme-colors 
+);

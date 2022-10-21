@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles/header.scss'
+import './styles/_header.scss'
 
 export default function Header({ page}) {
   return (

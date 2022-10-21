@@ -1,0 +1,27 @@
+/**********************************************************
+* Categories Picker Sidebar Section
+/*********************************************************/
+.cic-sidebar-pages-wrapper {
+    background-color: theme-color( 'light' );
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1.25rem;
+
+    h3 {
+        text-align: left;
+        margin-bottom: 1.25rem;
+        margin-top: 0.25rem;
+    }
+}
+
+.sidebar-pages-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 1.25rem;
+    align-items: center;
+
+    img {
+        margin-right: 0.75rem;
+    }
+}

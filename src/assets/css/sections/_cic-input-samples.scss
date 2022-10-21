@@ -1,0 +1,20 @@
+/**********************************************************
+* Input Samples Section
+/*********************************************************/
+.cic-input-sample-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;  
+}
+
+.sample-container {
+  padding: 1rem;
+}
+
+@include media-breakpoint-up(md) {
+  .cic-input-sample-wrapper {
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );
+    column-gap: 1rem;  
+  }
+}

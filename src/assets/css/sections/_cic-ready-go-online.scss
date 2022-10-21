@@ -1,0 +1,101 @@
+.cic-ready-go-online-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template:
+        " video video video video "
+        " content content content content ";
+    padding: 2rem 0;
+}
+#cic-ready-go-online-video-container{
+    grid-area: video;
+    height: 19.125rem;
+    width: 100%;
+}
+#cic-ready-go-online-img {
+    grid-area: video;
+    height: 19.125rem;
+    width: 100%;
+}
+#cic-ready-go-online-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+#cic-ready-go-online-content-container {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cic-ready-go-online-content {
+    display: grid;
+    row-gap: 0.8125rem;
+    margin-bottom: 1rem;
+}
+.cic-ready-go-online-card {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+}
+.cic-ready-go-online-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap:2rem;
+}
+#cic-ready-go-online-btn-container{
+    display:none;
+}
+@media only screen and (min-width: 1120px){
+    .cic-ready-go-online-wrapper {
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+            " video video video video video video content content content content content content ";
+        width: 100%;
+        margin: 0 auto;
+        max-width: 70rem;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1119px){
+    .cic-ready-go-online-wrapper {
+        margin: 0 2rem;
+        max-width: 66rem;
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template:
+        " video video video video content content content content "
+        " video video video video content content content content "
+        " btn btn btn btn btn btn btn btn"
+    }
+    .cic-ready-go-online-btn-container{
+        display:none;
+    }
+    #cic-ready-go-online-btn-container{
+        display: inherit;
+        grid-area: btn;
+        width: 100%;
+    }
+    .cic-ready-go-online-buttons{
+        justify-content: center;
+        padding-top: 1rem;
+        column-gap: 1rem;
+    }
+
+}
+@media only screen and (max-width: 767px){
+    .cic-ready-go-online-wrapper {
+        margin: 0 1rem;
+    }
+    .cic-ready-go-online-content{
+        padding-top:1rem;
+    }
+    .cic-ready-go-online-buttons {
+        justify-content: center;
+        row-gap: 1rem;
+        flex-wrap: wrap;
+    }
+}

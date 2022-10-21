@@ -1,0 +1,117 @@
+/**********************************************************
+* Store Locator
+/*********************************************************/
+
+.cic-product-lookup-wrapper {	
+    display: grid;
+	grid-template-columns: repeat( 4, 1fr );
+	grid-template: 
+        " title title title title "
+        " content content content content "
+		" zipCode zipCode zipCode zipCode "
+		" buttons buttons buttons buttons "
+    ;
+	padding: 2rem 0;
+}
+
+.product-lookup-title {
+	grid-area: title;
+	margin-bottom: 1rem;
+}
+
+.product-lookup-content {
+	grid-area: content;
+	margin-bottom: 1rem;
+}
+
+.product-lookup-zip {
+	grid-area: zipCode;
+    margin-bottom: 0.5rem;
+
+    .form-group {
+        margin-bottom: 0;
+        width: 100%;
+    }
+}
+
+.product-lookup-buttons {
+	grid-area: buttons;
+}
+
+#cic-product-lookup-icon {
+	cursor: pointer;
+	float: right;
+}
+
+#product-error-message {
+    display: none;
+	margin-bottom: 1rem;
+}
+
+#cic-find-product {
+	cursor: pointer;
+}
+
+#zipIconProductFocus {
+	display: none;
+}
+
+.product-search-container {
+	display: flex;
+	align-items: center;
+}
+
+.product-lookup-zip .form-group {
+	width: 90%;
+
+	input {
+		width: 85%;
+	}	
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 767px) {
+	.cic-product-lookup-wrapper {
+		margin: 0 1rem;
+	}
+}
+
+//TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 1119px) {   
+	.cic-product-lookup-wrapper {
+		display: grid;
+		column-gap: 2rem;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-areas:
+			" title title title title title title title title "
+			" content content content content zipCode zipCode zipCode zipCode "
+			" content content content content buttons buttons buttons buttons "			
+		;
+		margin: 0 2rem;
+		max-width: 66rem;
+	}
+
+	.product-lookup-buttons a {
+		max-width: 32rem;
+	}
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 1120px) {
+	.cic-product-lookup-wrapper {
+		display: grid;
+		column-gap: 2rem;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas:
+			" . . title title title title title title title title . . "
+			" . . content content content content zipCode zipCode zipCode zipCode . . "
+			" . . content content content content buttons buttons buttons buttons . . "			
+		;
+		margin: 0 auto;
+		max-width: 70rem;
+	}
+
+	.product-lookup-buttons a {
+		max-width: 100%;
+	}
+}

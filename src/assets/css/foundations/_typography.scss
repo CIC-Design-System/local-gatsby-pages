@@ -1,0 +1,152 @@
+/********************************************************************
+* Typography.scss
+*
+* Sets all stylying for the typography used on our site.  
+********************************************************************/
+
+/********************************************
+* Base Elements 
+*********************************************/
+
+body { 
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1rem;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+a { 
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+a:hover { 
+	text-decoration: none;
+}
+
+h1, h2, h3, h4 { 
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 2.5rem;
+	line-height: 1.4;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 { 
+	font-size: 1.5rem;  
+    line-height: 1.4;
+    letter-spacing: 0px;
+}
+h4 { 
+	font-size: 1.25rem; 
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+p {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.25em;
+	margin: 0;
+	padding: 0; 
+}
+
+.cic-paragraph--medium { 
+	font-weight: 500;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/********************************************
+* Helper Classes 
+*********************************************/
+
+.cic-lead {
+	font-size: 1.125rem; 
+	line-height: 1.25em;
+	font-weight: 400;
+}
+
+.cic-lead--medium {
+	font-weight: 500;
+	font-size: 1.25rem;
+}
+
+.cic-heading-2 { 
+	font-size: 2rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.cic-heading-3 { 
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.cic-heading-4 { 
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.cic-caption { 
+	font-size: .75rem;
+	line-height: 1em;
+}
+
+.cic-caption--medium { 
+    font-style: normal;
+    font-weight: 500;
+    font-size: .75em;
+    line-height: 1em;
+}
+
+.cic-medium {
+	font-weight: 500;
+}
+
+/********************************************
+* Highlighters
+*********************************************/
+
+.cic-highlighter--green { 
+    background-color: $green-10;
+}
+
+.cic-highlighter--purple { 
+    background-color: $purple-10;
+}
+
+.cic-highlighter--blue { 
+    background-color: $blue-10;
+}
+
+.cic-highlighter--lime { 
+    background-color: $lime-10;
+}
+
+/********************************************
+* Links
+*********************************************/
+
+.cic-link--white { 
+    color: theme-color( 'white' ) !important;
+}

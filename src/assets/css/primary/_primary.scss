@@ -1,0 +1,449 @@
+:root {
+    --primary-color: $red-60;
+    --warning-color: $orange-10;
+    --light-color: $green-10;
+    --primary-fill: #801100;
+    --alt-h-text: #821100;
+    --banner: $orange-10;
+    --tertiary-fill: $white;
+    --disable-fill: #a6a4a3;
+    --link: $green-60;
+    --anim-duration: 0.8s;
+    --circle-diam: 50px;
+    --circle-scale-perc: 0.2;
+    --first-loader: $green-10;
+    --second-loader: $red-30;
+  }
+  .bg-secondary,
+  #cic-search-container,
+  #cic-search-container input[type="text"],
+  #cic-search-float,
+  #cic-search-float:focus,
+  .simple-dropdown-menu {
+    background: $green-60 !important;
+  }
+  #cic-search-container.active {
+    border: 1px solid $green-60 !important;
+  }
+  #cic-search-float:-webkit-autofill,
+  #cic-search-float:-webkit-autofill:hover,
+  #cic-search-float:-webkit-autofill:focus,
+  #cic-search-float:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $green-60 inset !important;
+  }
+  .site-logo {
+    height: 4em;
+  }
+  .cic-header-nav-logo {
+    width: 4em;
+    min-width: 4em;
+  }
+  #cic-nav-drawer-heading .cic-header-nav-logo {
+    width: 4em;
+    min-width: 4em;
+  }
+  @media only screen and (min-width: 1120px) {
+    .cic-header-nav-logo {
+      width: 5.5em !important;
+      min-width: 5.5em !important;
+    }
+  }
+  @media only screen and (max-width: 1119px) {
+    .site-logo {
+      height: 3em;
+    }
+    #cic-nav-drawer-heading .site-logo {
+      height: 3em;
+    }
+  }
+  #cic-footer-copyright-img-container .cic-logo {
+    width: 5.5rem;
+    max-height: 4rem;
+    height: 4rem;
+  }
+  .current,
+  .map-view.current,
+  .list-view.current {
+    background: $green-60 !important;
+  }
+  .cic-sidebar-simple-text-wrapper,
+  .cic-radio-button input:checked ~ .cic-checkmark:after {
+    background-color: $green-60 !important;
+  }
+  .blog-card:hover,
+  .cic-mm-login:hover,
+  .current,
+  .vaac-select .select:focus,
+  #zip-code-container.active {
+    border: 1px solid $green-60 !important;
+  }
+  .blog-card:active,
+  .mm-menu-item:hover,
+  .mm-menu-item:active {
+    border: 2px solid $green-60 !important;
+  }
+  #brandFilter span,
+  .filter-pill {
+    color: $green-60 !important;
+  }
+  .filter-pill {
+    background-color: $green-10;
+  }
+  .cic-checkbox-label input:checked ~ .checkmark {
+    background-color: $green-60;
+  }
+  p,
+  .blog-post-content p,
+  .blog-post-content li,
+  a.cic-header-top-nav-item p,
+  .mega-menu-container li a p,
+  ul li {
+    color: #1f1d1c;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .cic-heading-2,
+  .cic-heading-3,
+  .cic-heading-4 {
+    color: #333 !important;
+  }
+  #cic-instant-quote-content-container .cic-heading-3,
+  #cic-newsletter-title p.cic-heading-2,
+  #cic-footer-container a.cic-heading-4,
+  .cic-testimonial-section-title p.cic-heading-2,
+  a.more-reviews-link {
+    color: $white !important;
+  }
+  @font-face {
+    font-family: heading;
+    src: url(https://checkintocash.com/wp-content/uploads/4175Recoleta-SemiBold.woff);
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: body;
+    src: url(https://checkintocash.com/wp-content/uploads/2304Graphik-Regular-Web.woff);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: body;
+    src: url(https://checkintocash.com/wp-content/uploads/1844Graphik-Medium-Web.woff);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  body,
+  a,
+  h5,
+  p,
+  #cic-search-container label,
+  .menu-title,
+  #zip-code-container label,
+  .fl-node-content a {
+    font-family: body, sans-serif !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .cic-heading-2,
+  .cic-heading-3,
+  .cic-heading-4 {
+    font-family: heading, serif !important;
+  }
+  .cic-btn-primary,
+  .cic-nav-btn,
+  .title-loan-button .cic-btn-primary:active,
+  .title-loan-button .cic-btn-primary:focus {
+    background: $red-60 !important;
+    border-color: $red-60 !important;
+    color: $white !important;
+  }
+  .cic-btn-primary:hover {
+    background: $red-80 !important;
+    border-color: $red-80 !important;
+    color: $white !important;
+  }
+  .cic-btn-primary:focus {
+    background: $red-80 !important;
+    border-color: $red-80 !important;
+    color: $white !important;
+  }
+  .active-menu-item:after {
+    background-color: $red-60 !important;
+  }
+  .cic-btn-secondary--dark {
+    border: 1px solid $red-60 !important;
+    color: $red-60 !important;
+  }
+  .cic-btn-secondary--dark:hover {
+    border: 1px solid $red-80 !important;
+    background-color: $red-10 !important;
+    color: $red-80 !important;
+  }
+  .cic-btn-secondary--dark:focus {
+    border: 1px solid $red-80 !important;
+    background-color: $red-10 !important;
+    color: $red-80 !important;
+  }
+  .cic-font-primary {
+    color: $red-60 !important;
+  }
+  .cic-btn-secondary--light {
+    border: 1px solid $white !important;
+    color: $white !important;
+  }
+  .cic-btn-secondary--light:hover {
+    border: 1px solid $red-80 !important;
+    background-color: $red-10 !important;
+    color: $red-80 !important;
+  }
+  .cic-btn-secondary--light:focus {
+    border: 1px solid $red-80 !important;
+    background-color: $red-10 !important;
+    color: $red-80 !important;
+  }
+  .cic-btn-tertiary {
+    background: $green-10 !important;
+    border-color: $green-10 !important;
+    color: #00533e !important;
+  }
+  .cic-btn-tertiary:hover {
+    background: $green-30 !important;
+    border-color: $green-30 !important;
+    color: #003d29 !important;
+  }
+  .cic-btn-tertiary:focus {
+    background: $green-30 !important;
+    border-color: $green-30 !important;
+    color: #003d29 !important;
+  }
+  .cic-btn-secondary--dark:disabled,
+  .cic-btn-secondary--light:disabled,
+  .cic-btn-secondary--cc-connect:disabled,
+  .cic-btn:disabled,
+  .cic-btn.disabled {
+    border: 1px solid #a6a4a3 !important;
+    background: #f5f3f1 !important;
+    color: #a6a4a3 !important;
+  }
+  .blog-card.disabled,
+  .cic-radio-button.disabled .cic-checkmark {
+    border: 1px solid #a6a4a3 !important;
+  }
+  .blog-card.disabled h4,
+  .blog-card.disabled p,
+  .cic-radio-button.disabled {
+    color: #a6a4a3 !important;
+  }
+  .loan-calculator-card.disabled {
+    background: #f5f3f1 !important;
+    color: #a6a4a3 !important;
+  }
+  a,
+  .rate-terms-callus a,
+  .article-content a p,
+  .cic-recent-blog-posts-read-more p,
+  .cic-footer-legal a,
+  #cic-product-hero-contact p,
+  .rate-state-table .fee-schedule,
+  .table-title a,
+  .rate-state-callus p,
+  .closeAlert.cic-btn,
+  .cic-available-loans-card a,
+  .post-read-more p,
+  .pillar-row-card span > p,
+  .cic-font-secondary,
+  .cardMore a,
+  .cic-state-list p,
+  .fl-post-more-link,
+  .mm-sidebar-item p,
+  .cic-mm-login p,
+  .page-numbers,
+  .cic-step-numbers .step-number .step,
+  .blog-card a > p,
+  .cic-card,
+  .banner-container.branded div > p,
+  a > p,
+  .cic-caption a,
+  .store-locator-view-chooser div:not(.current),
+  #footer-link,
+  .cic-nav-login p,
+  .cic-nav-login-clic p,
+  .assistant-header-title {
+    color: $green-60;
+  }
+  .cic-link--light {
+    color: $green-10 !important;
+  }
+  #cic-search-container {
+    border: 1px solid $white;
+  }
+  #cic-search-float:-webkit-autofill,
+  #cic-search-float:-webkit-autofill:hover,
+  #cic-search-float:-webkit-autofill:focus,
+  #cic-search-float:-webkit-autofill:active {
+    -webkit-text-fill-color: $white !important;
+  }
+  a:hover,
+  a:hover > p {
+    color: #026b54;
+  }
+  a:visited a:visited > p {
+    color: #551a8b;
+  }
+  .cic-nav-item a,
+  .store-locator-view-chooser div.current {
+    color: $white;
+  }
+  #cic-nav-login p {
+    color: $white !important;
+  }
+  #cic-nav-login a:hover p {
+    color: $white !important;
+  }
+  .cic-nav-item a:hover,
+  .store-locator-view-chooser div.current:hover {
+    color: $white;
+  }
+  .cic-nav-item:hover,
+  .cic-nav-item.hovered {
+    border-bottom: 2px solid $white;
+  }
+  a#cic-home-hero-login-link > p,
+  .click-privacy-policy {
+    color: $green-10;
+  }
+  .footer-call-us {
+    color: $green-10 !important;
+  }
+  #footer-menu-1 div div ul li.menu-item a {
+    color: $green-10;
+  }
+  #footer-menu-2 div div ul li.menu-item a {
+    color: $green-10;
+  }
+  #footer-menu-3 div div ul li.menu-item a {
+    color: $green-10;
+  }
+  #footer-menu-4 div div ul li.menu-item a {
+    color: $green-10;
+  }
+  #loader::before {
+    background: $green-10;
+  }
+  #loader::after {
+    background: $red-30;
+  }
+  .cic-icon-primary {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(15%) saturate(2026%)
+      hue-rotate(114deg) brightness(91%) contrast(75%);
+  }
+  .cic-icon-secondary {
+    filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(192deg)
+      brightness(102%) contrast(104%);
+  }
+  .cic-icon-tertiary {
+    filter: brightness(0) saturate(100%) invert(93%) sepia(17%) saturate(754%)
+      hue-rotate(87deg) brightness(105%) contrast(103%);
+  }
+  .cic-icon-footer {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+      hue-rotate(288deg) brightness(102%) contrast(102%);
+  }
+  .validation-messages {
+    background-color: $orange-10;
+  }
+  .validation-messages p {
+    color: #821100;
+  }
+  .banner-wrapper.success-banner {
+    background-color: #d4edda;
+  }
+  .banner-wrapper.success-banner div > p {
+    color: #155724;
+  }
+  .banner-wrapper.alert-banner {
+    background-color: $orange-10;
+  }
+  .banner-wrapper.alert-banner div > p {
+    color: #821100;
+  }
+  .banner-wrapper.informational-banner {
+    background-color: #d1ecf1;
+  }
+  .banner-wrapper.informational-banner div > p {
+    color: #0c5460;
+  }
+  .cic-btn,
+  .cic-nav-btn,
+  .cic-btn-cc-connect,
+  .cic-fl-input,
+  #zip-code-container,
+  .family-brands-card {
+    border-radius: 0.25em;
+  }
+  #newsletter-tabs .nav-item {
+    border-radius: 0.25em 0.25em 0 0;
+  }
+  .blog-card,
+  .cic-card-container,
+  .cic-card,
+  .cic-available-loans-card,
+  .pillar-row-card,
+  .cic-recent-blog-posts-thumbnail,
+  .cic-light-gray-background,
+  #cic-get-started-feature-image,
+  #cic-nav-drawer-login-container,
+  #cic-how-it-works-video-container video,
+  #cic-how-it-works-img img,
+  .mm-menu-item,
+  .cic-mm-login,
+  #cic-product-hero-img,
+  .product-card,
+  .product-card.active,
+  .cic-store-locator-feature-image {
+    border-radius: 0.25em;
+  }
+  .sidebar.left {
+    border-radius: 0 0.25em 0.25em 0;
+  }
+  .pillar-row-card,
+  .searchForm,
+  .cic-focused-border {
+    border: 1px solid $green-60 !important;
+  }
+  .pillar-row-card:hover {
+    border: 2px solid $green-60;
+  }
+  .cic-fl-input,
+  .cic-mm-login,
+  .vaac-select select {
+    border: 1px solid #5e5c5b;
+  }
+  .vaac-select select:focus {
+    border: 1px solid $green-60;
+  }
+  .cic-box-shadow,
+  .cic-card-container,
+  .cic-alert-banner-container,
+  .cic-cookie-banner-container,
+  .cic-loading-container,
+  .cic-available-loans-card {
+    box-shadow: 0 2px 6px rgba(31, 29, 28, 0.2);
+  }
+  .cic-dark-waves-background-pattern {
+    background-image: url(https://checkintocash.com/wp-content/uploads/waves-pattern-dark.png);
+    box-shadow: 0 5px 8px 0 rgb(162 162 162/39%);
+    -webkit-box-shadow: 0 5px 8px 0 rgb(162 162 162/39%);
+    -moz-box-shadow: 0 5px 8px 0 rgb(162 162 162/39%);
+  }
+  .cic-light-waves-background-pattern {
+    background-image: url(https://checkintocash.com/wp-content/uploads/waves-pattern-light.png);
+  }
+  
