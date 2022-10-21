@@ -4,7 +4,7 @@ import './styles/_services.scss'
 export default function Services() {
   return (
     
-    <section id="loansServices">
+<section id="loansServices">
     <div className="loanAmount">
         <p className="cic-heading-3 spaceLoans spaceHeight">
             Available Loans Near Me Alexander City, AL
@@ -15,11 +15,11 @@ export default function Services() {
                 <a target="_blank" rel="noopener noreferrer" href="https://checkintocash.com/alabama/alabama-payday-loans/"><strong>Payday Loan</strong></a> up to $500
             </p>
             <p>
-                <img width="24px" height="24px" alt="Installment Loan Icon" src="https://localstoresprd.wpenginepowered.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-installment-small.svg" /> 
+                <img width="24px" height="24px" alt="Installment Loan Icon" src="https://localstoresprd.wpenginepowered.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-installment-small.svg" />
                 <a target="_blank" rel="noopener noreferrer" href="https://checkintocash.com/alabama/alabama-installment-loans/"><strong>Installment Loan</strong></a> up to $5,000
             </p>
             <p>
-                <img width="24px" height="24px" alt="Title Pawn Icon" src="https://localstoresprd.wpenginepowered.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-title-small.svg" /> 
+                <img width="24px" height="24px" alt="Title Pawn Icon" src="https://localstoresprd.wpenginepowered.com/wp-content/plugins/cic-atomic-bb-powerpack/assets/icons/cic-prod-title-small.svg" />
                 <a target="_blank" rel="noopener noreferrer" href="https://checkintocash.com/alabama/alabama-title-pawns/"><strong>Title Pawn</strong></a> up to $25,000
             </p>
             <p>Available in stores and online. <a href="https://checkintocash.com/store-locator/" rel="noopener noreferrer" target="_blank">Change Location</a></p>
@@ -53,6 +53,7 @@ export default function Services() {
         </div>
     </div>
 </section>
+
 
   )
 }

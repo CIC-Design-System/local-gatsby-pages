@@ -1,0 +1,21 @@
+.banner-phone {
+    display: grid;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    .banner-phone img {
+        width: 100%;
+    }
+    .onlyMobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .hideMobile {
+        display: none!important;
+    }
+    .onlyMobile {
+        display: inherit;
+    }
+}
