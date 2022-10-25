@@ -8,13 +8,18 @@ import Services from "../components/services/services";
 import Banner from "../components/banner/banner";
 import Started from "../components/getStarted/getStarted";
 
-export default function moment({data, pageContext}) { 
+export default function moment({data, pageContext: {slug}, pageContext  }) { 
+ 
+   console.log(pageContext); 
+  console.log(slug);
+  console.log(data);
+  
   return (
     <React.Fragment>
-      <Header page={pageContext} />
-      <Services page={pageContext} />
-      <Banner page={pageContext} />
-      <Started page={pageContext} />
+      <Header  page={pageContext} data={data} />
+      <Services  />
+      <Banner  />
+      <Started  />
     </React.Fragment>
   
   )
@@ -22,22 +27,19 @@ export default function moment({data, pageContext}) {
 
 
 export const query = graphql`
-  query MyQuery {
-    wpPage(databaseId: {eq: 247957}) {
-      id
-      authorDatabaseId
-      title
-      template {
-        templateName
-      }
-      link
-      status
-      databaseId
-      contentTypeName
-      isPostsPage
-      parentId
-      parentDatabaseId
-      slug
-    }
+query MyQuery ($slug: String)  {
+  momentFeed(post_name: {eq:  $slug}) {
+    address
+    status
+    state_min
+    state
+    post_name
+    name
+    momentfeed_id
+    locality
+    id
   }
+}
+
+
 `

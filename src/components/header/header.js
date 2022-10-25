@@ -2,7 +2,8 @@ import React from 'react'
 
 import './styles/_header.scss'
 
-export default function Header({ page}) {
+export default function Header({ page, data}) {
+    console.log(data);
   return (
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
         <div className="cic-rate-state-wrapper">
@@ -13,10 +14,10 @@ export default function Header({ page}) {
             </div>
             <div className="rate-state-info">
                 <div className="rate-state-title">
-                    <h1 itemProp="name"> Check Into Cash {page.title} </h1>
+                    <h1 itemProp="name"> {data.momentFeed.name} {data.momentFeed.locality}, {data.momentFeed.state_min} </h1>
                 </div>
                 <div className="rate-state-table">
-                    <h2 className="txtLeft h2-sub"> Alexander City, AL </h2>
+                    <h2 className="txtLeft h2-sub"> {data.momentFeed.locality}, {data.momentFeed.state_min} </h2>
                     <div className="rt-loan-amount" itemScope="" itemProp="address" itemType="https://schema.org/PostalAddress">
                         <div className="iconDiv topTel">
                             <div className="cic-icon-primary spaceIcon mm-icon-wrapper noRepeat IconPhone"></div>
