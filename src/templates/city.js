@@ -2,7 +2,7 @@ import React from 'react'
 import { Link,graphql } from "gatsby"
 
 
-export default function city({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
+export default function City({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
  
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))
 

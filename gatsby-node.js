@@ -31,7 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
   }  
   
-  `, { limit: 1500 }).then(result => {
+  `, { limit: 2000 }).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -98,6 +98,7 @@ exports.sourceNodes = async ({ actions }) => {
         state_min       : min_state,
         locality        : city.locality,
         name            : city.name,
+        zip             : city.postal_code,
         address         : city.address,
         status          : city.status,
         momentfeed_id   : city.momentfeed_id,

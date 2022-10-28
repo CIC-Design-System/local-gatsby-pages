@@ -4,7 +4,7 @@ import { Link,graphql } from "gatsby"
 export default function US({data}) {
   console.log(data);
   return (
-    <div>US TEMPdasdasLATE</div>
+    <div>XD </div>
   )
 }
 

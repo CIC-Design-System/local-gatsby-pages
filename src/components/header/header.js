@@ -1,16 +1,18 @@
-import React from 'react'
+import React, {useContext } from 'react'
 
-import './styles/_header.scss'
+import './styles/_header.scss';
+import { InfoContext } from '../../context/Context';
 
-export default function Header({ page, data}) {
-    console.log(data);
+
+export default function Header() {
+    const { data, store} = useContext(InfoContext);
+   const result = store.data.customFields.filter(custom => custom.name === 'Store Image');
+
   return (
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
         <div className="cic-rate-state-wrapper">
             <div className="rate-state-background">
-                <img itemProp="image"
-                    src="https://localstoresprd.wpenginepowered.com/wp-content/uploads/moment-feed/al/alexander-city-6089b071e4b0d9ce545206f3.webp"
-                    alt="Image of the store" />
+                <img itemProp="image" src={result[0].data} alt="Image of the store" />
             </div>
             <div className="rate-state-info">
                 <div className="rate-state-title">
@@ -26,7 +28,7 @@ export default function Header({ page, data}) {
                                     aria-label="Click here to Call Us at 2563299542">
                                     <h3 className="h3-third">
                                         <span itemProp="telephone">
-                                            (256)-329-9542
+                                            {store.data.phone}
                                         </span>
                                     </h3>
                                 </a>
@@ -42,25 +44,28 @@ export default function Header({ page, data}) {
                                     href="https://maps.google.com/maps?cid=8296081415232152819"
                                     aria-label="Click here to get the Google Map directions">
                                     <h3 className="h3-third">
-                                        <span itemProp="streetAddress">  3706 Hwy 280, Alexander City, AL, 35010 </span>
+                                        <span itemProp="streetAddress">  {store.data.address}, {store.data.locality}, {store.data.region}, {store.data.postcode} </span>
                                     </h3>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div className="rt-loan-amount">
-                        <div className="iconDiv">
-                            <div className="cic-icon-primary spaceIcon mm-icon-wrapper IconBuilding noRepeat"></div>
-                            <div>
-                                <a target="_blank" rel="noopener noreferrer"
-                                    title="Click here to get the Google Map directions"
-                                    href="https://maps.google.com/maps?cid=8296081415232152819"
-                                    aria-label="Click here to get the Google Map directions">
-                                    <h3 className="h3-third"> <span itemProp="streetAddress"> Next to La Posada Mexican Grill </span> </h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        (store.data.sublocality == "") ? <></> : (
+                            <div className="rt-loan-amount">
+                                <div className="iconDiv">
+                                    <div className="cic-icon-primary spaceIcon mm-icon-wrapper IconBuilding noRepeat"></div>
+                                    <div>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            title="Click here to get the Google Map directions"
+                                            href={store.data.website}
+                                            aria-label="Click here to get the Google Map directions">
+                                            <h3 className="h3-third"> <span itemProp="streetAddress"> {store.data.sublocality} </span> </h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> )
+                    }
                     <div className="rt-loan-amount">
                         <div className="iconDiv">
                             <div className="spaceIcon mm-icon-wrapper IconClock"></div>
@@ -86,9 +91,9 @@ export default function Header({ page, data}) {
                         aria-label="Click here to get the directions from this store"> Get Directions </a>
                 </div>
                 <div className="rate-state-callus">
-                    <p className="cic-paragraph--medium ml-2"><a title="Back to Stores List" rel="noopener noreferrer"
-                            aria-label="Back to Stores List" href="https://local.checkintocash.com/us/al/">Back to Stores
-                            List</a></p>
+                    <p className="cic-paragraph--medium ml-2">
+                        <a title="Back to Stores List" rel="noopener noreferrer" aria-label="Back to Stores List" href="https://local.checkintocash.com/us/al/">Back to Stores List</a>
+                    </p>
                 </div>
             </div>
         </div>
