@@ -12,70 +12,70 @@ import { InfoContext} from '../context/Context';
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) { 
   //Hooks
-  const { getStoreInfo} = ApiHooks();
+  const { getStoreInfo, getStoreLoans} = ApiHooks();
 
   //States
   const [store, setStore] = useState(null); 
   const [storeContent, setStoreContent] = useState(null); 
   const [storeLocator, setStoreLocator] = useState(null); 
+  const [loansInfo, setLoansInfo] = useState(null); 
   
   //Variables
-  let [store_info,store_content, status_store, store_locator, zip_code] = [null, null, data.momentFeed.status, null, data.momentFeed.zip];
+  let [store_info,store_content, status_store, store_locator, zip_code, loans_response] = [null, null, data.momentFeed.status, null, data.momentFeed.zip, null];
   const moment_feed = data.momentFeed.momentfeed_id;
+
+  //
+
+  const loans = JSON.stringify({
+    state: data.momentFeed.state,
+    brand: data.momentFeed.name,
+    state_min: data.momentFeed.state_min
+  });
   
   //First Call for the Store
   useEffect(() => {
     if(status_store === "open"){
+      //First
       store_info = getStoreInfo(moment_feed, "store");
       store_info.then((response) => {
-        console.log("Moment Feed XD ");
         console.log(response);
         setStore(response);
+      })
+      //Second
+      store_content = getStoreInfo(moment_feed, "store_content");
+      store_content.then((response) => {
+        console.log(response);
+        setStoreContent(response);
+      })
+      //Third
+      store_locator = getStoreInfo(zip_code, "store_locator");
+      store_locator.then((response) => {
+        console.log(response);
+        setStoreLocator(response);
+      })
+      //Fourth
+      loans_response = getStoreLoans(loans, "loans");
+      loans_response.then((response) => {
+        console.log(response);
+        setLoansInfo(response);
       })
     }
     else{
       setStore("");
+      setStoreContent("");
+      setStoreLocator("");
+      setLoansInfo("");
     }
     return () => {
       setStore(null);
-    };
-  }, [])
-
-  useEffect(() => {
-    if(status_store === "open"){
-      store_content = getStoreInfo(moment_feed, "store_content");
-      store_content.then((response) => {
-        console.log("Moment Feed Content XD ");
-        console.log(response);
-        setStoreContent(response);
-      })
-    }
-    else{
-      setStoreContent("");
-    }
-    return () => {
       setStoreContent(null);
+      setStoreLocator(null);
+      setLoansInfo(null);
     };
   }, [])
-
   
-  useEffect(() => {
-    if(status_store === "open"){
-      store_locator = getStoreInfo(zip_code, "store_locator");
-      store_locator.then((response) => {
-        console.log("Moment Feed Locator XD ");
-        console.log(response);
-        setStoreLocator(response);
-      })
-    }
-    else{
-        setStoreLocator("");
-    }
-    return () => {
-        setStoreLocator(null);
-    };
-  }, [])
-
+   
+ 
   const verifiedInfo = () => {
     if(store !=null){
       if(status_store === "open"){

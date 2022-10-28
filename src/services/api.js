@@ -38,7 +38,39 @@ const getStoreInfo = async ( data, endpoint) => {
     });
   } 
 
+//EndPoint Call For the Loans
+const getStoreLoans = async ( data, endpoint) => {
+    let url = null
+    try {
+        switch (endpoint) {
+            case "loans":
+                url = `${process.env.GATSBY_LOANS_API}`;
+                break;
+            case "services":
+                url = `${process.env.GATSBY_SERVICES_API}`;
+                break;
+        }
+        const resp = await callLoansAPI(data, url);
+        return resp; 
+    } 
+    catch (error) {
+        return error
+    }
+ }
+ const callLoansAPI = ( data, url  ) => {
+    return new Promise((resolve, reject) => {
+        
+        axios.post(url, data, { headers: { "Content-Type": "text/plain" } })
+        .then(response => {
+            resolve (response);
+        })
+        .catch(function (error) {
+            reject(error);
+        });
+    });
+  } 
  return {
-    getStoreInfo
+    getStoreInfo,
+    getStoreLoans
  }
 }
