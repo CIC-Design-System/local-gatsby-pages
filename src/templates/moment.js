@@ -38,25 +38,25 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       //First
       store_info = getStoreInfo(moment_feed, "store");
       store_info.then((response) => {
-        console.log(response);
+        // console.log(response);
         setStore(response);
       })
       //Second
       store_content = getStoreInfo(moment_feed, "store_content");
       store_content.then((response) => {
-        console.log(response);
+        // console.log(response);
         setStoreContent(response);
       })
       //Third
       store_locator = getStoreInfo(zip_code, "store_locator");
       store_locator.then((response) => {
-        console.log(response);
+        // console.log(response);
         setStoreLocator(response);
       })
       //Fourth
       loans_response = getStoreLoans(loans, "loans");
       loans_response.then((response) => {
-        console.log(response);
+        // console.log(response);
         setLoansInfo(response);
       })
     }
@@ -80,7 +80,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     if(store !=null){
       if(status_store === "open"){
         return(
-          <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator}}>
+          <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo}}>
             <Header/>
             <Services  />
             <Banner  />

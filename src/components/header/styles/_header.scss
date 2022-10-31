@@ -87,7 +87,11 @@ img {
         max-height: 19.18rem;
     }
 }
-
+@media only screen and (min-width: 768px) and (max-width: 1119px){
+    .rate-state-background {
+        height: 18.75rem!important;
+    }
+}
 
 @media only screen and (min-width: 768px){
     .cic-rate-state-wrapper {
@@ -98,5 +102,13 @@ img {
     .cic-btn {
         padding: 1.125em 0!important;
     }
+}
+
+@media only screen and (max-width: 767px){
+    
+.rate-state-background {
+    height: 17.125rem;
+    margin-bottom: 1rem;
+}
 }
  

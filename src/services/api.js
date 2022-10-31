@@ -27,7 +27,6 @@ const getStoreInfo = async ( data, endpoint) => {
  }
  const callMomentAPI = (url) => {
     return new Promise((resolve, reject) => {
-        
         axios.get(url, { headers: { "Authorization": process.env.GATSBY_API_KEY } })
         .then(response => {
             resolve (response);
@@ -46,9 +45,6 @@ const getStoreLoans = async ( data, endpoint) => {
             case "loans":
                 url = `${process.env.GATSBY_LOANS_API}`;
                 break;
-            case "services":
-                url = `${process.env.GATSBY_SERVICES_API}`;
-                break;
         }
         const resp = await callLoansAPI(data, url);
         return resp; 
@@ -59,7 +55,6 @@ const getStoreLoans = async ( data, endpoint) => {
  }
  const callLoansAPI = ( data, url  ) => {
     return new Promise((resolve, reject) => {
-        
         axios.post(url, data, { headers: { "Content-Type": "text/plain" } })
         .then(response => {
             resolve (response);

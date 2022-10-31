@@ -42,3 +42,34 @@ div.availableS > p > strong, div.availableL > p > strong {
 .spaceLoans {
     padding-bottom: 1.5rem;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1119px){
+    #loansServices {
+        padding: 2rem 0;
+        margin: 0 auto;
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        column-gap: 1rem;
+        grid-template-areas:
+            " loanAmount cicServices"
+            " loanAmount cicServices";
+        max-width: 90%;
+        max-height: max-content;
+    }
+}
+@media only screen and (max-width: 767px){
+    
+    #loansServices {
+        padding: 2rem 0;
+        margin: 0px 20px;
+        display: grid;
+        grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+        grid-template-areas:
+            "loanAmount "
+            "cicServices";
+        max-width: 100%;
+    }
+    .cicServices {
+        padding-top: 4rem;
+    }
+}

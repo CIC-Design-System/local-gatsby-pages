@@ -2,11 +2,14 @@ import React, {useContext } from 'react'
 
 import './styles/_header.scss';
 import { InfoContext } from '../../context/Context';
+import StoreDetails from './components/StoreDetails';
+import Buttons from './components/Buttons';
+ 
 
 
 export default function Header() {
     const { data, store} = useContext(InfoContext);
-   const result = store.data.customFields.filter(custom => custom.name === 'Store Image');
+    const result = store.data.customFields.filter(custom => custom.name === 'Store Image');
 
   return (
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
@@ -20,57 +23,42 @@ export default function Header() {
                 </div>
                 <div className="rate-state-table">
                     <h2 className="txtLeft h2-sub"> {data.momentFeed.locality}, {data.momentFeed.state_min} </h2>
-                    <div className="rt-loan-amount" itemScope="" itemProp="address" itemType="https://schema.org/PostalAddress">
-                        <div className="iconDiv topTel">
-                            <div className="cic-icon-primary spaceIcon mm-icon-wrapper noRepeat IconPhone"></div>
-                            <div>
-                                <a href="tel:+2563299542" title="Click here to Call Us at 2563299542"
-                                    aria-label="Click here to Call Us at 2563299542">
-                                    <h3 className="h3-third">
-                                        <span itemProp="telephone">
-                                            {store.data.phone}
-                                        </span>
-                                    </h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rt-loan-amount" itemScope="" itemProp="address" itemType="https://schema.org/PostalAddress">
-                        <div className="iconDiv">
-                            <div className="cic-icon-primary spaceIcon mm-icon-wrapper noRepeat IconMapPin"></div>
-                            <div>
-                                <a target="_blank" rel="noopener noreferrer"
-                                    title="Click here to get the Google Map directions"
-                                    href="https://maps.google.com/maps?cid=8296081415232152819"
-                                    aria-label="Click here to get the Google Map directions">
-                                    <h3 className="h3-third">
-                                        <span itemProp="streetAddress">  {store.data.address}, {store.data.locality}, {store.data.region}, {store.data.postcode} </span>
-                                    </h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <StoreDetails 
+                        topTel="topTel" 
+                        icon="IconPhone" 
+                        url={`tel:+${store.data.phone}`} 
+                        aria={`Call Us at ${store.data.phone}`} 
+                        text={store.data.phone} 
+                        type="address" 
+                        schema="https://schema.org/PostalAddress" 
+                    />
+
+                    <StoreDetails 
+                        topTel="" 
+                        icon="IconMapPin" 
+                        url={`tel:+${store.data.phone}`} 
+                        aria={`get the Google Map directions`} 
+                        text={`${store.data.address}, ${store.data.locality}, ${store.data.region}, ${store.data.postcode} `} 
+                        type="address" 
+                        schema="https://schema.org/PostalAddress" 
+                    />
                     {
-                        (store.data.sublocality == "") ? <></> : (
-                            <div className="rt-loan-amount">
-                                <div className="iconDiv">
-                                    <div className="cic-icon-primary spaceIcon mm-icon-wrapper IconBuilding noRepeat"></div>
-                                    <div>
-                                        <a target="_blank" rel="noopener noreferrer"
-                                            title="Click here to get the Google Map directions"
-                                            href={store.data.website}
-                                            aria-label="Click here to get the Google Map directions">
-                                            <h3 className="h3-third"> <span itemProp="streetAddress"> {store.data.sublocality} </span> </h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> )
+                        (store.data.sublocality == "") 
+                        ? <></> 
+                        : (
+                            <StoreDetails 
+                                topTel="" 
+                                icon="IconBuilding" 
+                                url={`${store.data.website}`} 
+                                aria={`get the Google Map directions`} 
+                                text={`${store.data.sublocality} `} 
+                            />
+                        )
                     }
                     <div className="rt-loan-amount">
                         <div className="iconDiv">
                             <div className="spaceIcon mm-icon-wrapper IconClock"></div>
                             <a data-toggle="collapse" href="#openIntervals" className="cic-store-locator-openIntervals-trigger collapsed" aria-expanded="false">
-
                                 <div className="hourdsDiv mg60">
                                     <span className="cic-paragraph--medium green-cic">Open Now:</span>
                                 </div>
@@ -81,14 +69,8 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="rate-state-buttons" itemScope="" itemProp="hasMap" itemType="https://schema.org/Map">
-                    <a  el="noopener noreferrer" target="_blank"
-                        href="https://www.4215trk.com/rd/r.php?sid=6&amp;pub=460033&amp;lpid=17&amp;c1=mf&amp;c2=mfemc&amp;c3=gs"
-                        className="cic-btn cic-btn-primary my-3"
-                        aria-label="Click here to apply for a Check Into Cash Payday Loan now"> Get Started </a>
-                    <a itemProp="mapType"  rel="noopener noreferrer" target="_blank"
-                        href="https://maps.google.com/maps?cid=8296081415232152819"
-                        className="cic-btn cic-btn-secondary--dark"
-                        aria-label="Click here to get the directions from this store"> Get Directions </a>
+                    <Buttons link="" btn="cic-btn-primary" aria="Click here to apply for a Check Into Cash Payday Loan now" text={`Get Started`} /> 
+                    <Buttons link="" btn="cic-btn-secondary--dark" aria="Click here to get the directions from this store" text={`Get Directions`} item="mapType"  /> 
                 </div>
                 <div className="rate-state-callus">
                     <p className="cic-paragraph--medium ml-2">
