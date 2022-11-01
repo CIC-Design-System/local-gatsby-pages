@@ -4,11 +4,11 @@ import '../assets/css/source.scss';
 import Header from "../components/header/header";
 import Services from "../components/services/services";
 import Banner from "../components/banner/banner";
-import Started from "../components/getStarted/getStarted";
-
+import Started from "../components/getStarted/getStarted"; 
 
 import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
+import AboutUs from "../components/aboutUs/aboutUs"; 
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) { 
   //Hooks
@@ -31,34 +31,21 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     brand: data.momentFeed.name,
     state_min: data.momentFeed.state_min
   });
-  
   //First Call for the Store
+  /**/
   useEffect(() => {
     if(status_store === "open"){
-      //First
-      store_info = getStoreInfo(moment_feed, "store");
-      store_info.then((response) => {
-        // console.log(response);
-        setStore(response);
-      })
-      //Second
-      store_content = getStoreInfo(moment_feed, "store_content");
-      store_content.then((response) => {
-        // console.log(response);
-        setStoreContent(response);
-      })
-      //Third
-      store_locator = getStoreInfo(zip_code, "store_locator");
-      store_locator.then((response) => {
-        // console.log(response);
-        setStoreLocator(response);
-      })
-      //Fourth
-      loans_response = getStoreLoans(loans, "loans");
-      loans_response.then((response) => {
-        // console.log(response);
-        setLoansInfo(response);
-      })
+
+      Promise.all([ getStoreInfo(moment_feed, "store"), 
+            getStoreInfo(moment_feed, "store_content"), 
+            getStoreInfo(zip_code, "store_locator"), 
+            getStoreLoans(loans, "loans")]).then((values) => {
+
+              setStore(values[0]);
+              setStoreContent(values[1]);
+              setStoreLocator(values[2]);
+              setLoansInfo(values[3]);
+      } );
     }
     else{
       setStore("");
@@ -85,6 +72,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
             <Services  />
             <Banner  />
             <Started  />
+            <AboutUs />
         </InfoContext.Provider>
         )
       }

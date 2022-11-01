@@ -1,16 +1,32 @@
-import React from 'react'
+import React, {useContext,useState} from 'react'
 import './styles/_banner.scss'
+import { InfoContext } from '../../context/Context';  
 
 export default function Banner() {
+  const { storeContent} = useContext(InfoContext); 
+  const [check, setCheck] = useState(storeContent);  
+  const bringImg = (field, classN) => {          
+    return(             
+      check.data.data.map( (type, index) => {
+          if(type.alias == field){ 
+              return( 
+                <a key={`banner-${index}`} title="Link to Apply Now  - Tomorrow can be a Payday" href="https://apply.checkintocash.com" target="_blank" rel="noopener noreferrer">
+                    <img width="100%" height="100%" alt="banner Tomorrow can be a Payday" loading="lazy" className={`lazy ${classN}`} src={`${type.settings.mfSrc}`} />
+                </a>
+              )
+          }
+      })
+    )
+  }
   return (
     <section id="bannerPhone">
         <div className="banner-phone">
-            <a title="Link to Apply Now  - Tomorrow can be a Payday" href="https://bit.ly/3l1cHuq" target="_blank" rel="noopener noreferrer">
-                <img width="100%" height="100%" alt="banner Tomorrow can be a Payday" loading="lazy" className="lazy hideMobile" src="https://5ff239f6957b485d6945bc81.lp.prod.momentfeed.com/assets/media/TCBP_MF_1440x300_2021_V2.jpg" />
-            </a>
-            <a title="Link to Apply Now  - Tomorrow can be a Payday" href="https://bit.ly/3l1cHuq" target="_blank" rel="noopener noreferrer">
-                <img width="100%" height="100%" alt="banner Tomorrow can be a Payday" loading="lazy" className="onlyMobile" src="https://5ff239f6957b485d6945bc81.lp.prod.momentfeed.com/assets/media/TCBP_MF_340x100_2021_V2.jpg" />
-            </a>
+          {
+             ( typeof check === 'object') ? ( bringImg("promo-banner-(desktop)", "hideMobile") )  : <></>
+          }
+          {
+             ( typeof check === 'object') ? ( bringImg("promo-banner-(mobile)", "onlyMobile") )  : <></>
+          } 
         </div>
     </section>
   )
