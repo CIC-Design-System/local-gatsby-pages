@@ -1,51 +1,47 @@
-import React, { useState, useEffect,Fragment } from "react";
+import React, { useState, useEffect,Fragment, useCallback } from "react";
 import { graphql } from "gatsby";
 import '../assets/css/source.scss';
-import Header from "../components/header/header";
-import Services from "../components/services/services";
-import Banner from "../components/banner/banner";
-import Started from "../components/getStarted/getStarted"; 
-
+import OpenStore from "../components/openStore/OpenStore";
 import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
-import AboutUs from "../components/aboutUs/aboutUs"; 
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) { 
   //Hooks
   const { getStoreInfo, getStoreLoans} = ApiHooks();
-
   //States
   const [store, setStore] = useState(null); 
   const [storeContent, setStoreContent] = useState(null); 
   const [storeLocator, setStoreLocator] = useState(null); 
   const [loansInfo, setLoansInfo] = useState(null); 
-  
   //Variables
-  let [store_info,store_content, status_store, store_locator, zip_code, loans_response] = [null, null, data.momentFeed.status, null, data.momentFeed.zip, null];
+  let [ status_store,  zip_code ] = [ data.momentFeed.status, data.momentFeed.zip];
   const moment_feed = data.momentFeed.momentfeed_id;
 
-  //
-
+  //Data for the axios
   const loans = JSON.stringify({
     state: data.momentFeed.state,
     brand: data.momentFeed.name,
     state_min: data.momentFeed.state_min
   });
-  //First Call for the Store
   /**/
+  const runPromise = useCallback(() => {
+    Promise.all([ getStoreInfo(moment_feed, "store"), 
+          getStoreInfo(moment_feed, "store_content"), 
+          getStoreInfo(zip_code, "store_locator"), 
+          getStoreLoans(loans, "loans")]).then((values) => {
+            setStore(values[0]);
+            setStoreContent(values[1]);
+            setStoreLocator(values[2]);
+            setLoansInfo(values[3]);
+    } )
+    .catch(error => {
+      console.log(error);
+    });
+  }, [ zip_code, moment_feed, loans ]); 
+
   useEffect(() => {
     if(status_store === "open"){
-
-      Promise.all([ getStoreInfo(moment_feed, "store"), 
-            getStoreInfo(moment_feed, "store_content"), 
-            getStoreInfo(zip_code, "store_locator"), 
-            getStoreLoans(loans, "loans")]).then((values) => {
-
-              setStore(values[0]);
-              setStoreContent(values[1]);
-              setStoreLocator(values[2]);
-              setLoansInfo(values[3]);
-      } );
+      runPromise();
     }
     else{
       setStore("");
@@ -59,20 +55,14 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       setStoreLocator(null);
       setLoansInfo(null);
     };
-  }, [])
+  }, [runPromise, status_store ])
   
-   
- 
   const verifiedInfo = () => {
     if(store !=null){
       if(status_store === "open"){
         return(
           <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo}}>
-            <Header/>
-            <Services  />
-            <Banner  />
-            <Started  />
-            <AboutUs />
+            <OpenStore/>
         </InfoContext.Provider>
         )
       }
@@ -89,14 +79,10 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     <Fragment>
       { 
         (store === null )  ? <></> : verifiedInfo()
-      
       }
     </Fragment>
-  
   )
 }
-
-
 export const query = graphql`
 query MyQuery ($slug: String)  {
   momentFeed(post_name: {eq:  $slug}) {
@@ -112,6 +98,4 @@ query MyQuery ($slug: String)  {
     zip
   }
 }
-
-
 `

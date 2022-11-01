@@ -1,11 +1,7 @@
 import React from 'react'
 import { Link,graphql } from "gatsby"
-
-const renderList = (data) =>{
+import '../assets/css/source.scss';
  
-    
-  
-}
 export default function state({data,pageContext}) {
   
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))

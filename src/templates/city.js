@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link,graphql } from "gatsby"
+import '../assets/css/source.scss';
 
 
 export default function City({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
