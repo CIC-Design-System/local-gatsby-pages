@@ -6,7 +6,14 @@
 export const filterArray = (storeContent, field) =>{
    return storeContent.data.data.filter(custom => custom.alias === field); 
 }
+ export const filterProviders = (store, type) => { 
+      return store.location.providers.filter(custom => custom.type === type);
  
+ }
+ export const filterSingleProv = (store, type) => { 
+      return store.data.providers.filter(custom => custom.type === type);
+ 
+ }
  export const statesList = () => { 
    const statesUrls = [
       { state:    'AL', url:    'alabama' },

@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from 'react'
 import '../styles/_storeLocator.scss'
 import SingleStore from './SingleStore';
 
@@ -20,7 +20,9 @@ export default function StoreSection({storeLocator}) {
                                 )
                             }
                             else{
-                                return( <Fragment key={`store-${index}`} ></Fragment>  )
+                                return(
+                                    <Fragment key={`store-${index}`}></Fragment>
+                                )
                             }
                         })
                     }

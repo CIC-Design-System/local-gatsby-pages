@@ -1,16 +1,13 @@
 import React, { useState,useEffect } from 'react'
+import { filterProviders } from '../../../selectors/getType';
 
 export default function SingleStore({store, index}) {
-
     const [map, setMap] = useState([]);
     useEffect(() => {
-         const link = returnGoogle()
-         setMap(link); 
-    }, [])
-    
-    const returnGoogle = () => {
-        return store.location.providers.filter(custom => custom.type === 'Google');
-    }
+         const link = filterProviders(store, 'Google')
+         setMap(link);
+    }, [store])
+     
   return (
     <div className={`store${index}`}>
         <div className="storeTitle">
