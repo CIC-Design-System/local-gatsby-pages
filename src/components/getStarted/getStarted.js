@@ -1,20 +1,14 @@
-import React,{useContext, useState, useMemo } from 'react'
+import React,{useContext } from 'react'
 import './styles/_getStarted.scss'
 import { InfoContext } from '../../context/Context';  
-
+import { filterArray } from '../../selectors/getType'; 
 export default function Started() {
-    const { data, storeContent, store} = useContext(InfoContext); 
-    const [check, setCheck] = useState(storeContent);  
+    const { data, storeContent } = useContext(InfoContext);  
 
     const renderCheckList = () => { 
-        return(             
-        check.data.data.map( (type, index) => {
-            if(type.alias == "getting-started-checklist"){ 
-                return( 
-                    <div key={index} dangerouslySetInnerHTML={{ __html: `${type.settings.mfTagContent}` }} />
-                )
-            }
-        })
+        const result = filterArray(storeContent, "getting-started-checklist");   
+        return(
+            <div dangerouslySetInnerHTML={{ __html: `${result[0].settings.mfTagContent}` }} />
         )
     }
   return (
@@ -28,7 +22,7 @@ export default function Started() {
             </div>
             <div className="cic-content-info2">
                  {
-                    ( typeof check === 'object') ? ( renderCheckList() )  : <></>
+                    ( typeof storeContent === 'object') ? ( renderCheckList() )  : <></>
                  }
             </div>
         </div>

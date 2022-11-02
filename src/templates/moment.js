@@ -13,6 +13,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   const [storeContent, setStoreContent] = useState(null); 
   const [storeLocator, setStoreLocator] = useState(null); 
   const [loansInfo, setLoansInfo] = useState(null); 
+  const [testimonials, setTestimonials] = useState(null); 
   //Variables
   let [ status_store,  zip_code ] = [ data.momentFeed.status, data.momentFeed.zip];
   const moment_feed = data.momentFeed.momentfeed_id;
@@ -28,7 +29,8 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     Promise.all([ getStoreInfo(moment_feed, "store"), 
           getStoreInfo(moment_feed, "store_content"), 
           getStoreInfo(zip_code, "store_locator"), 
-          getStoreLoans(loans, "loans")]).then((values) => {
+          getStoreLoans(loans, "loans")]
+        ).then((values) => {
             setStore(values[0]);
             setStoreContent(values[1]);
             setStoreLocator(values[2]);

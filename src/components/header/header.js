@@ -15,7 +15,7 @@ export default function Header() {
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
         <div className="cic-rate-state-wrapper">
             <div className="rate-state-background">
-                <img itemProp="image" src={result[0].data} alt="Image of the store" />
+                <img itemProp="image" src={result[0].data} alt={`Store in  ${data.momentFeed.name} ${data.momentFeed.locality}, ${data.momentFeed.state_min}`} />
             </div>
             <div className="rate-state-info">
                 <div className="rate-state-title">
@@ -43,7 +43,7 @@ export default function Header() {
                         schema="https://schema.org/PostalAddress" 
                     />
                     {
-                        (store.data.sublocality == "") 
+                        (store.data.sublocality === "") 
                         ? <></> 
                         : (
                             <StoreDetails 

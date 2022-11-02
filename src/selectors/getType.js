@@ -3,7 +3,9 @@
     return store.data.data.find(custom => custom.alias === alias);
  }
  
-
+export const filterArray = (storeContent, field) =>{
+   return storeContent.data.data.filter(custom => custom.alias === field); 
+}
  
  export const statesList = () => { 
    const statesUrls = [

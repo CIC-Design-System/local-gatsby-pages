@@ -17,6 +17,12 @@ const getStoreInfo = async ( data, endpoint) => {
             case "store_locator":
                 url = `${process.env.GATSBY_MF_STORE_LOCATOR}${data}&radius=30&pageSize=3`;
                 break;
+            case "testimonials":
+                url = `${process.env.GATSBY_MF_TESTIMONIALS}${process.env.GATSBY_MF_TOKEN}&corporate_id=${data}&star_rating=5&limit=3`;
+                break;
+            default:
+                url = ``;
+                break;
         }
         const resp = await callMomentAPI(url);
         return resp; 
@@ -44,6 +50,9 @@ const getStoreLoans = async ( data, endpoint) => {
         switch (endpoint) {
             case "loans":
                 url = `${process.env.GATSBY_LOANS_API}`;
+                break;
+            default:
+                url = ``;
                 break;
         }
         const resp = await callLoansAPI(data, url);

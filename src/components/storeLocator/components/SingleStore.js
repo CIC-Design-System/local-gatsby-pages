@@ -5,12 +5,12 @@ export default function SingleStore({store, index}) {
     const [map, setMap] = useState([]);
     useEffect(() => {
          const link = returnGoogle()
-         setMap(link);  
+         setMap(link); 
     }, [])
+    
     const returnGoogle = () => {
         return store.location.providers.filter(custom => custom.type === 'Google');
     }
-    
   return (
     <div className={`store${index}`}>
         <div className="storeTitle">

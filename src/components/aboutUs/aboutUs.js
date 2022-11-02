@@ -1,20 +1,19 @@
-import React, {useContext,useState} from 'react'
-import { InfoContext } from '../../context/Context';  
+import React, {useContext} from 'react'
+import { InfoContext } from '../../context/Context';
+import { filterArray } from '../../selectors/getType';
+
 import './styles/_aboutus.scss'
 
+
 export default function AboutUs() {
-    const { storeContent, data, store}   = useContext(InfoContext); 
-    const [check, setCheck] = useState(storeContent);  
-    const bringImg = (field) => {          
-      return(             
-        check.data.data.map( (type, index) => {
-            if(type.alias == field){ 
-                return( 
-                    <img key={`about-${index}`} className="lazy entered lazyloaded" alt={`${type.settings.mfTitle}`} src={`${type.settings.mfSrc}`} />
-                )
-            }
-        })
-      )
+    const { storeContent, data, store}   = useContext(InfoContext);  
+    const bringImg = (field) => {   
+       const result = filterArray(storeContent, field); 
+       if(result.length > 0 ){
+          return(             
+            <img  className="lazy entered lazyloaded" alt={`${result[0].settings.mfTitle}`} src={`${result[0].settings.mfSrc}`} />
+          )
+       }
     }
   return (
     <section id="GetStarted">
@@ -24,7 +23,7 @@ export default function AboutUs() {
         </div>
         <div className="cic-how-it-works-img">
             {
-                ( typeof check === 'object') ? ( bringImg("about-image" ) )  : <></>
+                ( typeof storeContent === 'object') ? ( bringImg("about-image" ) )  : <></>
             } 
         </div>
         <div className="cic-how-it-works-content-container spaceAround">
@@ -39,7 +38,7 @@ export default function AboutUs() {
             </p>
         </div>
         <div className="cic-how-it-works-btns">
-            <a  rel="noopener noreferrer" target="_blank" href="https://apply.checkintocash.com/" className="cic-btn cic-btn-primary my-3" aria-label="Click here to apply for a Check Into Cash Payday Loan now"> Get Started </a>
+            <a href="https://apply.checkintocash.com/" rel="noopener noreferrer" target="_blank" className="cic-btn cic-btn-primary my-3" aria-label="Click here to apply for a Check Into Cash Payday Loan now"> Get Started </a>
             <a href="https://checkintocash.com/store-locator/" className="cic-btn cic-btn-secondary--dark my-3" title="Click here to find a Store near you" aria-label="Click here to find a Store near you" rel="noopener noreferrer"> Find a Store </a>
         </div>
     </div>
