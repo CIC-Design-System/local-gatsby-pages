@@ -102,6 +102,7 @@ exports.sourceNodes = async ({ actions }) => {
         address         : city.address,
         status          : city.status,
         momentfeed_id   : city.momentfeed_id,
+        corporate_id    : city.corporate_id,
         post_name       : city.post_name
       }
 

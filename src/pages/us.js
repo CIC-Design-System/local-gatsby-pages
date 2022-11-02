@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState,useCallback } from 'react'
-import { Link,graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
 
@@ -18,8 +18,7 @@ export default function US({data}) {
   /**/
   
    const SearchState = useCallback(() => {
-    let flag = ""; 
-    console.log("running ");
+    let flag = "";  
     return(
       states.map( (state, index) => {
         flag = filterState(state.state)
@@ -28,9 +27,12 @@ export default function US({data}) {
             <UsTemplate key={`us-${index}`} wordpress={wordpress} flag={flag} state={state} />
           )
         }
+        else{
+         <Fragment key={`us-${index}`}></Fragment>
+        }
       })
     )
-  }, [states ]); 
+  }, [states, wordpress ]); 
   
  
   return (

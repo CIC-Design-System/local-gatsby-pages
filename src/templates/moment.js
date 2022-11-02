@@ -13,9 +13,9 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   const [storeContent, setStoreContent] = useState(null); 
   const [storeLocator, setStoreLocator] = useState(null); 
   const [loansInfo, setLoansInfo] = useState(null); 
-  const [testimonials, setTestimonials] = useState(null); 
+  const [testimon, setTestimonials] = useState(null); 
   //Variables
-  let [ status_store,  zip_code ] = [ data.momentFeed.status, data.momentFeed.zip];
+  let [ status_store,  zip_code, corporate_id ] = [ data.momentFeed.status, data.momentFeed.zip, data.momentFeed.corporate_id];
   const moment_feed = data.momentFeed.momentfeed_id;
 
   //Data for the axios
@@ -29,17 +29,20 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     Promise.all([ getStoreInfo(moment_feed, "store"), 
           getStoreInfo(moment_feed, "store_content"), 
           getStoreInfo(zip_code, "store_locator"), 
-          getStoreLoans(loans, "loans")]
+          getStoreLoans(loans, "loans"),
+          getStoreInfo(corporate_id, "testimonials"), 
+        ]
         ).then((values) => {
             setStore(values[0]);
             setStoreContent(values[1]);
             setStoreLocator(values[2]);
             setLoansInfo(values[3]);
+            setTestimonials(values[4]); 
     } )
     .catch(error => {
       console.log(error);
     });
-  }, [ zip_code, moment_feed, loans ]); 
+  }, [ zip_code, moment_feed, loans, corporate_id ]); 
 
   useEffect(() => {
     if(status_store === "open"){
@@ -63,7 +66,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     if(store !=null){
       if(status_store === "open"){
         return(
-          <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo}}>
+          <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
             <OpenStore/>
         </InfoContext.Provider>
         )
@@ -96,6 +99,7 @@ query MyQuery ($slug: String)  {
     name
     momentfeed_id
     locality
+    corporate_id
     id
     zip
   }

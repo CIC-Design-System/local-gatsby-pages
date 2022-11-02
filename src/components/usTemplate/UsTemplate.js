@@ -12,7 +12,7 @@ export default function UsTemplate({wordpress, flag, state}) {
         <h3>{state.state}</h3>
         { 
             flag.map( (detail, index)=> {
-                 id_prov = searchID(detail.id); 
+              id_prov = searchID(detail.id); 
                 return(
                      <Link to={`${id_prov[0].uri}`}  key={`${state.state}-${index}`}><li>{detail.locality}, {detail.name}</li> </Link>
                 )

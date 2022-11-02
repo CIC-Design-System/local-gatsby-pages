@@ -1,6 +1,7 @@
 import React from 'react'
+import SingleTestimonial from './singleTestimonial'
 
-export default function SectionTestimonals() {
+export default function SectionTestimonals({data}) {
   return (
     <section id="testimonials">
         <div className="cic-light-waves-background-pattern"> 
@@ -22,23 +23,13 @@ export default function SectionTestimonals() {
                 </div>
             </div>
             <div className="section-carousel cic-testimonial-carousel">
-                <div className="cic-testimonial-card">
-                    <i className="cic-testimonial-card-profile IconUserTest cic-user-size"></i>
-                    <div className="cardUsername">
-                        <p>Leslie Letatau</p>
-                        <i className="mm-icon-full-star IconFullStar usr-stars"></i><i className="mm-icon-full-star IconFullStar usr-stars"></i><i className="mm-icon-full-star IconFullStar usr-stars"></i><i className="mm-icon-full-star IconFullStar usr-stars"></i><i className="mm-icon-full-star IconFullStar usr-stars"></i>
-                    </div>
-                    <div className="cardDate">
-                        <p className="cic-card-date">30-Jun-2021</p>
-                    </div>
-                    <div className="cardContent">
-                        <p>
-                            Both employees are very friendly and helpful!!! I love their energy of keeping their customers satisfied! 🤗✊🏽🙌🏽
-                        </p>
-                    </div>
-                    <i className="cic-card-quotes IconUserQuote cic-quote-size"></i>
-                    <i className="mm-icon-full-star cic-card-source IconGoogle"></i>
-                </div>
+                {
+                    data.map( (testimonial, index) =>{
+                        return(
+                            <SingleTestimonial testimonial={testimonial} key={`testimon-${index}`}/>
+                        )
+                    } )
+                }
             </div>
             <div className="section-moreReviews">
                 <p>
