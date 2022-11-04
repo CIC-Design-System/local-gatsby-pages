@@ -26,7 +26,7 @@ export default function Services() {
                                     link ={loans.link} 
                                     text={loans.name} 
                                     amount={loans.max}
-                                    key={index}
+                                    key={`loans-`+index}
                                 
                                 />
                         )
@@ -51,7 +51,7 @@ export default function Services() {
                             <AvailableLoans 
                                     icon={loans.icon} 
                                     text={loans.name} 
-                                    key={index}
+                                    key={`services-`+index}
                                 
                                 />
                         )
