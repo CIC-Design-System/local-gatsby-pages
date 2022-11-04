@@ -47,7 +47,7 @@ export default function AboutUs() {
                     </p>
                 </div>
                 <div className="cic-how-it-works-btns">
-                    <a href="https://apply.checkintocash.com/" rel="noopener noreferrer" target="_blank" className="cic-btn cic-btn-primary my-3" aria-label="Click here to apply for a Check Into Cash Payday Loan now"> Get Started </a>
+                    <a href="https://apply.checkintocash.com/" rel="noopener noreferrer" target="_blank" className="cic-btn cic-btn-primary my-3" aria-label={`Click here to apply for a ${data.momentFeed.name} Payday Loan now`}> Get Started </a>
                     <a href="https://checkintocash.com/store-locator/" className="cic-btn cic-btn-secondary--dark my-3" title="Click here to find a Store near you" aria-label="Click here to find a Store near you" rel="noopener noreferrer"> Find a Store </a>
                 </div>
             </div>

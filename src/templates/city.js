@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
-
+import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
+ 
 
 export default function City({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
  
@@ -9,18 +10,20 @@ export default function City({data,pageContext:{id ,title ,status ,slug ,parentI
 
 console.log(cities);
   return (
-    
-    <div>
-      {cities.map((node, i) => (
-      <li key={node.id} >
-          <Link 
-            
-            to={node.slug}>
-            {node.title}
-          </Link>
-        </li>
-    ))}
-  </div>
+    <Fragment>
+        <Breadcrumbs/>
+        <div>
+          {cities.map((node, i) => (
+          <li key={node.id} >
+              <Link 
+                
+                to={node.slug}>
+                {node.title}
+              </Link>
+            </li>
+        ))}
+      </div>
+    </Fragment>
   )
 }
 

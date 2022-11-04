@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
- 
+import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
+
 export default function state({data,pageContext}) {
   
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))
   return (
-    
-    <div>
-      {cities.map((category, i) => (
-      <li key={category.id} >
-          <Link 
-            
-            to={category.slug}>
-            {category.title}
-          </Link>
-        </li>
-    ))}
-  </div>
+    <Fragment>
+        <Breadcrumbs />  
+        <div>
+          {cities.map((category, i) => (
+          <li key={category.id} >
+              <Link 
+                
+                to={category.slug}>
+                {category.title}
+              </Link>
+            </li>
+        ))}
+      </div>
+    </Fragment>
   )
 }
 

@@ -6,7 +6,7 @@ export default function Testimonials() {
   const { testimon } = useContext(InfoContext);  
 
   const renderTestimonials = () => { 
-    if(testimon != null){
+    if(testimon !== null){
       return(
         <SectionTestimonals data={testimon.data} />
       )

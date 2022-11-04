@@ -69,7 +69,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="rate-state-buttons" itemScope="" itemProp="hasMap" itemType="https://schema.org/Map">
-                    <Buttons link="" btn="cic-btn-primary" aria="Click here to apply for a Check Into Cash Payday Loan now" text={`Get Started`} /> 
+                    <Buttons link="" btn="cic-btn-primary" aria={`Click here to apply for a ${data.momentFeed.name} Payday Loan now`} text={`Get Started`} /> 
                     <Buttons link="" btn="cic-btn-secondary--dark" aria="Click here to get the directions from this store" text={`Get Directions`} item="mapType"  /> 
                 </div>
                 <div className="rate-state-callus">

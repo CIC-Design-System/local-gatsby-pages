@@ -55,7 +55,7 @@ export const filterArray = (storeContent, field) =>{
       { state:    'OR', url:    'oregon' },
       { state:    'PA', url:    'pennsylvania' },
       { state:    'RI', url:    'rhode-island' },
-      { state:    'SC', url:    'south-caroling' },
+      { state:    'SC', url:    'south-carolina' },
       { state:    'SD', url:    'south-dakota' },
       { state:    'TN', url:    'tennessee' },
       { state:    'TX', url:    'texas' },

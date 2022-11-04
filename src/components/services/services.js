@@ -17,7 +17,7 @@ export default function Services() {
         </p>
         <div className="availableL">
             {
-                (loansInfo != null) 
+                (loansInfo !== null) 
                 ? ( 
                     loansInfo.data.loans.map(function(loans, index) {
                         return(
@@ -44,7 +44,7 @@ export default function Services() {
         <div className="availableS"> 
         
         {
-                (loansInfo != null) 
+                (loansInfo !== null) 
                 ? ( 
                     loansInfo.data.services.map(function(loans, index) {
                         return(

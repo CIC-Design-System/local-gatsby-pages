@@ -6,11 +6,13 @@ import Started from '../getStarted/getStarted';
 import AboutUs from '../aboutUs/aboutUs'; 
 import StoreLocator from '../storeLocator/StoreLocator';
 import Testimonials from '../testimonials/Testimonials';
+import Breadcrumbs from '../breadcrumbs/Breadcrumbs'; 
 
 
-export default function OpenStore() {
+export default function OpenStore() { 
   return (
     <Fragment>
+        <Breadcrumbs />
         <Header/>
         <Services  />
         <Banner  />

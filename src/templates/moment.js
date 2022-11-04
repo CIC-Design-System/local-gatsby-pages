@@ -63,7 +63,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   }, [runPromise, status_store ])
   
   const verifiedInfo = () => {
-    if(store !=null){
+    if(store !== null){
       if(status_store === "open"){
         return(
           <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>

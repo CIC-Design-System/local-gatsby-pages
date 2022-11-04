@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState,useCallback } from 'react'
 import { graphql } from "gatsby"
 import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
+import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 
 export default function US({data}) { 
    const [states, setStates] = useState([]);
@@ -37,6 +38,7 @@ export default function US({data}) {
  
   return (
     <Fragment>
+      <Breadcrumbs />
     {
          ( states.length > 0 ) ? ( SearchState() )  : <></>
     } 
