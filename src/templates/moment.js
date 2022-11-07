@@ -1,12 +1,18 @@
 import React, { useState, useEffect,Fragment, useCallback } from "react";
-import { graphql } from "gatsby";
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import '../assets/css/source.scss';
+import { graphql } from "gatsby";
 import OpenStore from "../components/openStore/OpenStore";
 import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
+import NavDesktop from "../components/Navbar/components/NavDesktop";
 
-export default function Moment({data, pageContext: {slug}, pageContext  }) { 
+export default function Moment({data, pageContext: {slug}, pageContext  }) {
   //Hooks
   const { getStoreInfo, getStoreLoans} = ApiHooks();
   //States
@@ -66,11 +72,13 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   const verifiedInfo = () => {
     if(store !== null){
       if(status_store === "open"){
+        // console.log(data.allWpMenu);
         return(
           <Fragment>
-              <Breadcrumbs />
-              <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
-                <OpenStore/>
+            <NavDesktop data={data.allWpMenu}/>
+            <Breadcrumbs />
+            <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
+              <OpenStore/>
             </InfoContext.Provider>
           </Fragment>
         )
@@ -78,6 +86,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       else{
         return(
           <Fragment>
+              <NavDesktop data={data.allWpMenu}/>
               <Breadcrumbs />
               <p>This store is closed </p>
           </Fragment>
@@ -107,6 +116,20 @@ query MyQuery ($slug: String)  {
     corporate_id
     id
     zip
+  }
+  allWpMenu {
+    nodes {
+      databaseId
+      slug
+      name
+      menuItems {
+        nodes {
+          uri
+          path
+          label
+        }
+      }
+    }
   }
 }
 `

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
+import { upperCase } from '../../selectors/getType';
+
 
 export default function UsTemplate({wordpress, flag, state}) { 
     let id_prov = 0;
@@ -8,8 +10,10 @@ export default function UsTemplate({wordpress, flag, state}) {
         return wordpress.filter(moment => moment.databaseId === num);
     }
   return (
-    <section style={{width: "20%" }}>
-        <h3>{state.state}</h3>
+    
+    <div className="fl-content-full">
+    <div className="row">
+    <h3>{upperCase(state.url.replace(/\-/g, ' '))}</h3>
         { 
             flag.map( (detail, index)=> {
               id_prov = searchID(detail.id); 
@@ -18,6 +22,7 @@ export default function UsTemplate({wordpress, flag, state}) {
                 )
             })
         }
-    </section>
+    </div>
+  </div>
   )
 }

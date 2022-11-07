@@ -1,10 +1,16 @@
 import React, { Fragment, useEffect, useState,useCallback } from 'react'
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import '../assets/css/source.scss';
 import { graphql } from "gatsby"
 import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
+import NavDesktop from "../components/Navbar/components/NavDesktop";
 
-export default function US({data}) { 
+export default function US({data}) {
    const [states, setStates] = useState([]);
    useEffect(() => {
     const arr = statesList()
@@ -38,6 +44,7 @@ export default function US({data}) {
  
   return (
     <Fragment>
+      <NavDesktop data={data.allWpMenu}/>
       <Breadcrumbs />
     {
          ( states.length > 0 ) ? ( SearchState() )  : <></>
@@ -76,6 +83,21 @@ query USQuery {
       state_min
       status
       zip
+    }
+  }
+  
+  allWpMenu {
+    nodes {
+      databaseId
+      slug
+      name
+      menuItems {
+        nodes {
+          uri
+          path
+          label
+        }
+      }
     }
   }
 }  

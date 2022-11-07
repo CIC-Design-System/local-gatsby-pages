@@ -1,5 +1,5 @@
 import React from 'react'
-import { statesList } from '../../selectors/getType';
+import { statesList, upperCase } from '../../selectors/getType';
     
 export default function Breadcrumbs() {
     const states = statesList(); 
@@ -38,14 +38,7 @@ export default function Breadcrumbs() {
             } 
         }) 
          return str;
-    }
-    const upperCase = (str) => {
-        let splitStr = str.toLowerCase().split(' ');
-        for (let i = 0; i < splitStr.length; i++) {
-            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-        }
-        return splitStr.join(' '); 
-    }
+    } 
     return (
         <div className="cic-breadcrumbs cic-caption">
             <a href="/">{process.env.GATSBY_BRAND}</a> 
