@@ -105,4 +105,4 @@ query USQuery {
 }  
 `
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>US</title>
