@@ -14,6 +14,13 @@ export const filterArray = (storeContent, field) =>{
       return store.data.providers.filter(custom => custom.type === type);
  
  }
+ 
+ export const removeDecimals = (num) => { 
+    let new_num = parseInt(num)
+    return new_num.toLocaleString("en-US");
+
+
+}
  export const statesList = () => { 
    const statesUrls = [
       { state:    'AL', url:    'alabama' },

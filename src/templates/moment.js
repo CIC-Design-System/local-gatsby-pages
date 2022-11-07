@@ -4,6 +4,7 @@ import '../assets/css/source.scss';
 import OpenStore from "../components/openStore/OpenStore";
 import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
+import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) { 
   //Hooks
@@ -66,14 +67,18 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     if(store !== null){
       if(status_store === "open"){
         return(
-          <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
-            <OpenStore/>
-        </InfoContext.Provider>
+          <Fragment>
+              <Breadcrumbs />
+              <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
+                <OpenStore/>
+            </InfoContext.Provider>
+          </Fragment>
         )
       }
       else{
         return(
           <Fragment>
+              <Breadcrumbs />
               <p>This store is closed </p>
           </Fragment>
         )
