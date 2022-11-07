@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { filterProviders } from '../../../selectors/getType';
-
+import { filterProviders, formatPhoneNumber } from '../../../selectors/getType';
 export default function SingleStore({store, index}) {
     const [map, setMap] = useState([]);
     useEffect(() => {
@@ -36,7 +35,7 @@ export default function SingleStore({store, index}) {
                     <div className="cic-icon-primary spaceIcon noRepeat mm-icon-wrapper IconPhone"></div>
                     <div>
                         <a href={`tel:+${store.location.phone}`}>
-                            <p><span className="cic-paragraph--medium">{store.location.phone}</span></p>
+                            <p><span className="cic-paragraph--medium">{formatPhoneNumber(store.location.phone)}</span></p>
                         </a>
                     </div>
                 </div>

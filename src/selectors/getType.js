@@ -6,21 +6,30 @@
 export const filterArray = (storeContent, field) =>{
    return storeContent.data.data.filter(custom => custom.alias === field); 
 }
- export const filterProviders = (store, type) => { 
+export const filterProviders = (store, type) => { 
       return store.location.providers.filter(custom => custom.type === type);
  
- }
- export const filterSingleProv = (store, type) => { 
+}
+export const filterSingleProv = (store, type) => { 
       return store.data.providers.filter(custom => custom.type === type);
- 
- }
- 
- export const removeDecimals = (num) => { 
+}
+export const removeDecimals = (num) => { 
     let new_num = parseInt(num)
     return new_num.toLocaleString("en-US");
-
-
 }
+export const formatPhoneNumber = (str) => {
+  //Filter only numbers from the input
+  let cleaned = ('' + str).replace(/\D/g, '');
+  //Check if the input is of correct length
+  let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+  if (match) {
+    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+  };
+
+  return str
+} 
+
  export const statesList = () => { 
    const statesUrls = [
       { state:    'AL', url:    'alabama' },

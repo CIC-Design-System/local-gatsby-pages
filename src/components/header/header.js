@@ -4,13 +4,14 @@ import './styles/_header.scss';
 import { InfoContext } from '../../context/Context';
 import StoreDetails from './components/StoreDetails';
 import Buttons from './components/Buttons';
+import { formatPhoneNumber } from '../../selectors/getType';
  
 
 
 export default function Header() {
     const { data, store} = useContext(InfoContext);
     const result = store.data.customFields.filter(custom => custom.name === 'Store Image');
-
+    let phone_number = formatPhoneNumber(store.data.phone);
   return (
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
         <div className="cic-rate-state-wrapper">
@@ -27,8 +28,8 @@ export default function Header() {
                         topTel="topTel" 
                         icon="IconPhone" 
                         url={`tel:+${store.data.phone}`} 
-                        aria={`Call Us at ${store.data.phone}`} 
-                        text={store.data.phone} 
+                        aria={`Call Us at ${phone_number}`} 
+                        text={phone_number} 
                         type="address" 
                         schema="https://schema.org/PostalAddress" 
                     />

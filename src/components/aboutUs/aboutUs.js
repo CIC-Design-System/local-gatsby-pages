@@ -1,6 +1,6 @@
 import React, {useContext,useEffect, useState} from 'react'
 import { InfoContext } from '../../context/Context';
-import { filterArray, filterSingleProv } from '../../selectors/getType';
+import { filterArray, filterSingleProv, formatPhoneNumber } from '../../selectors/getType';
 
 import './styles/_aboutus.scss'
 
@@ -43,7 +43,7 @@ export default function AboutUs() {
                     <p>
                     You'll find working with our team to be quick, easy, and confidential. 
                     To get the quick cash you need, you'll need a bank account, your government-issued photo ID, 
-                    proof of income, and your vehicle and clear title (if applicable). Stop by our {data.momentFeed.locality} {data.momentFeed.name}  today, or call  <a href={`tel:+${store.data.phone}`}>{store.data.phone}</a> for more information. You can walk out with cash in your hand! All products not available in all locations.
+                    proof of income, and your vehicle and clear title (if applicable). Stop by our {data.momentFeed.locality} {data.momentFeed.name}  today, or call  <a href={`tel:+${store.data.phone}`}>{formatPhoneNumber(store.data.phone)}</a> for more information. You can walk out with cash in your hand! All products not available in all locations.
                     </p>
                 </div>
                 <div className="cic-how-it-works-btns">
