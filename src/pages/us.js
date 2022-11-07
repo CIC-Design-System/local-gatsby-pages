@@ -35,7 +35,9 @@ export default function US({data}) {
           )
         }
         else{
-         <Fragment key={`us-${index}`}></Fragment>
+         return(
+          <Fragment key={`us-${index}`}></Fragment>
+         )
         }
       })
     )

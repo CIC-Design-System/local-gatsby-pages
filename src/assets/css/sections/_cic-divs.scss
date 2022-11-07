@@ -1,8 +1,35 @@
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.cic-state-card {
+    display: grid;
+    grid-row: auto; 
+    padding: 0.5rem;
+    // margin: 1rem 0;
+    // grid-template-columns: minmax(1px, 1.5rem) 1fr;
+}
+
+
 @media only screen and (min-width: 1119px){
     .fl-content-full {
         width: 100%;
         max-width: 70rem;
         margin: 0 auto;
         // padding: 0.5rem 0;
+    }
+}
+
+
+@media only screen and (min-width: 1120px){
+    .cic-states-card-row {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        // row-gap: 1rem;
+        // column-gap: 1rem;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1rem;
     }
 }

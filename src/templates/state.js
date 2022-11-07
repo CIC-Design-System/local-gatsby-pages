@@ -6,8 +6,7 @@ import { Link,graphql } from "gatsby"
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 import NavDesktop from "../components/Navbar/components/NavDesktop";
 
-export default function state({data,pageContext}) {
-  
+export default function state({data,pageContext}) { 
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))
   return (
     <Fragment>
@@ -15,15 +14,16 @@ export default function state({data,pageContext}) {
         <Breadcrumbs /> 
         <div className="fl-content-full">
           <div className="row">
+            <h3> </h3>
+            <div className="cic-states-card-row">
                 {cities.map((category, i) => (
-                  <li key={category.id} >
-                      <Link 
-                        
-                        to={category.slug}>
+                  <div key={`state-list-${i}`} className="cic-state-card">
+                      <Link to={category.slug}>
                         {category.title}
                       </Link>
-                    </li>
+                    </div>
                 ))}
+            </div>
           </div>
         </div>
     </Fragment>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby"
 import { upperCase } from '../../selectors/getType';
 
 
@@ -12,16 +11,22 @@ export default function UsTemplate({wordpress, flag, state}) {
   return (
     
     <div className="fl-content-full">
-    <div className="row">
-    <h3>{upperCase(state.url.replace(/\-/g, ' '))}</h3>
-        { 
-            flag.map( (detail, index)=> {
-              id_prov = searchID(detail.id); 
-                return(
-                     <Link to={`${id_prov[0].uri}`}  key={`${state.state}-${index}`}><li>{detail.locality}, {detail.name}</li> </Link>
-                )
-            })
-        }
+      <div className="row">
+        <h3>{upperCase(state.url.replace(/\-/g, ' '))}</h3>
+        <div className="cic-states-card-row">
+          { 
+              flag.map( (detail, index)=> {
+                id_prov = searchID(detail.id);
+                  return(
+                      <div key={`state-list-${index}`} className="cic-state-card">
+                        <a itemProp="addressLocality" href={`${id_prov[0].uri}`}  key={`${state.state}-${index}`}> {detail.locality}, {detail.name} </a>
+                        <p>{detail.address}</p>
+                      </div> 
+                  )
+              })
+          }          
+        </div>
+
     </div>
   </div>
   )

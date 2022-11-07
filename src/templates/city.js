@@ -17,15 +17,17 @@ export default function City({data,pageContext:{id ,title ,status ,slug ,parentI
         <Breadcrumbs/>
         <div className="fl-content-full">
           <div className="row">
-            {cities.map((node, i) => (
-              <li key={node.id} >
-                <Link 
-                  
-                  to={node.slug}>
-                  {node.title}
-                </Link>
-              </li>
-            ))}
+            <h3> </h3>
+            <div className="cic-states-card-row">
+              {cities.map((node, i) => (
+                <div key={`state-list-${i}`} className="cic-state-card">
+                  <Link 
+                    to={node.slug}>
+                    {node.title}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
     </Fragment>
