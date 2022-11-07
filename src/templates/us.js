@@ -3,7 +3,6 @@ import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
 
 export default function US({data}) {
-  console.log(data);
   return (
     <div>XD </div>
   )

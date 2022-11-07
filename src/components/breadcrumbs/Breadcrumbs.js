@@ -4,7 +4,11 @@ import { statesList, upperCase } from '../../selectors/getType';
 export default function Breadcrumbs() {
     const states = statesList(); 
     const printBread = () =>{
-        const link =  window.location.pathname; 
+        let link = null
+        if (typeof window !== `undefined`){
+            link =  window.location.pathname; 
+        }
+        if(link !== null){
         const bread_reverse = link.split('/');
         let [text, url] = ["", ""];
         return(
@@ -29,6 +33,8 @@ export default function Breadcrumbs() {
                 }
             }) 
         )
+
+        }
     }
     const printUrl = (bread_reverse, index) => {
         let str = ""
