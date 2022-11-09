@@ -6,7 +6,7 @@ import Started from '../getStarted/getStarted';
 import AboutUs from '../aboutUs/aboutUs'; 
 import StoreLocator from '../storeLocator/StoreLocator';
 import Testimonials from '../testimonials/Testimonials'; 
-
+import Footer from '../Footer/Footer';
 
 export default function OpenStore() { 
   return (
@@ -18,6 +18,7 @@ export default function OpenStore() {
         <StoreLocator />
         <AboutUs />
         <Testimonials />
+        <Footer />
     </Fragment>
   )
 }

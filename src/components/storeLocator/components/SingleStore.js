@@ -17,7 +17,7 @@ export default function SingleStore({store, index}) {
                 <div className="iconDiv">
                     <div className="cic-icon-primary spaceIcon noRepeat mm-icon-wrapper IconTarget"></div>
                     <div>
-                        <p><span className="cic-paragraph--medium">{store.distance} miles away</span></p>
+                        <p><span className="cic-paragraph--medium">{store.distance.toFixed(1)} miles away</span></p>
                     </div>
                 </div>
             </div>

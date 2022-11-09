@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react' 
 import SingleTestimonial from './singleTestimonial'
 
+
 export default function SectionTestimonals({data}) {
+
   return (
     <section id="testimonials">
         <div className="cic-light-waves-background-pattern"> 

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Legal from '../Legal/Legal'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <Fragment>
+      <Legal />
+    </Fragment>
   )
 }

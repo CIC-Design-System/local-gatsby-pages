@@ -22,6 +22,15 @@ export const filterMenu = (data, type) =>{
    return data.nodes.filter(custom => custom.slug === type);
 }
 
+export const excerptText = (text) =>{
+   const sizeText = text.length;
+   let subText = text;
+   if(sizeText > 200){
+      subText = (text.substring(0, 200))+"...";
+   }
+   return subText;
+}
+
 export const upperCase = (str) => {
    let splitStr = str.toLowerCase().split(' ');
    for (let i = 0; i < splitStr.length; i++) {

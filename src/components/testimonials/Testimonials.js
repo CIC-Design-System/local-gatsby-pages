@@ -4,9 +4,9 @@ import { InfoContext } from '../../context/Context'
 
 export default function Testimonials() {
   const { testimon } = useContext(InfoContext);  
-
+  console.log(testimon.data);
   const renderTestimonials = () => { 
-    if(testimon !== null){
+    if(testimon !== null && testimon.data.length > 0 ){
       return(
         <SectionTestimonals data={testimon.data} />
       )
