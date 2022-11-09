@@ -9,6 +9,7 @@ import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 import NavDesktop from "../components/Navbar/components/NavDesktop";
+import Footer from '../components/Footer/Footer';
 
 export default function US({data}) {
    const [states, setStates] = useState([]);
@@ -51,6 +52,7 @@ export default function US({data}) {
     {
          ( states.length > 0 ) ? ( SearchState() )  : <></>
     } 
+    <Footer />
     </Fragment>
   )
 }

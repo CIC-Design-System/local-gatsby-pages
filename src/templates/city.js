@@ -7,6 +7,7 @@ import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 import NavDesktop from "../components/Navbar/components/NavDesktop";
+import Footer from '../components/Footer/Footer';
  
 
 export default function City({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
@@ -30,6 +31,7 @@ export default function City({data,pageContext:{id ,title ,status ,slug ,parentI
             </div>
           </div>
         </div>
+        <Footer />
     </Fragment>
   )
 }

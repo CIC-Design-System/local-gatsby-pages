@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Link,graphql } from "gatsby"
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 import NavDesktop from "../components/Navbar/components/NavDesktop";
+import Footer from '../components/Footer/Footer';
 
 export default function state({data,pageContext}) { 
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))
@@ -26,6 +27,7 @@ export default function state({data,pageContext}) {
             </div>
           </div>
         </div>
+        <Footer />
     </Fragment>
   )
 }
