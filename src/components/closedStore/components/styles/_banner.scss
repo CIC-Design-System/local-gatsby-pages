@@ -1,0 +1,22 @@
+.centroD {
+    max-width: 70rem;
+    width: 92%;
+    display: flex;
+    margin: 0 auto;
+    padding: 1.25rem 0rem;
+}
+.centroD > p {
+    color: var(--alt-h-text);
+}
+.centroD > p > a {
+    color: var(--tertiary-fill);
+}
+.bannerClosed {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    background: var(--banner);
+}

@@ -70,12 +70,12 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="rate-state-buttons" itemScope="" itemProp="hasMap" itemType="https://schema.org/Map">
-                    <Buttons link="" btn="cic-btn-primary" aria={`Click here to apply for a ${data.momentFeed.name} Payday Loan now`} text={`Get Started`} /> 
+                    <Buttons link={`${process.env.GATSBY_APPLY}`} btn="cic-btn-primary" aria={`Click here to apply for a ${data.momentFeed.name} Payday Loan now`} text={`Get Started`} /> 
                     <Buttons link="" btn="cic-btn-secondary--dark" aria="Click here to get the directions from this store" text={`Get Directions`} item="mapType"  /> 
                 </div>
                 <div className="rate-state-callus">
                     <p className="cic-paragraph--medium ml-2">
-                        <a title="Back to Stores List" rel="noopener noreferrer" aria-label="Back to Stores List" href="https://local.checkintocash.com/us/al/">Back to Stores List</a>
+                        <a title="Back to Stores List" rel="noopener noreferrer" aria-label="Back to Stores List" href="/">Back to Stores List</a>
                     </p>
                 </div>
             </div>

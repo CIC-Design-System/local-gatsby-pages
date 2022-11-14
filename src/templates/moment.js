@@ -11,6 +11,8 @@ import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
 import NavDesktop from "../components/Navbar/components/NavDesktop";
+import ClosedStore from "../components/closedStore/ClosedStore";
+import Footer from "../components/Footer/Footer";
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) {
   //Hooks
@@ -24,7 +26,6 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   //Variables
   let [ status_store,  zip_code, corporate_id ] = [ data.momentFeed.status, data.momentFeed.zip, data.momentFeed.corporate_id];
   const moment_feed = data.momentFeed.momentfeed_id;
-
   //Data for the axios
   const loans = JSON.stringify({
     state: data.momentFeed.state,
@@ -32,6 +33,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     state_min: data.momentFeed.state_min
   });
   /**/
+  
   const runPromise = useCallback(() => {
     Promise.all([ getStoreInfo(moment_feed, "store"), 
           getStoreInfo(moment_feed, "store_content"), 
@@ -51,10 +53,10 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     });
   }, [ zip_code, moment_feed, loans, corporate_id ]); 
 
-  useEffect(() => {
+  useEffect(() => { 
     if(status_store === "open"){
       runPromise();
-    }
+    } 
     else{
       setStore("");
       setStoreContent("");
@@ -80,15 +82,16 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
             <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
               <OpenStore/>
             </InfoContext.Provider>
+            <Footer />
           </Fragment>
         )
       }
       else{
         return(
           <Fragment>
-              <NavDesktop data={data.allWpMenu}/>
-              <Breadcrumbs />
-              <p>This store is closed </p>
+            <NavDesktop data={data.allWpMenu}/>
+            <ClosedStore data={data} />
+            <Footer />
           </Fragment>
         )
       }
@@ -116,6 +119,7 @@ query MyQuery ($slug: String)  {
     corporate_id
     id
     zip
+    phone
   }
   allWpMenu {
     nodes {

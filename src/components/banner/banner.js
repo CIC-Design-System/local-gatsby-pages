@@ -9,7 +9,7 @@ export default function Banner() {
     const result = filterArray(storeContent, field);   
     if(result.length > 0 ){
        return(
-        <a title="Link to Apply Now  - Tomorrow can be a Payday" href="https://apply.checkintocash.com" target="_blank" rel="noopener noreferrer">
+        <a title="Link to Apply Now  - Tomorrow can be a Payday" href={`${process.env.GATSBY_APPLY}`} target="_blank" rel="noopener noreferrer">
           <img width="100%" height="100%" alt="banner Tomorrow can be a Payday" loading="lazy" className={`lazy ${classN}`} src={`${result[0].settings.mfSrc}`} />
         </a> 
        )

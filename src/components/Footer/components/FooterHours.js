@@ -3,11 +3,11 @@ import React from 'react'
 export default function FooterHours() {
   return (
     <div id="cic-footer-contact-info-container" className="d-flex">
-        <div id="cic-footer-contact-info" tabindex="0" aria-label="Click to call Check Into Cash at 877.262.2274">
+        <div id="cic-footer-contact-info" aria-label={`Click to call Check Into Cash at ${process.env.GATSBY_NUMBER}`}>
             <div className="mm-icon-no IconPhoneFooter cic-icon-tertiary"></div>
-            <p className="cic-paragraph--medium"><a className="footer-call-us" href="tel:877.262.2274">Call Us 877.262.2274</a></p>
+            <p className="cic-paragraph--medium"><a className="footer-call-us" href={`tel:+${process.env.GATSBY_NUMBER}`}>Call Us {process.env.GATSBY_NUMBER}</a></p>
         </div>
-        <div id="cic-footer-contact-hours" tabindex="0" aria-label="Check Into Cash call center operates Monday through Friday from 8 o'clock am to 7 o'clock pm Eastern Time">
+        <div id="cic-footer-contact-hours" aria-label="Check Into Cash call center operates Monday through Friday from 8 o'clock am to 7 o'clock pm Eastern Time">
             <span className="d-flex">    
                 <p className="cic-paragraph--medium text-white">Call Center Hours:</p>
             </span>

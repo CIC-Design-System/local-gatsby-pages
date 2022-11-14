@@ -103,7 +103,8 @@ exports.sourceNodes = async ({ actions }) => {
         status          : city.status,
         momentfeed_id   : city.momentfeed_id,
         corporate_id    : city.corporate_id,
-        post_name       : city.post_name
+        post_name       : city.post_name,
+        phone           : city.phone
       }
 
       // Get content digest of node. (Required field)

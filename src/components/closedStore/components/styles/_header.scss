@@ -1,0 +1,29 @@
+.cic-rate-state-wrapper {
+    grid-template:
+        " bgimg bgimg bgimg bgimg "
+        " info info info info ";
+} 
+.rate-about-buttons {
+    grid-area: buttons;
+}
+@media only screen and (min-width: 768px){
+    .cic-rate-state-wrapper {
+        display: grid;
+        column-gap: 2rem;
+        row-gap: 0.5rem;
+    }
+    .rate-about-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1120px){
+    .cic-rate-state-wrapper {
+        margin: 0 auto;
+        max-width: 70rem;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-areas: " bgimg bgimg bgimg bgimg bgimg bgimg info info info info info info ";
+    }
+}

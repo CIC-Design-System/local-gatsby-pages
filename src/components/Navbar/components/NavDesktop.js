@@ -20,7 +20,7 @@ export default function NavDesktop({data}) {
                     </a>
                 </div>
                 <div id="tablet-apply-now-button">
-                    <a href="https://apply.checkintocash.com/" title="Apply Now" className="cic-btn cic-btn-primary" aria-label="">Get Started</a>
+                    <a href={`${process.env.GATSBY_APPLY}`} title="Apply Now" className="cic-btn cic-btn-primary" aria-label="">Get Started</a>
                 </div>
                 <div id="cic-normal-mobile-nav" className="d-flex flex-row align-items-center">
                     <div className="cic-header-nav-icon mr-3">
@@ -55,7 +55,7 @@ export default function NavDesktop({data}) {
                             <span className="cic-vertical-line"></span>
                         </div> 
                         <div id="cic-nav-btn-container" className="d-flex align-items-center">
-                            <a href="https://apply.checkintocash.com/" title="Apply Now" className="cic-nav-btn cic-caption--medium" aria-label="Click here to Apply Now">
+                            <a href={`${process.env.GATSBY_APPLY}`} title="Apply Now" className="cic-nav-btn cic-caption--medium" aria-label="Click here to Apply Now">
                                 <span className="cic-caption--medium">Get Started</span>
                             </a>
                         </div> 
