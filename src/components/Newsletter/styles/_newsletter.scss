@@ -1,0 +1,67 @@
+#newsletter-tab-container {
+    background-color: #fff;
+}
+#newsletter-tabs .nav-item .nav-link {
+    padding: 1rem;
+}
+#newsletter-tabs .nav-item {
+    border-radius: 0.25em 0.25em 0em 0em!important;
+} 
+#newsletter-tabs .nav-item {
+    background-color: #f5f3f1;
+    box-shadow: inset 0px -2px 4px rgb(0 0 0 / 15%);
+    border-radius: 8px 8px 0px 0px;
+    width: 10rem;
+    text-align: center;
+}
+.news_btn{
+    width: 100%;
+    border: none;
+    font-weight: 500;
+}
+.cic-newsletter-input .form-group, .cic-newsletter-text-input .form-group {
+    position: relative;
+}
+.cic-fl-input .form-control:placeholder-shown:not(:focus)+* {
+    top: 1.25rem;
+    font-size: 100%;
+    color: #a6a4a3;
+}
+.has-float-label .form-control:placeholder-shown:not(:focus)+* {
+    font-size: 100%;
+    opacity: .5;
+    top: 1.3em;
+    font-weight: 400;
+}
+.cic-two-icons label, .cic-left-icon label {
+    left: 3rem;
+}
+.cic-fl-input label {
+    background-color: white;
+    left: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: .75em;
+    line-height: 1em;
+    color: #1f1d1c;
+}
+.has-float-label label, .has-float-label>span {
+    position: absolute;
+    cursor: text;
+    font-size: 75%;
+    opacity: 1;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    top: -0.5em;
+    left: 47px;
+    z-index: 3;
+    line-height: 1;
+    padding: 0 1px;
+}
+
+.btn-cic-news{
+    border: none;
+}
+.nav-tabs .nav-link {
+    color: var(--link);
+}
