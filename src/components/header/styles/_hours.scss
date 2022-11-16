@@ -1,0 +1,19 @@
+.plainBtn{
+    background: none;
+    border: none;
+}
+.spaceHour {
+    margin-left: 0.6rem;
+}
+.hourdsDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px,max-content));
+}
+.spaceTime {
+    margin-left: 0.313rem!important;
+}
+.noToday {
+    color: var(--primary-fill);
+    font-family: "Body", sans-serif !important;
+    font-weight: 500;
+}

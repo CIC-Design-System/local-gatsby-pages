@@ -49,6 +49,15 @@ export const formatPhoneNumber = (str) => {
   return str
 } 
 
+export const formatHour12 = (ctime) =>{
+   const timeString = ctime;
+   // Prepend any date. Use your birthday.
+   const timeString12hr = new Date('2022-01-01T' + timeString + 'Z')
+   .toLocaleTimeString('en-US',
+       {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+   );
+   return timeString12hr
+}
  export const statesList = () => { 
    const statesUrls = [
       { state:    'AL', url:    'alabama' },

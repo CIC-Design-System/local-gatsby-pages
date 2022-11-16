@@ -1,17 +1,17 @@
-import React, {useContext } from 'react'
-
+import React, {useContext} from 'react'
 import './styles/_header.scss';
 import { InfoContext } from '../../context/Context';
 import StoreDetails from './components/StoreDetails';
 import Buttons from './components/Buttons';
-import { formatPhoneNumber } from '../../selectors/getType';
- 
+import { formatPhoneNumber } from '../../selectors/getType'; 
+import Hours from './components/Hours';
 
 
-export default function Header() {
+export default function Header() {  
     const { data, store} = useContext(InfoContext);
     const result = store.data.customFields.filter(custom => custom.name === 'Store Image');
-    let phone_number = formatPhoneNumber(store.data.phone);
+    let phone_number = formatPhoneNumber(store.data.phone); 
+    
   return (
     <section id="storeContent" itemScope="" itemType="https://schema.org/Store">
         <div className="cic-rate-state-wrapper">
@@ -56,18 +56,7 @@ export default function Header() {
                             />
                         )
                     }
-                    <div className="rt-loan-amount">
-                        <div className="iconDiv">
-                            <div className="spaceIcon mm-icon-wrapper IconClock"></div>
-                            <a data-toggle="collapse" href="#openIntervals" className="cic-store-locator-openIntervals-trigger collapsed" aria-expanded="false">
-                                <div className="hourdsDiv mg60">
-                                    <span className="cic-paragraph--medium green-cic">Open Now:</span>
-                                </div>
-                                <p className="smText spaceTime" itemProp="openingHours">10am - 6pm</p>
-                                <div className="mm-icon-wrapper color_background_svg  IconChevronDown"></div>
-                            </a>
-                        </div>
-                    </div>
+                    <Hours store={store}/>
                 </div>
                 <div className="rate-state-buttons" itemScope="" itemProp="hasMap" itemType="https://schema.org/Map">
                     <Buttons link={`${process.env.GATSBY_APPLY}`} btn="cic-btn-primary" aria={`Click here to apply for a ${data.momentFeed.name} Payday Loan now`} text={`Get Started`} /> 

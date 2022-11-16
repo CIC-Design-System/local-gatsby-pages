@@ -7,7 +7,6 @@ import Banner from './components/Banner';
 import HeaderClosed from './components/HeaderClosed'
 
 export default function ClosedStore({data}) {
-    console.log(data.momentFeed);
     const { getStoreInfo} = ApiHooks(); 
     let [ zip_code ] = [ data.momentFeed.zip];
     const [storeLocator, setStoreLocator] = useState(null);  
@@ -22,7 +21,7 @@ export default function ClosedStore({data}) {
     }, [ zip_code ]); 
     const renderStore = () => { 
         const size = storeLocator.data.length;
-        if(size > 2){
+        if(size >= 2){
             return (
                 <StoreSection storeLocator={storeLocator} />
             )
