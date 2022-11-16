@@ -18,7 +18,6 @@ export default function Hours({store}) {
             minute: '2-digit',
             hour12: false,
         })
-        console.log(current_hour);
         const time_store = store.data.hours.split(';');
         const days_of_the_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         let tmp= [];
