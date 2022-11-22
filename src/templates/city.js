@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
-// Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
@@ -31,7 +29,7 @@ export default function City({data,pageContext:{id ,title ,status ,slug ,parentI
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer data={data.allWpMenu} />
     </Fragment>
   )
 }
@@ -53,15 +51,18 @@ query CityQuery ($id: ID){
   }
   allWpMenu {
     nodes {
-      databaseId
-      slug
+      id
       name
+      slug
       menuItems {
         nodes {
-          uri
-          path
-          label
-        }
+              id
+              description
+              databaseId
+              uri
+              label
+              parentDatabaseId
+            }
       }
     }
   }

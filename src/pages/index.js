@@ -9,6 +9,8 @@ import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
 import NavDesktop from "../components/Navbar/components/NavDesktop";
+
+import Footer from '../components/Footer/Footer';
 const IndexPage = ({ data, actions }) => {
   const [states, setStates] = useState([]);
   useEffect(() => {
@@ -50,6 +52,7 @@ const IndexPage = ({ data, actions }) => {
    {
         ( states.length > 0 ) ? ( SearchState() )  : <></>
    } 
+   <Footer data={data.allWpMenu} />
    </Fragment>
  )
 }
@@ -90,15 +93,18 @@ query USQuery {
   
   allWpMenu {
     nodes {
-      databaseId
-      slug
+      id
       name
+      slug
       menuItems {
         nodes {
-          uri
-          path
-          label
-        }
+              id
+              description
+              databaseId
+              uri
+              label
+              parentDatabaseId
+            }
       }
     }
   }

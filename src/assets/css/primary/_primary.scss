@@ -133,21 +133,21 @@
     color: var(--white) !important;
   }
   @font-face {
-    font-family: heading;
+    font-family: "Heading";
     src: url(https://fourpointohdv.wpengine.com/wp-content/uploads/4175Recoleta-SemiBold.woff);
     font-weight: 600;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: body;
+    font-family: "body";
     src: url(https://fourpointohdv.wpengine.com/wp-content/uploads/2304Graphik-Regular-Web.woff);
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: body;
+    font-family: "body";
     src: url(https://fourpointohdv.wpengine.com/wp-content/uploads/1844Graphik-Medium-Web.woff);
     font-weight: 500;
     font-style: normal;
@@ -161,16 +161,10 @@
   .menu-title,
   #zip-code-container label,
   .fl-node-content a {
-    font-family: body, sans-serif !important;
+    font-family: "body", sans-serif !important;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  .cic-heading-2,
-  .cic-heading-3,
-  .cic-heading-4 {
-    font-family: heading, serif !important;
+  h1,  h2,  h3, h4, .cic-heading-2, .cic-heading-3, .cic-heading-4 {
+    font-family: "Heading", serif !important;
   }
   .cic-btn-primary,
   .cic-nav-btn,

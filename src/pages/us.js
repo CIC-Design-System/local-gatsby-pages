@@ -1,7 +1,5 @@
-import React, { Fragment, useEffect, useState,useCallback } from 'react'
-// Bootstrap CSS
+import React, { Fragment, useEffect, useState,useCallback } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import '../assets/css/source.scss';
 import { graphql } from "gatsby"
@@ -22,8 +20,6 @@ export default function US({data}) {
   const filterState =(state) => { 
     return moment.filter(moment_state => moment_state.state_min === state);
   }
-
-  /**/
   
    const SearchState = useCallback(() => {
     let flag = "";  
@@ -52,7 +48,7 @@ export default function US({data}) {
     {
          ( states.length > 0 ) ? ( SearchState() )  : <></>
     } 
-    <Footer />
+    <Footer data={data.allWpMenu} />
     </Fragment>
   )
 }
@@ -92,15 +88,18 @@ query USQuery {
   
   allWpMenu {
     nodes {
-      databaseId
-      slug
+      id
       name
+      slug
       menuItems {
         nodes {
-          uri
-          path
-          label
-        }
+              id
+              description
+              databaseId
+              uri
+              label
+              parentDatabaseId
+            }
       }
     }
   }

@@ -2,7 +2,16 @@
  export const getType = ( store, alias) => { 
     return store.data.data.find(custom => custom.alias === alias);
  }
- 
+ export const getParentMenu = ( data, alias) => { 
+   return data.filter(custom => custom.parentDatabaseId === alias);
+}
+ export const getMenu = ( data, alias) => { 
+   return data.nodes.find(custom => custom.name === alias);
+}
+export const getCurrentYear = () =>{
+   const d = new Date();
+   return d.getFullYear();
+}
 export const filterArray = (storeContent, field) =>{
    return storeContent.data.data.filter(custom => custom.alias === field); 
 }

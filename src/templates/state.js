@@ -27,7 +27,7 @@ export default function state({data,pageContext}) {
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer data={data.allWpMenu} />
     </Fragment>
   )
 }
@@ -50,15 +50,18 @@ query CityQuery ($id: ID){
   }
   allWpMenu {
     nodes {
-      databaseId
-      slug
+      id
       name
+      slug
       menuItems {
         nodes {
-          uri
-          path
-          label
-        }
+              id
+              description
+              databaseId
+              uri
+              label
+              parentDatabaseId
+            }
       }
     }
   }

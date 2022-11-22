@@ -1,5 +1,4 @@
 import React, { useState, useEffect,Fragment, useCallback } from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import '../assets/css/source.scss';
@@ -30,7 +29,6 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     brand: data.momentFeed.name,
     state_min: data.momentFeed.state_min
   });
-  /**/
   
   const runPromise = useCallback(() => {
     Promise.all([ getStoreInfo(moment_feed, "store"), 
@@ -72,7 +70,6 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   const verifiedInfo = () => {
     if(store !== null){
       if(status_store === "open"){
-        // console.log(data.allWpMenu);
         return(
           <Fragment>
             <NavDesktop data={data.allWpMenu}/>
@@ -80,7 +77,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
             <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
               <OpenStore/>
             </InfoContext.Provider>
-            <Footer />
+            <Footer data={data.allWpMenu} />
           </Fragment>
         )
       }
@@ -89,7 +86,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
           <Fragment>
             <NavDesktop data={data.allWpMenu}/>
             <ClosedStore data={data} />
-            <Footer />
+            <Footer data={data.allWpMenu} />
           </Fragment>
         )
       }
@@ -121,15 +118,18 @@ query MyQuery ($slug: String)  {
   }
   allWpMenu {
     nodes {
-      databaseId
-      slug
+      id
       name
+      slug
       menuItems {
         nodes {
-          uri
-          path
-          label
-        }
+              id
+              description
+              databaseId
+              uri
+              label
+              parentDatabaseId
+            }
       }
     }
   }

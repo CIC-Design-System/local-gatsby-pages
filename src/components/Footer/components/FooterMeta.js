@@ -1,4 +1,5 @@
 import React from 'react'
+import { getCurrentYear } from '../../../selectors/getType'
 
 export default function FooterMeta() {
   return (
@@ -18,17 +19,17 @@ export default function FooterMeta() {
                     </div>
                     <div className="d-flex flex-row"> 
                         <div className="cic-footer-social-icon">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/checkn2cash" title="Check Into Cash on Youtube" aria-label="Click here to watch Check Into Cash on Youtube">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/checkn2cash" title={`${process.env.GATSBY_BRAND} on Youtube`} aria-label={`Click here to watch ${process.env.GATSBY_BRAND} on Youtube`}>
                                 <div className="mm-icon-wrapper IconYT cic-icon-footer"></div>
                             </a>
                         </div>
                         <div className="cic-footer-social-icon">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/checkintocash" title="Check Into Cash on Facebook" aria-label="Click here to like Check Into Cash on Facebook">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/checkintocash" title={`${process.env.GATSBY_BRAND} on Facebook`} aria-label={`Click here to like ${process.env.GATSBY_BRAND} on Facebook`}>
                                 <div className="mm-icon-wrapper IconFacebook cic-icon-footer"></div>
                             </a>
                         </div>
                         <div className="cic-footer-social-icon">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/check-into-cash" title="Check Into Cash on LinkedIn" aria-label="Click here to network with Check Into Cash on LinkedIn">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/check-into-cash" title={`${process.env.GATSBY_BRAND} on LinkedIn`} aria-label={`Click here to network with ${process.env.GATSBY_BRAND} on LinkedIn`}>
                                 <div className="mm-icon-wrapper IconLinkedin cic-icon-footer"></div>
                             </a>
                         </div>
@@ -42,9 +43,9 @@ export default function FooterMeta() {
                         <img width="64" height="58" alt="INFIN Financial Services Alliance Member Seal" title="INFIN Financial Services Alliance Member Seal" className="cic-mobile-only infin-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2058'%3E%3C/svg%3E" />
                     </a>
                     <img width="137" height="138" alt="Network Solutions Identity Verified Seal" title="Network Solutions Identity Verified Seal" className="cic-mobile-only network-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20137%20138'%3E%3C/svg%3E"  />
-                    <img width="160" height="114" alt="Check Into Cash! Your One Stop Money Shop" title="Check Into Cash! Your One Stop Money Shop" className="cic-logo entered lazyloaded" src="https://localstoresprd.wpenginepowered.com/wp-content/uploads/2022/03/ciclogo-whitetag.webp"  />
+                    <img width="160" height="114" alt={`${process.env.GATSBY_BRAND}! Your One Stop Money Shop`} title={`${process.env.GATSBY_BRAND}! Your One Stop Money Shop`} className="cic-logo entered lazyloaded" src="https://localstoresprd.wpenginepowered.com/wp-content/uploads/2022/03/ciclogo-whitetag.webp"  />
                 </div>
-                <p className="cic-caption text-white d-flex mb-2">© 2022 Check Into Cash. All Rights Reserved.</p>
+                <p className="cic-caption text-white d-flex mb-2">© { getCurrentYear() } {process.env.GATSBY_BRAND}. All Rights Reserved.</p>
             </div>
         </div>
     </div>  
