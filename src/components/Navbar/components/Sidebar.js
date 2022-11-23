@@ -1,6 +1,16 @@
 import React from 'react'
-
+import { filterMenu } from '../../../selectors/getType';
+import ListSidebar from './ListSidebar';
+ 
 export default function Sidebar({data}) {
+    
+    const menu = filterMenu(data, "mega-menu-primary");
+    const closeSideBar = () => {
+        const sidebar = document.getElementById('cic-sidebar');
+ 
+        sidebar.style.display = "none";
+        sidebar.style.zIndex = "0"; 
+    }
   return (
     <div id="cic-sidebar" className="sidebar left" >
 	
@@ -9,7 +19,7 @@ export default function Sidebar({data}) {
                 <img className="cic-header-nav-img" src="https://localstoresprd.wpenginepowered.com/wp-content/uploads/2022/01/cic-logo-2.png" alt="Check Into Cash! Your One Stop Money Shop" title="Check Into Cash! Your One Stop Money Shop" width="64" height="48" />
             </div>
             <div className="cic-header-nav-icon mx-4">
-                <div className="cic-close-size IconCloseMenu pointer cic-icon-primary" id="cic-control--close" tabindex="0"></div>
+                <div onClick={()=> {closeSideBar()}}  className="cic-close-size IconCloseMenu pointer cic-icon-primary" id="cic-control--close" tabIndex="0"></div>
             </div>
         </div>
         
@@ -17,29 +27,17 @@ export default function Sidebar({data}) {
             <div className="tablet-menu-row">
                 <div className="tablet-menu-column">
                     <div id="cic-header-nav-accordion" className="list-group d-flex" role="menu">
-                        <a href="https://checkintocash.com/" title="Home" className="cic-header-top-nav-item cic-heading-4 d-flex justify-content-between align-items-center collapsed" role="menuitem">
-                            <p className="cic-lead cic-lead--medium">Home</p>
-                        </a>
-                        
-                        <a href="https://checkintocash.com/payday-loans/" className="cic-header-top-nav-item cic-heading-4 d-flex justify-content-between align-items-center collapsed" aria-label="" role="menuitem">
-                            <p className="cic-lead cic-lead--medium">Payday Loans</p>
-                        </a>
-                        
-                        <a href="https://checkintocash.com/title-loans/" className="cic-header-top-nav-item cic-heading-4 d-flex justify-content-between align-items-center collapsed" aria-label="" role="menuitem">
-                            <p className="cic-lead cic-lead--medium">Title Loans</p>
-                        </a>
-                        
-                        <a href="https://checkintocash.com/rates-and-terms/" className="cic-header-top-nav-item cic-heading-4 d-flex justify-content-between align-items-center collapsed" aria-label="" role="menuitem">
-                            <p className="cic-lead cic-lead--medium">Rates and Terms</p>
-                        </a>
-                        
-                        <a href="https://checkintocash.com/how-it-works/" className="cic-header-top-nav-item cic-heading-4 d-flex justify-content-between align-items-center collapsed" aria-label="" role="menuitem">
-                            <p className="cic-lead cic-lead--medium">How it Works</p>
-                        </a>
+                        {
+                            menu[0].menuItems.nodes.map( (detail, index)=> {
+                                  return(
+                                    <ListSidebar key={`menu-${index}`} data={detail} />
+                                  )
+                            })
+                        }
                     </div>			
                     <div className="cic-btn-container">
                         <p className="cic-font-secondary">Need Cash Today?</p>
-                        <a href="https://apply.checkintocash.com/" title="Apply Now" className="cic-btn cic-btn-primary my-2">
+                        <a href={`${process.env.GATSBY_APPLY}`} title=" Get Started" className="cic-btn cic-btn-primary my-2">
                             Get Started
                         </a>
                     </div>
@@ -48,7 +46,7 @@ export default function Sidebar({data}) {
                     <div className="d-flex flex-column">
                         <hr />
                         <div>
-                            <a href="https://checkintocash.com/store-locator/" title="Find A Store" className="mm-sidebar-item align-items-center">
+                            <a href={process.env.GATSBY_APPLY} title="Find A Store" className="mm-sidebar-item align-items-center">
                                 <div className="mm-icon-wrapper cic-icon-primary IconMapPin"></div>
                                 <p className="cic-paragraph--medium cic-font-secondary m-2">Find A Store</p>
                             </a>

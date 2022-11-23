@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import { filterMenu } from '../../../selectors/getType';
 import ListMenu from './ListMenu';
 
@@ -10,6 +10,22 @@ export default function NavDesktop({data}) {
         setDesk_(e.target.value)
     }
     const menu = filterMenu(data, "mega-menu-primary");
+
+    const openSideBar = () => {
+        const sidebar = document.getElementById('cic-sidebar');
+ 
+        sidebar.style.display = "inherit";
+        sidebar.style.zIndex = "1000"; 
+    }
+    // useEffect(() => {
+    //     const onScroll = (event) => console.info("scrolling", event);
+          
+    //     window.addEventListener('scroll', onScroll);
+        
+    //     return () => {
+    //       window.removeEventListener('scroll', onScroll);
+    //     }
+    //   }, []);
   return (
     
     <Fragment>
@@ -21,7 +37,7 @@ export default function NavDesktop({data}) {
                     </a>
                 </div>
                 <div id="tablet-apply-now-button">
-                    <a href={`${process.env.GATSBY_APPLY}`} title="Apply Now" className="cic-btn cic-btn-primary" aria-label="">Get Started</a>
+                    <a style={{width: "10em "}} href={`${process.env.GATSBY_APPLY}`} title="Apply Now" className="cic-btn cic-btn-primary" aria-label="">Get Started</a>
                 </div>
                 <div id="cic-normal-mobile-nav" className="d-flex flex-row align-items-center">
                     <div className="cic-header-nav-icon mr-3">
@@ -30,7 +46,7 @@ export default function NavDesktop({data}) {
                         </a>
                     </div>
                     <div className="cic-header-nav-icon">
-                        <a id="normal-cic-controls" >					
+                        <a id="normal-cic-controls" href="#" onClick={ ()=> {openSideBar()}}>					
                             <div className="IconHamburger cic-icon-hamburger cic-icon-secondary"></div>
                         </a>
                     </div>
@@ -56,7 +72,7 @@ export default function NavDesktop({data}) {
                             <span className="cic-vertical-line"></span>
                         </div> 
                         <div id="cic-nav-btn-container" className="d-flex align-items-center">
-                            <a href={`${process.env.GATSBY_APPLY}`} title="Apply Now" className="cic-nav-btn cic-caption--medium" aria-label="Click here to Apply Now">
+                            <a href={`${process.env.GATSBY_STORE_LOCATOR}`} title="Apply Now" className="cic-nav-btn cic-caption--medium" aria-label="Click here to Apply Now">
                                 <span className="cic-caption--medium">Get Started</span>
                             </a>
                         </div> 

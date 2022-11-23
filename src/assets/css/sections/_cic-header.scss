@@ -208,10 +208,12 @@
     line-height: 1.5rem;
     margin: spacer( 2 ) 0;
 }
-
+.ml-3, .mx-3 {
+    margin-left: 1rem!important;
+}
 #cic-nav-drawer-login-container {
     padding: 2em 2.75em;
-    border: 1px solid gray( '70' );
+    border: 1px solid #5e5c5b;
 }
 
 #cic-header-hamburger-spanish-selector p {
