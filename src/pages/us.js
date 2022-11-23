@@ -6,8 +6,8 @@ import { graphql } from "gatsby"
 import { statesList } from '../selectors/getType';
 import UsTemplate from '../components/usTemplate/UsTemplate';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
-import NavDesktop from "../components/Navbar/components/NavDesktop";
 import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
 
 export default function US({data}) {
    const [states, setStates] = useState([]);
@@ -43,7 +43,7 @@ export default function US({data}) {
  
   return (
     <Fragment>
-      <NavDesktop data={data.allWpMenu}/>
+      <Navbar data={data.allWpMenu}/>
       <Breadcrumbs />
     {
          ( states.length > 0 ) ? ( SearchState() )  : <></>

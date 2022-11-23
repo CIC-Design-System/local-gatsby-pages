@@ -7,9 +7,9 @@ import OpenStore from "../components/openStore/OpenStore";
 import { ApiHooks } from "../services/api";
 import { InfoContext} from '../context/Context';
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
-import NavDesktop from "../components/Navbar/components/NavDesktop";
 import ClosedStore from "../components/closedStore/ClosedStore";
 import Footer from "../components/Footer/Footer";
+import Navbar from '../components/Navbar/Navbar';
 
 export default function Moment({data, pageContext: {slug}, pageContext  }) {
   //Hooks
@@ -72,7 +72,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       if(status_store === "open"){
         return(
           <Fragment>
-            <NavDesktop data={data.allWpMenu}/>
+            <Navbar data={data.allWpMenu}/>
             <Breadcrumbs />
             <InfoContext.Provider value={{pageContext, data, store, storeContent, storeLocator, loansInfo, testimon}}>
               <OpenStore/>
@@ -84,7 +84,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       else{
         return(
           <Fragment>
-            <NavDesktop data={data.allWpMenu}/>
+            <Navbar data={data.allWpMenu}/>
             <ClosedStore data={data} />
             <Footer data={data.allWpMenu} />
           </Fragment>

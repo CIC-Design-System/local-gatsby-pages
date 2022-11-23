@@ -4,20 +4,20 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Link,graphql } from "gatsby"
 import '../assets/css/source.scss';
 import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs';
-import NavDesktop from "../components/Navbar/components/NavDesktop";
 import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
  
 
 export default function City({data,pageContext:{id ,title ,status ,slug ,parentId  ,uri}}) {
   let cities = data.allWpPage.nodes.sort((a, b) => a.title.localeCompare(b.title))
   return (
     <Fragment>
-        <NavDesktop data={data.allWpMenu}/>
+        <Navbar data={data.allWpMenu}/>
         <Breadcrumbs/>
         <div className="fl-content-full">
           <div className="row">
             <h3> </h3>
-            <div className="cic-states-card-row">
+            <div>
               {cities.map((node, i) => (
                 <div key={`state-list-${i}`} className="cic-state-card">
                   <Link 

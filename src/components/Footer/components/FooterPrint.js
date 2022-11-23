@@ -29,7 +29,13 @@ export default function FooterPrint({data, menuParent, divClass}) {
                         return(
                             <Fragment key={'footer-menu-'+index} >
                                 <li className={'cic-footer-top-nav-item cic-heading-4 text-white d-flex justify-content-between align-items-center'} data-parent={'cic-'+element.databaseId} data-route={element.uri}>
-                                    <a href={element.uri} target="_blank" rel="noopener noreferrer">{element.label}</a>                                    
+                                    <a href={element.uri} target="_blank" rel="noopener noreferrer" className='toggleMenu cic-footer-top-nav-item cic-heading-4 text-white d-flex justify-content-between align-items-center'>{element.label}</a>
+                                    {
+                                        (childrenMenu.length > 0) ? (
+                                            <div className="cic-footer-icon"><div className="cic-phone-white-size IconWthChevronDown menuChevron"></div></div>
+                                        )
+                                        : <></>
+                                    }
                                 </li>
                                 {
                                     (childrenMenu.length > 0) ? printChildren(childrenMenu, element.databaseId) : <></>

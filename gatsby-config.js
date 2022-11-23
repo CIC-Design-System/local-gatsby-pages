@@ -6,7 +6,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby site`,
+    title: `Local Store Pages Check Into Cash`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [{

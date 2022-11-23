@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react'
 import { filterMenu } from '../../../selectors/getType';
 import ListMenu from './ListMenu';
 
+
 export default function NavDesktop({data}) {
  
     const [desk_, setDesk_] = useState("");
@@ -67,9 +68,9 @@ export default function NavDesktop({data}) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </nav>
+        
     </Fragment>
   )
 }

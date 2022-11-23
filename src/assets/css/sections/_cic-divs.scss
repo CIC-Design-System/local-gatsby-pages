@@ -11,14 +11,16 @@ a {
     // grid-template-columns: minmax(1px, 1.5rem) 1fr;
 }
 
+.fl-content-full {
+    padding: 0 2rem;
+} 
 
 @media only screen and (min-width: 1119px){
     .fl-content-full {
         width: 100%;
         max-width: 70rem;
         margin: 0 auto;
-        // padding: 0.5rem 0;
-    }
+    } 
 }
 
 
@@ -31,5 +33,11 @@ a {
         justify-content: center;
         width: 100%;
         margin-bottom: 1rem;
+    }
+}
+@media only screen and (max-width: 767px){
+    
+    .fl-content-full {
+        padding: 1rem;
     }
 }

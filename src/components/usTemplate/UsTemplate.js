@@ -11,7 +11,7 @@ export default function UsTemplate({wordpress, flag, state}) {
   return (
     
     <div className="fl-content-full">
-      <div className="row">
+      <div>
         <h3>{upperCase(state.url.replace(/\-/g, ' '))}</h3>
         <div className="cic-states-card-row">
           { 
