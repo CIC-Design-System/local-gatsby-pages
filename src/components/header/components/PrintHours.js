@@ -6,9 +6,11 @@ export default function PrintHours({week, textHtml}) {
     const [toggle, setToggle] = useState(false); 
     const { Collapse } = bootstrap; 
     useEffect(() => {
-        const myCollapse = document.getElementById('openIntervals')
-        const coll = new Collapse(myCollapse, {toggle: false})
-        toggle ? coll.show() : coll.hide()
+        if (typeof document !== `undefined`) {
+            const myCollapse = document.getElementById('openIntervals')
+            const coll = new Collapse(myCollapse, {toggle: false})
+            toggle ? coll.show() : coll.hide()
+        }
     }) 
   return (
     <Fragment>

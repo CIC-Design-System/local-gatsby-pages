@@ -11,53 +11,57 @@ export default function Newsletter() {
     const [balert, setAlert] = useState(false); 
     const [resultsApi, setResultsApi] = useState([]); 
  
-    const oFocusI = useCallback( (e) => { 
-        const id = e.currentTarget.id;
-        const input = document.getElementById(id);
-        const container = document.getElementById(id+"-container");
-        const icon = document.getElementById(id+"-icon");
-        const iconF = document.getElementById(id+"-icon-focus");
-        input.placeholder = " "
-        if(e.type === "focus"){ 
-            container.classList.add("cic-focused-border"); 
-            icon.style.display = "none";
-            iconF.style.display = "inline";
-        }
-        else if(e.type === "blur"){
-            container.classList.remove("cic-focused-border");
-            icon.style.display = "inline";
-            iconF.style.display = "none"; 
+    const oFocusI = useCallback( (e) => {
+        if (typeof document !== `undefined`) {
+            const id = e.currentTarget.id;
+            const input = document.getElementById(id);
+            const container = document.getElementById(id+"-container");
+            const icon = document.getElementById(id+"-icon");
+            const iconF = document.getElementById(id+"-icon-focus");
+            input.placeholder = " "
+            if(e.type === "focus"){ 
+                container.classList.add("cic-focused-border"); 
+                icon.style.display = "none";
+                iconF.style.display = "inline";
+            }
+            else if(e.type === "blur"){
+                container.classList.remove("cic-focused-border");
+                icon.style.display = "inline";
+                iconF.style.display = "none"; 
+            } 
         }
         
     }, [] );
     const onClickBtn = (element, type) =>{
         setAlert(false);
         let results = "";
-        const input = document.getElementById(element);
-        const errorE = document.getElementById("newsletter-error-message");
-        const errorP = document.getElementById("newsletter-phone-error-message");
-        let email_regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "g");
-        let phone_regex = new RegExp(/^(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/)
-        if(type === "email"){
-            const isEmail = email_regex.test(input.value);
-            if(isEmail){
-                errorE.style.display = "none"
-                results = saveNewsletter(input.value, "", "email");
-                showAlert(results)
+        if (typeof document !== `undefined`) {
+            const input = document.getElementById(element);
+            const errorE = document.getElementById("newsletter-error-message");
+            const errorP = document.getElementById("newsletter-phone-error-message");
+            let email_regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "g");
+            let phone_regex = new RegExp(/^(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/)
+            if(type === "email"){
+                const isEmail = email_regex.test(input.value);
+                if(isEmail){
+                    errorE.style.display = "none"
+                    results = saveNewsletter(input.value, "", "email");
+                    showAlert(results)
+                }
+                else
+                    errorE.style.display = "inherit"
             }
-            else
-                errorE.style.display = "inherit"
+            else if(type === "phone"){
+                const isPhone = phone_regex.test(input.value)
+                if(isPhone){
+                    errorP.style.display = "none"
+                    results = saveNewsletter("", input.value, "number");
+                    showAlert(results)
+                }
+                else
+                    errorP.style.display = "inherit"
+            } 
         }
-        else if(type === "phone"){
-            const isPhone = phone_regex.test(input.value)
-            if(isPhone){
-                errorP.style.display = "none"
-                results = saveNewsletter("", input.value, "number");
-                showAlert(results)
-            }
-            else
-                errorP.style.display = "inherit"
-        } 
     }
     const showAlert = (results)=>{
         results.then((values) => {

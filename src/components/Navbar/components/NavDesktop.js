@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment, useState} from 'react'
 import { filterMenu } from '../../../selectors/getType';
 import ListMenu from './ListMenu';
 
@@ -12,10 +12,11 @@ export default function NavDesktop({data}) {
     const menu = filterMenu(data, "mega-menu-primary");
 
     const openSideBar = () => {
-        const sidebar = document.getElementById('cic-sidebar');
- 
-        sidebar.style.display = "inherit";
-        sidebar.style.zIndex = "1000"; 
+        if (typeof document !== `undefined`) {
+            const sidebar = document.getElementById('cic-sidebar');
+            sidebar.style.display = "inherit";
+            sidebar.style.zIndex = "1000"; 
+        }
     }
     // useEffect(() => {
     //     const onScroll = (event) => console.info("scrolling", event);

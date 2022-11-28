@@ -6,10 +6,11 @@ export default function Sidebar({data}) {
     
     const menu = filterMenu(data, "mega-menu-primary");
     const closeSideBar = () => {
-        const sidebar = document.getElementById('cic-sidebar');
- 
-        sidebar.style.display = "none";
-        sidebar.style.zIndex = "0"; 
+        if (typeof document !== `undefined`) {
+            const sidebar = document.getElementById('cic-sidebar');
+            sidebar.style.display = "none";
+            sidebar.style.zIndex = "0"; 
+        }
     }
   return (
     <div id="cic-sidebar" className="sidebar left" >
@@ -19,7 +20,7 @@ export default function Sidebar({data}) {
                 <img className="cic-header-nav-img" src="https://localstoresprd.wpenginepowered.com/wp-content/uploads/2022/01/cic-logo-2.png" alt="Check Into Cash! Your One Stop Money Shop" title="Check Into Cash! Your One Stop Money Shop" width="64" height="48" />
             </div>
             <div className="cic-header-nav-icon mx-4">
-                <div onClick={()=> {closeSideBar()}}  className="cic-close-size IconCloseMenu pointer cic-icon-primary" id="cic-control--close" tabIndex="0"></div>
+                <div onClick={()=> {closeSideBar()}}  className="cic-close-size IconCloseMenu pointer cic-icon-primary" id="cic-control--close" ></div>
             </div>
         </div>
         
