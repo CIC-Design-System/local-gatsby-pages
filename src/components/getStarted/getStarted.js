@@ -22,7 +22,7 @@ export default function Started() {
             </div>
             <div className="cic-content-info2">
                  {
-                    ( typeof storeContent === 'object') ? ( renderCheckList() )  : <></>
+                    ( typeof storeContent === 'object' && storeContent !== null) ? ( renderCheckList() )  : <></>
                  }
             </div>
         </div>

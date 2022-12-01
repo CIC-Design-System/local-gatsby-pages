@@ -28,7 +28,7 @@ export default function AboutUs() {
                 </div>
                 <div className="cic-how-it-works-img">
                     {
-                        ( typeof storeContent === 'object') ? ( bringImg("about-image" ) )  : <></>
+                        ( typeof storeContent === 'object' && storeContent !== null) ? ( bringImg("about-image" ) )  : <></>
                     } 
                 </div>
                 <div className="cic-how-it-works-content-container spaceAround">

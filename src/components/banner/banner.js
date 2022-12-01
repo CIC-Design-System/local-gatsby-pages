@@ -19,10 +19,10 @@ export default function Banner() {
     <section id="bannerPhone">
         <div className="banner-phone">
           {
-             ( typeof storeContent === 'object') ? ( bringImg("promo-banner-(desktop)", "hideMobile") )  : <></>
+             ( typeof storeContent === 'object' && storeContent !== null) ? ( bringImg("promo-banner-(desktop)", "hideMobile") )  : <></>
           }
           {
-             ( typeof storeContent === 'object') ? ( bringImg("promo-banner-(mobile)", "onlyMobile") )  : <></>
+             ( typeof storeContent === 'object' && storeContent !== null) ? ( bringImg("promo-banner-(mobile)", "onlyMobile") )  : <></>
           } 
         </div>
     </section>

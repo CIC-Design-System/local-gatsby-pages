@@ -29,7 +29,9 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     brand: data.momentFeed.name,
     state_min: data.momentFeed.state_min
   });
-  
+
+  /*
+  //Just in case we need 'em
   const runPromise = useCallback(() => {
     Promise.all([ getStoreInfo(moment_feed, "store"), 
           getStoreInfo(moment_feed, "store_content"), 
@@ -47,8 +49,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
     .catch(error => {
       console.log(error);
     });
-  }, [ zip_code, moment_feed, loans, corporate_id ]); 
-
+  }, [ zip_code, moment_feed, loans, corporate_id ]);
   useEffect(() => { 
     if(status_store === "open"){
       runPromise();
@@ -66,6 +67,48 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
       setLoansInfo(null);
     };
   }, [runPromise, status_store ])
+   */
+  //Just in case we need 'em
+  
+  //First Call for the Store
+  useEffect(() => {
+    if(status_store === "open"){
+      const store_content = getStoreInfo(moment_feed, "store_content");
+      const store_info    = getStoreInfo(moment_feed, "store");
+      const store_locator = getStoreInfo(zip_code, "store_locator");
+      const store_loans   = getStoreLoans(loans, "loans");
+      const store_testi   = getStoreInfo(corporate_id, "testimonials");
+      store_info.then((response) => {
+        setStore(response);
+      })
+      store_content.then((response) => {
+        setStoreContent(response);
+      })
+      store_locator.then((response) => {
+        setStoreLocator(response);
+      })
+      store_loans.then((response) => {
+        setLoansInfo(response);
+      })
+      store_testi.then((response) => {
+        setTestimonials(response);
+      })
+    }
+    else{
+      setStore("");
+      setStoreContent("");
+      setStoreLocator("");
+      setLoansInfo("");
+      setTestimonials("");
+    }
+    return () => {
+      setStore(null);
+      setStoreContent(null);
+      setStoreLocator(null);
+      setLoansInfo(null);
+      setTestimonials(null);
+    };
+  }, [])
   
   const verifiedInfo = () => {
     if(store !== null){
@@ -95,7 +138,7 @@ export default function Moment({data, pageContext: {slug}, pageContext  }) {
   return (
     <Fragment>
       { 
-        (store === null )  ? <></> : verifiedInfo()
+        (store === null)  ? <></> : verifiedInfo()
       }
     </Fragment>
   )
